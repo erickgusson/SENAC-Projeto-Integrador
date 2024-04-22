@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    border: 0;
+}
+
+.home header nav {
+    background-image: url(../img/nav-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 20vh;
+}
+
+.home header nav ul {
+    list-style: none;
+}
+
+.home header nav ul li a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4px 8px;
+    margin: 8px 0;
+
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.home header nav ul li a img {
+    border-right: 1px solid black;
+    padding-right: 4px;
+    margin-right: 4px;
+
+    width: 20px;
+    height: 20px;
+}
+
+.home .banner {
+    width: 100%;
+    background-size: contain;
+}
