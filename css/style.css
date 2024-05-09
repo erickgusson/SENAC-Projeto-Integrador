@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Artifika&display=swap');
+
 * {
     margin: 0;
     border: 0;
+    font-family: "Artifika", serif;
 }
+
+h1{
+    font-family: "Alice", serif;
+    font-size: 80px;
+    color: #7B429A;
+    -webkit-text-stroke: 0.01px #22112c;
+} 
 
 .home header nav {
     background-image: url(../img/nav-bg.png);
@@ -21,7 +32,6 @@
 
 .home header nav ul li a{
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     padding: 4px 8px;
@@ -30,6 +40,9 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 20px;
+
+    text-decoration: none;
+    color: black;
 }
 
 .home header nav ul li a img {
@@ -42,6 +55,7 @@
 }
 
 .home .banner {
+    height: 500px;
     width: 100%;
     background-size: contain;
 }
