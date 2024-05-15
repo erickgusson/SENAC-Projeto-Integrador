@@ -5,57 +5,18 @@
     margin: 0;
     border: 0;
     font-family: "Artifika", serif;
+    box-sizing: border-box;
 }
 
-h1{
-    font-family: "Alice", serif;
-    font-size: 80px;
-    color: #7B429A;
-    -webkit-text-stroke: 0.01px #22112c;
-} 
-
-.home header nav {
-    background-image: url(../img/nav-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    height: 20vh;
+body {
+    background-color: #4C3E5D;
+    color: white;
 }
 
-.home header nav ul {
-    list-style: none;
-}
-
-.home header nav ul li a{
-    display: flex;
-    align-items: center;
-
-    padding: 4px 8px;
-    margin: 8px 0;
-
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 20px;
-
-    text-decoration: none;
-    color: black;
-}
-
-.home header nav ul li a img {
-    border-right: 1px solid black;
-    padding-right: 4px;
-    margin-right: 4px;
-
-    width: 20px;
-    height: 20px;
-}
-
-.home .banner {
-    height: 500px;
+.hero {
     width: 100%;
-    background-size: contain;
+}
+
+.hero img {
+    width: 100%;
 }
