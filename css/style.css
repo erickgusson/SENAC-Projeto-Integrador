@@ -20,3 +20,34 @@ body {
 .banner img {
     width: 100%;
 }
+
+.botao{
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Alice", sans-serif;
+    color: black;
+
+    background-color: white;
+
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 4px 12px;
+
+    
+}
+
+/* Botão pesquisar */
+.botao img{
+    height: 24px;
+    border-right: 1px solid #a9a6a6;
+    margin-right: 4px;
+    padding-right: 4px;
+}
+
+input[type="search"]
+{
+    width: 100%;
+}
