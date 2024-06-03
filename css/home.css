@@ -1,12 +1,17 @@
 #home-produtos {
     max-width: 90vw;
-    margin: 0 auto;
+    margin: 60px auto;
+}
+
+#home-produtos .produtos {
+    margin-bottom: 100px;
 }
 
 #home-produtos .produtos .produtos-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 #home-produtos .produtos .produtos-top h2 {
@@ -22,7 +27,7 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    background-image: url(../img/icon/decoracao-estrla.png);
+    background-image: url(../img/icon/decoracao-estrela.png);
     background-size: cover;
 }
 
@@ -32,6 +37,84 @@
     width: 40px;
     height: 40px;
     margin-left: 10px;
-    background-image: url(../img/icon/decoracao-estrla.png);
+    background-image: url(../img/icon/decoracao-estrela.png);
     background-size: cover;
+}
+
+#home-produtos .produtos .produtos-top a {
+    text-decoration: none;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    
+    transition: 500ms;
+}
+
+#home-produtos .produtos .produtos-top a:hover {
+    transform: scale(1.2);
+}
+
+#home-produtos .produtos .produtos-top a::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-image: url(../img/icon/mais.png);
+    background-size: cover;
+}
+
+#home-produtos .produtos .produtos-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px 0;
+}
+
+#home-produtos .produtos .produtos-bottom figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #B49B8A;
+
+    border: 2px solid white;
+    border-radius: 25px;
+
+    padding: 8px 4px;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
+
+    transition: 500ms;
+}
+
+#home-produtos .produtos .produtos-bottom figure:hover {
+    transform: scale(1.1);
+}
+
+#home-produtos .produtos .produtos-bottom figure img {
+    width: 320px;
+    height: 320px;
+}
+
+@media screen and (max-width: 768px) {
+    #home-produtos .produtos .produtos-top {
+        flex-direction: column;
+    }
+
+    #home-produtos .produtos .produtos-top h2{
+        font-size: 24px;
+    }
+
+    #home-produtos .produtos .produtos-top h2::after, #home-produtos .produtos .produtos-top h2::before{
+        width: 20px;
+        height: 20px;
+    }
+
+    #home-produtos .produtos .produtos-bottom figure img {
+        width: 250px;
+        height: 250px;
+    }
 }
