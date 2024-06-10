@@ -31,7 +31,7 @@
     text-decoration: underline;
 }
 
-.botao{
+.titulo-produtos > .botao{
     width: 60%;
 }
 
