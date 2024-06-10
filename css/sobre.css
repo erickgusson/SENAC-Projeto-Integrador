@@ -1,0 +1,23 @@
+body {
+    min-height: 100vh;
+}
+
+.quem-somos div {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 30px;
+    gap: 50px;
+
+}
+
+.quem-somos div h2{
+    text-align: center;
+}
+
+.quem-somos div strong{
+    text-align: center;
+}
