@@ -137,8 +137,8 @@ body {
     margin-bottom: 10px;
 }
 
-#produtos .produtos-esquerda ul li {
-    padding: 0;
+#produtos .produtos-esquerda ul  {
+    padding: 20px;
 }
 
 #produtos .produtos-esquerda ul li {
