@@ -1,53 +1,169 @@
-#produtos{
+#produtos {
     display: flex;
     padding: 0 2vw;
     margin-top: 20px;
     gap: 10%;
 }
-.produtos-esquerda{
+
+/* COLUNAS */
+.produtos-esquerda {
     flex: 1;
     display: flex;
+    flex-direction: column;
 }
-.produtos-meio{
+
+.produtos-meio {
     flex: 3;
     display: flex;
     flex-direction: column;
 }
 
-.produtos-direita{
+.produtos-direita {
     display: flex;
     flex: 1;
-    
+
 }
 
-#produtos .produtos-meio .titulo-produtos{
+/* -------------------- */
+
+/* COLUNA DO MEIO DA PÁGINA */
+#produtos .produtos-meio .titulo-produtos {
     display: flex;
-    justify-content: space-around  ;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
 
-#produtos .produtos-meio .titulo-produtos h2{
+#produtos .produtos-meio .titulo-produtos h2 {
     text-decoration: underline;
 }
 
-.titulo-produtos > .botao{
+/* Campo Pesquisar */
+
+.titulo-produtos>.botao {
     width: 60%;
 }
 
-*{
-    /* outline: 1px solid green; */
+input[type="search"] {
+    outline: none;
+    color: #7B429B;
 }
 
-#produtos .lista-produtos{
-    border: 1px solid tomato;
+/* BOX DE PRODUTOS */
+#produtos .lista-produtos {
+    margin: 30px 0;
+    /* border: 1px solid tomato; */
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
-#produtos .lista-produtos .item{
-    background-color: #B49B8A;
-    border: 1px solid black;
+/* cada produtinho */
 
+#produtos .lista-produtos .item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    background:
+        linear-gradient(#B49B8A, #B49B8A) padding-box,
+        linear-gradient(to bottom, #ffcc80, #6e52ab) border-box;
+    ;
+    color: black;
+    font-weight: 600;
+    gap: 5px 0;
+    border: 5px solid transparent;
+    border-radius: 25px;
+    padding: 8px 4px;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
+
+    transition: 500ms;
+}
+
+body {
+    display: grid;
+
+}
+
+#produtos .lista-produtos .item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* adicionar ao carrinho */
+#produtos .lista-produtos .item .adicionar {
+    margin-top: 10px;
+    background-color: #6e52ab;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: white;
+}
+
+#produtos .lista-produtos .item .adicionar:hover {
+    cursor: pointer;
+    color: #ffcc80;
+    transition: 200ms;
+    transform: scale(1.05);
+}
+
+/* COLUNA DA ESQUERDA (FILTROS) */
+
+#produtos .produtos-esquerda {
+    background-color: white;
+    color: black;
+
+    height: 700px;
+    width: 100%; 
+
+    border: 5px solid transparent;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(to bottom, #ffcc80, #6e52ab) border-box;
+    ;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
+}
+
+#produtos .produtos-esquerda h2 {
     text-align: center;
+    color: #7B429B;
+    margin-bottom: 10px;
+}
+
+#produtos .produtos-esquerda ul li {
+    padding: 0;
+}
+
+#produtos .produtos-esquerda ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    text-decoration: none;
+
+}
+
+/* Filtros */
+input[type=checkbox] {
+    accent-color: #7b429b;
+    color: #7B429B;
+
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+}
+
+li:has(input:checked) {
+    color: #7B429B;
+    font-weight: bold
+}
+
+#cb-todos{
+    border: 1px solid #6e52ab;
 }

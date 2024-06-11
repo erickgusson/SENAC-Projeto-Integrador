@@ -11,6 +11,9 @@
 body {
     background-color: #4C3E5D;
     color: white;
+    display: grid;
+    min-height: 100vh;
+    align-content: space-between;
 }
 
 .banner {
