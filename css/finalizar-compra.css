@@ -1,0 +1,78 @@
+input[type="search"]{
+    outline: none;
+    color: #7B429B;
+}
+
+#finalizar-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#finalizar-compra h1 {
+    margin: 30px 0;
+}
+
+.formulario-pedido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 100px;
+    margin: 40px 0 80px;
+}
+
+.pedido-dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    width: 100%;
+
+    gap: 20px;
+}
+
+.pedido-info, .pedido-pagamento {
+    text-align: center;
+
+    background-color: white;
+    color: black;
+
+    height: max-content;
+    width: 100%;
+
+    padding: 5px 0;
+    border: 5px solid transparent;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(to bottom, #ffcc80, #6e52ab) border-box;
+    ;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
+}
+
+.pedido-info h3, .pedido-pagamento h3 {
+    text-transform: uppercase;
+}
+
+ul {
+    padding: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.pedido-pagamento div, .pedido-pagamento div label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
