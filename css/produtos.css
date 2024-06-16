@@ -20,6 +20,7 @@
 
 .produtos-direita {
     display: flex;
+    flex-direction: column;
     flex: 1;
 
 }
@@ -36,6 +37,8 @@
 
 #produtos .produtos-meio .titulo-produtos h2 {
     text-decoration: underline;
+    font-size: 26px;
+
 }
 
 /* Campo Pesquisar */
@@ -44,7 +47,7 @@
     width: 60%;
 }
 
-input[type="search"] {
+input[type="search"]{
     outline: none;
     color: #7B429B;
 }
@@ -113,12 +116,13 @@ body {
 
 /* COLUNA DA ESQUERDA (FILTROS) */
 
-#produtos .produtos-esquerda {
+#produtos .produtos-esquerda,
+#produtos .produtos-direita {
     background-color: white;
     color: black;
 
-    height: 700px;
-    width: 100%; 
+    height: max-content;
+    width: 100%;
 
     border: 5px solid transparent;
     border-radius: 25px;
@@ -131,20 +135,22 @@ body {
     box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
 }
 
-#produtos .produtos-esquerda h2 {
+#produtos .produtos-esquerda h2,
+#produtos .produtos-direita h2 {
     text-align: center;
+    font-size: 26px;
     color: #7B429B;
     margin-bottom: 10px;
 }
 
-#produtos .produtos-esquerda ul  {
+#produtos .produtos-esquerda ul {
     padding: 20px;
 }
 
 #produtos .produtos-esquerda ul li {
     display: flex;
     justify-content: space-between;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
 
 }
@@ -164,6 +170,30 @@ li:has(input:checked) {
     font-weight: bold
 }
 
-#cb-todos{
+#cb-todos {
     border: 1px solid #6e52ab;
 }
+/* BOTAO FILTRAR */
+#produtos .produtos-esquerda button{
+    /* color: #6e52ab; */
+    padding: 12px;
+    cursor: pointer;
+    font-size: 24px;
+    background: none;
+    transition: 200ms;
+
+}
+
+#produtos .produtos-esquerda button:hover{
+    color: #6e52ab;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+/* ---------------- */
+/* PRODUTOS DIREITA (CARRINHO) */
+
+
+
+
+
