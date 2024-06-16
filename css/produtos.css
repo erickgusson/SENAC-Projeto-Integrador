@@ -116,25 +116,6 @@ body {
 
 /* COLUNA DA ESQUERDA (FILTROS) */
 
-#produtos .produtos-esquerda,
-#produtos .produtos-direita {
-    background-color: white;
-    color: black;
-
-    height: max-content;
-    width: 100%;
-
-    border: 5px solid transparent;
-    border-radius: 25px;
-
-    background:
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(to bottom, #ffcc80, #6e52ab) border-box;
-    ;
-
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
-}
-
 #produtos .produtos-esquerda h2,
 #produtos .produtos-direita h2 {
     text-align: center;
