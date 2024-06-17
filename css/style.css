@@ -85,3 +85,19 @@ input[type="search"]
 
     box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
 }
+
+.botao-click{
+    height: 50px;
+    width: 250px;
+
+    border-radius: 25px;
+
+    font-size: 24px;
+    color: white;
+    transition: 200ms;
+}
+
+.botao-click:hover{
+    transform: scale(1.05);
+
+}
