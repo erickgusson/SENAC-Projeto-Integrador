@@ -1,0 +1,26 @@
+#produto-selecionado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 10px 0 45px;
+}
+
+#produto-selecionado h1{
+    text-align: center;
+    font-size: 80px;
+
+    margin: 10px;
+}
+
+figure {
+    display: flex;
+
+    max-width: 90vw;
+}
+
+.preco-adicionar{
+    display: flex;
+    justify-content: space-around;
+}
