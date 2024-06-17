@@ -3,7 +3,7 @@ form{
     flex-direction: column;
 
     margin: 10px;
-    gap: 25px;
+    
 }
 
 .login-cadastro{
@@ -21,8 +21,6 @@ h2{
     margin-bottom: 10px;
 }
 
-
-
 input[type="email"], 
 input[type="password"],
 input[type="text"]{
@@ -32,7 +30,6 @@ input[type="text"]{
     padding: 10px 10px;
 
     font-size: 20px;
-
 }
 
 input[type="submit"]{
@@ -41,9 +38,7 @@ input[type="submit"]{
     text-align: center;
     margin-top: 30px;
 
-    width: 200px;
-    background-color: #7B429B;
-    color: white;
+    
 }
 
 .caixa{
@@ -53,5 +48,21 @@ input[type="submit"]{
 
 .caixa-cadastro{
     height: 600px; 
-    /* gap: 60px; */
+}
+
+/* Esqueci minha senha */
+.login-cadastro form a{
+    text-align: center;
+    margin-top: -30px;
+
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+
+    transition: 300ms;
+} 
+
+.login-cadastro form a:hover{
+    color: #7B429B;
+    font-weight: bold;
+    font-size: 17px;
 }

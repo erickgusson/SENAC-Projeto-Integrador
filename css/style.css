@@ -71,6 +71,9 @@ input[type="search"]
     background-color: white;
     color: black;
 
+    width: max-content;
+    height: max-content;
+
     border: 5px solid transparent;
     border-radius: 25px;
 
@@ -90,7 +93,10 @@ input[type="search"]
 
     font-size: 24px;
     color: white;
-    transition: 200ms;
+    transition: 300ms;
+
+    background-color: #7B429B;
+    color: white;
 }
 
 .botao-click:hover{

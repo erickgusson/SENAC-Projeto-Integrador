@@ -25,11 +25,12 @@ figure {
     gap: 50px;
 }
 
-figure img {
+figure .caixa .caixa-produto{
     max-width: 90vw;
     width: 400px;
     height: auto;
 }
+
 figure > span {
     width: 50%;
 
