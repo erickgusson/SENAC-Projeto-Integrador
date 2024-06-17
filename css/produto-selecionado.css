@@ -11,16 +11,49 @@
     text-align: center;
     font-size: 80px;
 
-    margin: 10px;
+    margin: 100px 0;
+    color: #ffcc80;
 }
 
 figure {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 
     max-width: 90vw;
+    gap: 50px;
+}
+
+figure img {
+    max-width: 90vw;
+    width: 400px;
+    height: auto;
+}
+figure > span {
+    width: 50%;
+
+    font-size: 32px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.tags span {
+    background-color: #353535;
+    
+    padding: 4px 8px;
+    border: 1px solid black;
+    border-radius: 30px;
 }
 
 .preco-adicionar{
+    width: 90vw;
     display: flex;
     justify-content: space-around;
 }
