@@ -1,0 +1,39 @@
+form{
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+    gap: 25px;
+}
+
+h2{
+    text-align: center;
+    font-size: 26px;
+    color: #7B429B;
+    margin-bottom: 10px;
+}
+
+input[type="email"], 
+input[type="password"]{
+    outline: none;
+    /* border: 1px solid black;
+    border-radius: 25px; */
+
+    width: 400px;
+    padding: 0 10px;
+
+    font-size: 20px;
+
+}
+
+input[type="button"]{
+
+    align-self: center;
+    text-align: center;
+
+    width: 200px;
+    background-color: #7B429B;
+    color: white;
+
+
+}

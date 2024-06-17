@@ -29,7 +29,7 @@ body {
     width: 100%;
 }
 
-.botao{
+.botao-geral{
     display: flex;
     align-items: center;
 
@@ -44,15 +44,21 @@ body {
     border-radius: 25px;
     padding: 4px 12px;
 
-    
+    transition: 500ms;
 }
 
 /* Botão pesquisar */
-.botao img{
+.botao-geral img{
     height: 24px;
     border-right: 1px solid #a9a6a6;
     margin-right: 4px;
     padding-right: 4px;
+}
+
+.botao-geral:hover{
+    cursor: pointer;
+    color: #6e52ab;
+    font-weight: bold;
 }
 
 input[type="search"]
@@ -66,7 +72,7 @@ input[type="search"]
     color: black;
 
     height: max-content;
-    width: 100%;
+    width: max-content;
 
     padding: 5px 0;
     border: 5px solid transparent;
