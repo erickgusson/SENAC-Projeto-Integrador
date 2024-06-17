@@ -71,10 +71,6 @@ input[type="search"]
     background-color: white;
     color: black;
 
-    height: max-content;
-    width: max-content;
-
-    padding: 5px 0;
     border: 5px solid transparent;
     border-radius: 25px;
 
