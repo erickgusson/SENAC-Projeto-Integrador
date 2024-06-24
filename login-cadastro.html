@@ -48,31 +48,88 @@
             <a href="#">Esqueceu sua senha?</a>
         </form>
 
-        <form action="#" method="post" class="caixa caixa-cadastro">
+        <form action="#" method="post" class="caixa caixa-cadastro escondido" id="form-cadastro">
             <h2>CADASTRAR</h2>
-            <!-- Nome -->
-            <span class="botao-geral"><img src="img/icon/icon-user.png" alt="">
-                <input type="text" placeholder="Nome" required>
-            </span>
-            <!-- Email -->
-            <span class="botao-geral"><img src="img/icon/icon-email.png" alt="">
-                <input type="email" name="email" id="email" placeholder="Email" required>
-            </span>
-            <!-- Senha -->
-            <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
-                <input type="password" name="senha" id="senha" placeholder="Senha" required>
-            </span>
-            <!-- Confirmar Senha -->
-            <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
-                <input type="password" name="senha" id="senha" placeholder="Confirmar Senha" required>
-            </span>
+
+            <div class="campos">
+
+                <!-- Nome -->
+                <span class="botao-geral"><img src="img/icon/icon-user.png" alt="">
+                    <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                </span>
+
+                <!-- Email -->
+                <span class="botao-geral"><img src="img/icon/icon-email.png" alt="">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </span>
+            </div>
+
+            <div class="campos">
+
+                <!-- Senha -->
+                <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                </span>
+
+                <!-- Confirmar Senha -->
+                <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
+                    <input type="password" name="senha2" id="senha2" placeholder="Confirmar Senha" required>
+                </span>
+            </div>
+
+            <h2 class="dados-pessoais">Dados Pessoais</h2>
+
+            <div class="campos">
+
+                <!-- Telefone -->
+                <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                </span>
+
+                <!-- CEP -->
+                <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <input type="number" name="cep" id="cep" placeholder="CEP" required>
+                </span>
+            </div>
+
+            <div class="campos">
+
+                <!-- Rua -->
+                <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <input type="text" name="nome" id="nome" placeholder="Rua" required>
+                </span>
+
+                <!-- Nº -->
+                <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <input type="number" name="numero" id="numero" placeholder="Nº" required>
+                </span>
+            </div>
+
+            <div class="campos">
+
+                <!-- Bairro -->
+                <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+                </span>
+
+                <!-- Cidade -->
+                <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+                </span>
+            </div>
+
             <!-- Cadastrar -->
             <input type="submit" value="Cadastrar" class="botao-click">
         </form>
     </div>
 
+    <div class="botao-cadastrar" id="mostrar-cadastro">
+        <span>Não possui um conta?</span>
+        <button onclick="javascript:mostrarCadastro()" class="botao-click">CADASTRAR</button>
+    </div>
+
     <footer class="footer">
-       
+
         <div class="col">
             <a href="#">
                 <img src="img/logo/Logo.png" alt="Logo">
@@ -97,7 +154,7 @@
                 <a href="#"><img src="img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
                 <a href="#"><img src="img/icon/Insta.png" alt="Contato atraves do Inta"></a>
             </div>
-            
+
         </div>
 
         <div class="col">
@@ -108,5 +165,6 @@
 
     </footer>
 </body>
+<script src="js/script.js"></script>
 
 </html>
