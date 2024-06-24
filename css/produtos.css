@@ -1,3 +1,7 @@
+body {
+    display: grid;
+}
+
 #produtos {
     display: flex;
     padding: 0 2vw;
@@ -67,9 +71,7 @@ input[type="search"]{
 #produtos .lista-produtos .item {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
 
     background:
         linear-gradient(#B49B8A, #B49B8A) padding-box,
@@ -85,11 +87,6 @@ input[type="search"]{
     box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
 
     transition: 500ms;
-}
-
-body {
-    display: grid;
-
 }
 
 #produtos .lista-produtos .item:hover {
