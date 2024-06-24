@@ -1,0 +1,71 @@
+h1 {
+    font-size: 80px;
+    margin: 20px;
+}
+
+.carrinho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caixa {
+    width: 80%;
+
+    padding: 30px;
+    margin: 20px;
+}
+
+.caixa tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 20px 0;
+}
+
+th {
+    font-size: 28px;
+}
+
+td {
+    font-size: 24px;
+}
+
+th:not(:first-child), td:not(:first-child) {
+    flex: 3;
+}
+
+th, td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 5;
+
+    gap: 20px;
+}
+
+.caixa-produto{
+    max-width: 125px;
+    max-height: 125px;
+}
+
+.btn-deletar {
+    width: 32px;
+    height: 40px;
+    
+    background-color: transparent;
+    background-image: url(../img/icon/icon-deletar.png);
+    
+    transition: 1000ms;
+}
+
+.btn-deletar:hover {
+    cursor: pointer;
+    background-image: url(../img/icon/icon-deletar-red.png);
+}
+
+button {
+    margin: 30px;
+}

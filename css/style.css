@@ -85,6 +85,32 @@ input[type="search"]
     box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
 }
 
+.caixa-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        linear-gradient(#B49B8A, #B49B8A) padding-box,
+        linear-gradient(to bottom, #ffcc80, #6e52ab) border-box;
+    ;
+    color: black;
+    font-weight: 600;
+    gap: 5px 0;
+    border: 5px solid transparent;
+    border-radius: 25px;
+    padding: 8px 4px;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, .6);
+
+    transition: 500ms;
+}
+
+.caixa-produto:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 .botao-click{
     height: 50px;
     width: 250px;
