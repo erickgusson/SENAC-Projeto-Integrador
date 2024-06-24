@@ -9,9 +9,12 @@ form{
 .login-cadastro{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 50px;
-    gap: 100px;
-    margin-bottom: 700px;
+    /* gap: 100px; */
+    margin-bottom: 50px;
+    flex-direction: column;
+
 }
 
 h2{
@@ -21,9 +24,16 @@ h2{
     margin-bottom: 10px;
 }
 
+.dados-pessoais{
+    margin-top: 50px;
+}
+
 input[type="email"], 
 input[type="password"],
-input[type="text"]{
+input[type="text"],
+input[type="tel"],
+input[type="number"]
+{
     outline: none;
 
     width: 400px;
@@ -42,12 +52,13 @@ input[type="submit"]{
 }
 
 .caixa{
-    padding: 20px 20px;
+    padding: 20px 30px;
     gap: 40px;
 }
 
 .caixa-cadastro{
-    height: 600px; 
+    height: max-content;
+    width: max-content;
 }
 
 /* Esqueci minha senha */
@@ -65,4 +76,27 @@ input[type="submit"]{
     color: #7B429B;
     font-weight: bold;
     font-size: 17px;
+}
+
+/* --------------------- */
+
+.campos{
+    display: flex;
+    gap: 20px;
+}
+
+form .botao-geral{
+    width: 400px;
+    
+}
+
+.escondido{
+    display: none;
+}
+
+.botao-cadastrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
