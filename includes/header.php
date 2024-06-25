@@ -24,7 +24,7 @@
         <header>
             <nav class="nav">
                 <div class="col">
-                    <a href="#"><img src="assets/img/logo/Logo.png" alt="Logo"></a>
+                    <a href="index.php"><img src="assets/img/logo/Logo.png" alt="Logo"></a>
                 </div>
 
                 <div class="col">

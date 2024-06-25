@@ -17,7 +17,7 @@ include "./includes/header.php"
         <tbody>
             <tr>
                 <td>
-                    <a href="produto-selecionado.html"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
+                    <a href="produto-selecionado.php"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
                     <label for="">Cookie Nutella</label>
                 </td>
                 <td>R$ <span>10,00</span></td>
@@ -27,7 +27,7 @@ include "./includes/header.php"
             </tr>
             <tr>
                 <td>
-                    <a href="produto-selecionado.html"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
+                    <a href="produto-selecionado.php"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
                     <label for="">Cookie Nutella</label>
                 </td>
                 <td>R$ <span>10,00</span></td>
@@ -37,7 +37,7 @@ include "./includes/header.php"
             </tr>
             <tr>
                 <td>
-                    <a href="produto-selecionado.html"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
+                    <a href="produto-selecionado.php"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
                     <label for="">Cookie Nutella</label>
                 </td>
                 <td>R$ <span>10,00</span></td>

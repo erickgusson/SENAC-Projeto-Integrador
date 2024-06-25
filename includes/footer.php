@@ -23,11 +23,11 @@
 
     <div class="col">
 
-        <h4>Redes sociais</h4>
-        <div class="footer-sociais">
-            <a href="#"><img src="assets/img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
-            <a href="#"><img src="assets/img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
-            <a href="#"><img src="assets/img/icon/Insta.png" alt="Contato atraves do Instagram"></a>
+        <h4>Parceiros</h4>
+            
+            <a href="https://policebox.paulowh.com/" target="_blank">Police Box</a>
+            <a href="https://buildsburguer.paulowh.com/" target="_blank">Build's Burguer</a>
+            <a href="https://ventqui.paulowh.com/" target="_blank">Ven't Qui</a>
         </div>
     </div>
 
@@ -35,5 +35,4 @@
         <h4>Quem somos</h4>
     </div>
 </footer>
-
 </html>
