@@ -1,4 +1,6 @@
-<?php include "./includes/header.php" ?> 
+<?php
+$title = "Sobre";
+include "./includes/header.php" ?> 
 
 <section class="quem-somos">
     <br>

@@ -1,4 +1,4 @@
-form{
+#login-cadastro form{
     display: flex;
     flex-direction: column;
 
@@ -6,7 +6,7 @@ form{
     
 }
 
-.login-cadastro{
+#login-cadastro{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,22 +17,22 @@ form{
 
 }
 
-h2{
+#login-cadastro h2{
     text-align: center;
     font-size: 26px;
     color: #7B429B;
     margin-bottom: 10px;
 }
 
-.dados-pessoais{
+#login-cadastro .dados-pessoais{
     margin-top: 50px;
 }
 
-input[type="email"], 
-input[type="password"],
-input[type="text"],
-input[type="tel"],
-input[type="number"]
+#login-cadastro input[type="email"], 
+#login-cadastro input[type="password"],
+#login-cadastro input[type="text"],
+#login-cadastro input[type="tel"],
+#login-cadastro input[type="number"]
 {
     outline: none;
 
@@ -42,7 +42,7 @@ input[type="number"]
     font-size: 20px;
 }
 
-input[type="submit"]{
+#login-cadastro input[type="submit"]{
 
     align-self: center;
     text-align: center;
@@ -51,18 +51,18 @@ input[type="submit"]{
     
 }
 
-.caixa{
+#login-cadastro form.caixa{
     padding: 20px 30px;
     gap: 40px;
 }
 
-.caixa-cadastro{
+#login-cadastro form.caixa-cadastro{
     height: max-content;
     width: max-content;
 }
 
 /* Esqueci minha senha */
-.login-cadastro form a{
+#login-cadastro form a{
     text-align: center;
     margin-top: -30px;
 
@@ -72,7 +72,7 @@ input[type="submit"]{
     transition: 300ms;
 } 
 
-.login-cadastro form a:hover{
+#login-cadastro form a:hover{
     color: #7B429B;
     font-weight: bold;
     font-size: 17px;
@@ -80,23 +80,24 @@ input[type="submit"]{
 
 /* --------------------- */
 
-.campos{
+#login-cadastro form .campos{
     display: flex;
     gap: 20px;
 }
 
-form .botao-geral{
+#login-cadastro form .botao-geral{
     width: 400px;
     
 }
 
-.escondido{
+#login-cadastro .escondido{
     display: none;
 }
 
-.botao-cadastrar{
+#login-cadastro .botao-cadastrar{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }

@@ -5,9 +5,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doces Lunares</title>
-
+    <title><?= isset($title) && !empty($title) ? $title . " - Doces Lunares": "Doces Lunares" ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login-cadastro.css"> 
     <link rel="stylesheet" href="assets/css/nav-footer.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/finalizar-compra.css">
@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="assets/css/produto-selecionado.css">
     <link rel="stylesheet" href="assets/css/carrinho.css">
     <link rel="stylesheet" href="assets/css/sobre.css">
-
-
-
-
 
 </head>
 
@@ -37,8 +33,8 @@
 
                 <div class="col">
                     <a href="#" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>
-                    <a href="produtos.html" class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt="icone de lupa">Pesquisar</a>
-                    <a href="sobre.html" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="">Quem somos</a>
+                    <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt="icone de lupa">Pesquisar</a>
+                    <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone representando um pessoa">Quem somos</a>
                 </div>
             </nav>
         </header>
