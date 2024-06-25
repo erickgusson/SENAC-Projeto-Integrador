@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include "./includes/header.php" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/nav-footer.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/produtos.css">
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+<title>Produtos</title>
 
 
-
-    <title>Produtos</title>
-</head>
-
-<body>
-    <header>
-        <nav class="nav">
-            <div class="col">
-                <a href="index.html"><img src="img/logo/Logo.png" alt="Logo"></a>
-            </div>
-
-            <div class="col">
-                <h1>Doces Lunares</h1>
-            </div>
-            <div class="col">
-                <a href="#" class="botao-geral"><img src="img/icon/icon-carrinho.png" alt="">Carrinho</a>
-                <a href="sobre.html" class="botao-geral"><img src="img/icon/icon-quem-somos.png" alt="">Quem somos</a>
-            </div>
-        </nav>
-    </header>
 
     <section>
         <main id="produtos" class="col">
@@ -61,60 +33,60 @@
             <div class="produtos-meio">
                 <div class="titulo-produtos">
                     <h2>TODOS</h2>
-                    <span class="botao-geral"><img src="img/icon/icon-pesquisar.png" alt=""><input type="search"></span>
+                    <span class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt=""><input type="search"></span>
                 </div>
 
                 <div class="lista-produtos">
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
                     </div>
                     <div class="item">
-                        <img src="img/produtos/BoloPrestigio.png" alt="">
+                        <img src="assets/img/produtos/BoloPrestigio.png" alt="">
                         <p>Bolo de prestígio</p>
                         <p>R$ 7,50 / 100g</p>
                         <button class="adicionar">Adicionar ao Carrinho</button>
@@ -140,7 +112,7 @@
 
             <a href="#">
 
-                <img src="img/logo/Logo.png" alt="Logo">
+                <img src="assets/img/logo/Logo.png" alt="Logo">
 
             </a>
 
@@ -165,9 +137,9 @@
             <h4>Redes sociais</h4>
             <div class="footer-sociais">
 
-                <a href="#"><img src="img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
-                <a href="#"><img src="img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
-                <a href="#"><img src="img/icon/Insta.png" alt="Contato atraves do Inta"></a>
+                <a href="#"><img src="assets/img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
+                <a href="#"><img src="assets/img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
+                <a href="#"><img src="assets/img/icon/Insta.png" alt="Contato atraves do Inta"></a>
 
             </div>
 

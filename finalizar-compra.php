@@ -1,52 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Finalizar Compra</title>
-
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav-footer.css">
-
-    <link rel="stylesheet" href="css/finalizar-compra.css">
-
-</head>
+<?php 
+    include "./includes/header.php"
+?>
 
 <body>
 
     <main class="home">
 
-        <header>
-
-            <nav class="nav">
-
-                <div class="col">
-
-                    <a href="#"><img src="img/logo/Logo.png" alt="Logo"></a>
-
-                </div>
-
-                <div class="col">
-
-                    <h1>Doces Lunares</h1>
-
-                </div>
-
-                <div class="col">
-
-                    <a href="#" class="botao"><img src="img/icon/icon-carrinho.png" alt="">Carrinho</a>
-                    <a href="produtos.html" class="botao"><img src="img/icon/icon-pesquisar.png" alt="">Pesquisar</a>
-                    <a href="sobre.html" class="botao"><img src="img/icon/icon-quem-somos.png" alt="">Quem somos</a>
-
-                </div>
-
-            </nav>
-
-        </header>
 
         <section id="finalizar-compra">
 
@@ -58,7 +17,7 @@
                     <div>
 
                         <label for="frete">Calcular frete:</label>
-                        <p class="botao-geral"><img src="img/icon/icon-mapa.png" alt=""><input type="search"
+                        <p class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt=""><input type="search"
                                 placeholder="0000-000"></p>
 
                     </div>
@@ -66,7 +25,7 @@
                     <div>
 
                         <label for="frete">Número da Casa:</label>
-                        <p class="botao-geral"><img src="img/icon/icon-mapa.png" alt=""><input type="search"
+                        <p class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt=""><input type="search"
                                 placeholder="0000"></p>
 
                     </div>
@@ -74,7 +33,7 @@
                     <div>
 
                         <label for="frete">Complemento:</label>
-                        <p class="botao-geral"><img src="img/icon/icon-mapa.png" alt=""><input type="search"
+                        <p class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt=""><input type="search"
                                 placeholder="0000"></p>
 
                     </div>
@@ -82,7 +41,7 @@
                     <div>
 
                         <label for="frete">Cadastar cupom: </label>
-                        <p class="botao-geral"><img src="img/icon/icon-cupom.png" alt=""><input type="search"
+                        <p class="botao-geral"><img src="assets/img/icon/icon-cupom.png" alt=""><input type="search"
                                 placeholder="INAUG30"></p>
 
                     </div>
@@ -111,8 +70,8 @@
                         <input type="radio" name="metodo-pix" id="metodo-pix">
                         <label for="metodo-pix">
                             <img
-                                src="img/icon/icon-pix.png" alt="usar o pix">
-                                <img src="img/placeholder-qr.png"
+                                src="assets/img/icon/icon-pix.png" alt="usar o pix">
+                                <img src="assets/img/placeholder-qr.png"
                                 alt="qr pix">
                             </label>
                     </div>
@@ -131,7 +90,7 @@
 
                 <a href="#">
 
-                    <img src="img/logo/Logo.png" alt="Logo">
+                    <img src="assets/img/logo/Logo.png" alt="Logo">
 
                 </a>
 
@@ -156,9 +115,9 @@
                 <h4>Redes sociais</h4>
                 <div class="footer-sociais">
 
-                    <a href="#"><img src="img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
-                    <a href="#"><img src="img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
-                    <a href="#"><img src="img/icon/Insta.png" alt="Contato atraves do Inta"></a>
+                    <a href="#"><img src="assets/img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
+                    <a href="#"><img src="assets/img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
+                    <a href="#"><img src="assets/img/icon/Insta.png" alt="Contato atraves do Inta"></a>
 
                 </div>
 

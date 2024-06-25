@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Cadastrar</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login-cadastro.css">
-    <link rel="stylesheet" href="css/nav-footer.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login-cadastro.css">
+    <link rel="stylesheet" href="assets/css/nav-footer.css">
 
 
 </head>
@@ -32,7 +32,7 @@ if (isset($_POST) && !empty($_POST)) {
             <nav class="nav">
 
                 <div class="col">
-                    <a href="#"><img src="img/logo/Logo.png" alt="Logo"></a>
+                    <a href="#"><img src="assets/img/logo/Logo.png" alt="Logo"></a>
                 </div>
 
                 <div class="col">
@@ -40,9 +40,9 @@ if (isset($_POST) && !empty($_POST)) {
                 </div>
 
                 <div class="col">
-                    <a href="#" class="botao-geral"><img src="img/icon/icon-carrinho.png" alt="">Carrinho</a>
-                    <a href="produtos.html" class="botao-geral"><img src="img/icon/icon-pesquisar.png" alt="">Pesquisar</a>
-                    <a href="sobre.html" class="botao-geral"><img src="img/icon/icon-quem-somos.png" alt="">Quem somos</a>
+                    <a href="#" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="">Carrinho</a>
+                    <a href="produtos.html" class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt="">Pesquisar</a>
+                    <a href="sobre.html" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="">Quem somos</a>
                 </div>
 
             </nav>
@@ -51,11 +51,11 @@ if (isset($_POST) && !empty($_POST)) {
             <form action="#" method="POST" class="caixa">
                 <h2>LOGIN</h2>
 
-                <span class="botao-geral"><img src="img/icon/icon-email.png" alt="">
+                <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
                     <input type="email" name="email" id="email" placeholder="Email" required>
                 </span>
 
-                <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
+                <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
                     <input type="password" name="senha" id="senha" placeholder="Senha" required>
                 </span>
 
@@ -83,12 +83,12 @@ if (isset($_POST) && !empty($_POST)) {
                 <div class="campos">
 
                     <!-- Nome -->
-                    <span class="botao-geral"><img src="img/icon/icon-user.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/icon-user.png" alt="">
                         <input type="text" name="nome" id="nome" placeholder="Nome" required>
                     </span>
 
                     <!-- Email -->
-                    <span class="botao-geral"><img src="img/icon/icon-email.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
                         <input type="email" name="email" id="email" placeholder="Email" required>
                     </span>
                 </div>
@@ -96,12 +96,12 @@ if (isset($_POST) && !empty($_POST)) {
                 <div class="campos">
 
                     <!-- Senha -->
-                    <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
                         <input type="password" name="senha" id="senha" placeholder="Senha" required>
                     </span>
 
                     <!-- Confirmar Senha -->
-                    <span class="botao-geral"><img src="img/icon/icon-senha.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
                         <input type="password" name="senha2" id="senha2" placeholder="Confirmar Senha" required>
                     </span>
                 </div>
@@ -111,12 +111,12 @@ if (isset($_POST) && !empty($_POST)) {
                 <div class="campos">
 
                     <!-- Telefone -->
-                    <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
                         <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
                     </span>
 
                     <!-- CEP -->
-                    <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
                         <input type="number" name="cep" id="cep" placeholder="CEP" required>
                     </span>
                 </div>
@@ -124,12 +124,12 @@ if (isset($_POST) && !empty($_POST)) {
                 <div class="campos">
 
                     <!-- Rua -->
-                    <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
                         <input type="text" name="nome" id="nome" placeholder="Rua" required>
                     </span>
 
                     <!-- Nº -->
-                    <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
                         <input type="number" name="numero" id="numero" placeholder="Nº" required>
                     </span>
                 </div>
@@ -137,12 +137,12 @@ if (isset($_POST) && !empty($_POST)) {
                 <div class="campos">
 
                     <!-- Bairro -->
-                    <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
                         <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
                     </span>
 
                     <!-- Cidade -->
-                    <span class="botao-geral"><img src="img/icon/decoracao-estrela.png" alt="">
+                    <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
                         <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
                     </span>
                 </div>
@@ -161,7 +161,7 @@ if (isset($_POST) && !empty($_POST)) {
 
             <div class="col">
                 <a href="#">
-                    <img src="img/logo/Logo.png" alt="Logo">
+                    <img src="assets/img/logo/Logo.png" alt="Logo">
                 </a>
             </div>
 
@@ -179,9 +179,9 @@ if (isset($_POST) && !empty($_POST)) {
                 <h4>Redes sociais</h4>
 
                 <div class="footer-sociais">
-                    <a href="#"><img src="img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
-                    <a href="#"><img src="img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
-                    <a href="#"><img src="img/icon/Insta.png" alt="Contato atraves do Inta"></a>
+                    <a href="#"><img src="assets/img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
+                    <a href="#"><img src="assets/img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
+                    <a href="#"><img src="assets/img/icon/Insta.png" alt="Contato atraves do Inta"></a>
                 </div>
 
             </div>
@@ -194,6 +194,6 @@ if (isset($_POST) && !empty($_POST)) {
 
         </footer>
     </body>
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </html>

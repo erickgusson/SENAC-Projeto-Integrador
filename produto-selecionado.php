@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torta de Morango</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav-footer.css">
-    <link rel="stylesheet" href="css/produto-selecionado.css">
-
-</head>
-
-<body>
-
-    <main class="home">
-        <header>
-
-            <nav class="nav">
-
-                <div class="col">
-                    <a href="#"><img src="img/logo/Logo.png" alt="Logo"></a>
-                </div>
-
-                <div class="col">
-                    <h1>Doces Lunares</h1>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="botao-geral"><img src="img/icon/icon-carrinho.png" alt="">Carrinho</a>
-                    <a href="produtos.html" class="botao-geral"><img src="img/icon/icon-pesquisar.png" alt="">Pesquisar</a>
-                    <a href="sobre.html" class="botao-geral"><img src="img/icon/icon-quem-somos.png" alt="">Quem somos</a>
-                </div>
-
-            </nav>
-
-        </header>
+<?php include "./includes/header.php" ?>
 
         <section id="produto-selecionado">
 
@@ -45,7 +7,7 @@
             <figure>
 
                 <div>
-                    <img class="caixa caixa-produto" src="img/produtos/TortaMorango.png" alt="Tora de morango">
+                    <img class="caixa caixa-produto" src="assets/img/produtos/TortaMorango.png" alt="Tora de morango">
 
                     <div class="tags">
                         <span>Torta</span>
@@ -75,7 +37,7 @@
 
             <div class="col">
                 <a href="#">
-                    <img src="img/logo/Logo.png" alt="Logo">
+                    <img src="assets/img/logo/Logo.png" alt="Logo">
                 </a>
             </div>
 
@@ -93,9 +55,9 @@
                 <h4>Redes sociais</h4>
 
                 <div class="footer-sociais">
-                    <a href="#"><img src="img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
-                    <a href="#"><img src="img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
-                    <a href="#"><img src="img/icon/Insta.png" alt="Contato atraves do Inta"></a>
+                    <a href="#"><img src="assets/img/icon/Whats.png" alt="Contato atraves do WhatsApp"></a>
+                    <a href="#"><img src="assets/img/icon/Facebook.png" alt="Contato atraves do Facebook"></a>
+                    <a href="#"><img src="assets/img/icon/Insta.png" alt="Contato atraves do Inta"></a>
                 </div>
             </div>
 

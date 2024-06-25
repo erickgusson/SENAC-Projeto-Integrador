@@ -46,7 +46,7 @@ th, td {
     gap: 20px;
 }
 
-.caixa-produto{
+#carrinho .caixa-produto{
     max-width: 125px;
     max-height: 125px;
 }

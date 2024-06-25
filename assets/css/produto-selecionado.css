@@ -15,7 +15,7 @@
     color: #ffcc80;
 }
 
-figure {
+#produto-selecionado figure {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -25,7 +25,7 @@ figure {
     gap: 50px;
 }
 
-figure .caixa .caixa-produto{
+#produto-selecionado figure .caixa .caixa-produto{
     max-width: 90vw;
     width: 400px;
     height: auto;
