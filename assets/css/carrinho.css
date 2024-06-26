@@ -3,7 +3,7 @@ h1 {
     margin: 20px;
 }
 
-#carrinho .carrinho {
+#carrinho, .carrinho {
     display: flex;
     flex-direction: column;
     align-items: center;
