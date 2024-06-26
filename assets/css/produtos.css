@@ -94,6 +94,10 @@ input[type="search"]{
     cursor: pointer;
 }
 
+#produtos .lista-produtos .item img {
+    max-width: 200px;
+}
+
 /* adicionar ao carrinho */
 #produtos .lista-produtos .item .adicionar {
     margin-top: 10px;
