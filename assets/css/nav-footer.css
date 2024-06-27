@@ -1,20 +1,28 @@
 /* Começo da Nav */
 
-.nav {
+#menu .nav {
     background: linear-gradient(270deg,
             rgba(110, 82, 171, 0.6),
             rgba(255, 204, 128, 0.6)),
         url(../img/background/nav-bg.png);
 
-    padding: 1rem;
+    padding: 1rem 0 0 1rem;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
 }
 
-.nav .col h1 {
+#menu .nav .row {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+#menu .nav .col h1 {
     font-family: "Alice", sans-serif;
     font-size: 100px;
 
@@ -24,14 +32,13 @@
     color: #7B429A;
 }
 
-.nav .col {
+#menu .nav .col {
     display: flex;
-    flex-direction: column;
 
     gap: 1rem;
 }
 
-/* .nav .col a {
+/* #menu .nav .col a {
     display: flex;
     align-items: center;
 
@@ -49,7 +56,7 @@
     padding: 8px 12px;
 }
 
-.nav .col a img {
+#menu .nav .col a img {
     border-right: 1px solid #A9A6A6;
     margin-right: 4px;
     padding-right: 4px;
@@ -94,7 +101,7 @@
 
 .footer-sociais {
     display: flex;
-    gap: 12px;
+    gap: 4px;
 }
 
 /* Fim do Footer */
@@ -102,12 +109,12 @@
 /* Correção da Nav e Footer */
 
 @media screen and (max-width: 768px) {
-    .nav {
+    #menu .nav {
         flex-direction: column;
         gap: 24px;
     }
 
-    .nav .col h1{
+    #menu .nav .col h1{
         font-size: 60px;
     }
 
