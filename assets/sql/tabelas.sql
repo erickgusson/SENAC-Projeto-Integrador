@@ -9,7 +9,7 @@ CREATE TABLE tb_users (
     bairro VARCHAR(255),
     rua VARCHAR(255),
     numero VARCHAR(255),
-    complemento VARCHAR(255),
+    complemento VARCHAR(255)
 )
 
 CREATE TABLE tb_user_verificacao (
@@ -32,7 +32,7 @@ CREATE TABLE tb_produtos (
     data_insercao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     imagem VARCHAR(200),
     nome VARCHAR(200),
-    preco VARCHAR(200),
+    preco VARCHAR(200)
 )
 
 CREATE Table tb_produtos_tags (
