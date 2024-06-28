@@ -32,7 +32,7 @@ CREATE TABLE tb_produtos (
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `imagem` VARCHAR(200),
     `nome` VARCHAR(200),
-    `preco` VARCHAR(200)
+    `preco` FLOAT(9, 2)
 )
 
 CREATE Table tb_produtos_tags (
