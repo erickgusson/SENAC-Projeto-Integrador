@@ -41,9 +41,7 @@ body {
     background-color: white;
 
     border: 1px solid black;
-    /* border-radius: 25px; */
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px;
     padding: 4px 12px;
 
     transition: 500ms;

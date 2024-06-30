@@ -22,6 +22,11 @@
     width: 100%;
 }
 
+#menu .nav .row .col .botao-geral {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
 #menu .nav .col h1 {
     font-family: "Alice", sans-serif;
     font-size: 100px;
