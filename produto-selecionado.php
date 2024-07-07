@@ -6,8 +6,8 @@
 
     <figure>
 
-        <div>
-            <img class="caixa-produto" src="assets/img/produtos/TortaMorango.png" alt="Tora de morango" height="400px">
+        <div class="produto-img-tag">
+            <img class="caixa-produto" src="assets/img/produtos/TortaMorango.png" alt="Tora de morango">
 
             <div class="tags">
                 <span>Torta</span>
