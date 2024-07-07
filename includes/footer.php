@@ -31,6 +31,8 @@
         <a href="https://policebox.paulowh.com/" target="_blank">Police Box</a>
         <a href="https://buildsburguer.paulowh.com/" target="_blank">Build's Burguer</a>
         <a href="https://ventqui.paulowh.com/" target="_blank">Ven't Qui</a>
+        <a href="https://idrink.paulowh.com/adega-idrink/" target="_blank">Idrink</a>
+        <a href="#" target="_blank">Pc Previnido</a>
     </div>
 </footer>
 
