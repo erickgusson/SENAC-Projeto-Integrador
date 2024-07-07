@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/carrinho.css">
     <link rel="stylesheet" href="assets/css/sobre.css">
 
+    <link rel="shortcut icon" href="assets/img/logo/favicon-32x32.png" type="image/x-icon">
+
 </head>
 
 <body>
