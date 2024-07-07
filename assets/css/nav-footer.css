@@ -18,13 +18,21 @@
 #menu .nav .row {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     width: 100%;
 }
 
 #menu .nav .row .col .botao-geral {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    padding: 4px 16px;
+}
+
+#menu .nav .row .col .botao-geral:hover {
+    position: relative;
+    bottom: 2px;
 }
 
 #menu .nav .col h1 {
