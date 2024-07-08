@@ -60,8 +60,11 @@ input[type="search"]{
 #produtos .lista-produtos {
     margin: 30px 0;
     /* border: 1px solid tomato; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
     gap: 20px;
 }
 
