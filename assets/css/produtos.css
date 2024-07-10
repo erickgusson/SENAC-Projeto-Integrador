@@ -51,7 +51,7 @@ body {
     width: 60%;
 }
 
-input[type="search"]{
+input[type="search"] {
     outline: none;
     color: #7B429B;
 }
@@ -161,8 +161,9 @@ li:has(input:checked) {
 #cb-todos {
     border: 1px solid #6e52ab;
 }
+
 /* BOTAO FILTRAR */
-#produtos .produtos-esquerda button{
+#produtos .produtos-esquerda button {
     /* color: #6e52ab; */
     padding: 12px;
     cursor: pointer;
@@ -172,7 +173,7 @@ li:has(input:checked) {
 
 }
 
-#produtos .produtos-esquerda button:hover{
+#produtos .produtos-esquerda button:hover {
     color: #6e52ab;
     font-weight: bold;
     font-size: 26px;
@@ -180,8 +181,3 @@ li:has(input:checked) {
 
 /* ---------------- */
 /* PRODUTOS DIREITA (CARRINHO) */
-
-
-
-
-

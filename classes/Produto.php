@@ -10,10 +10,19 @@ class Produto
 
         $conexao = new PDO("mysql:host={$_ENV['HOST']};dbname={$_ENV['DATABASE']};", $_ENV['USER'], $_ENV['PASSWORD']);
         $query = "SELECT * FROM tb_produtos ORDER BY RAND()";
-        $produtos = $conexao->query($query)->fetchAll();
+        $resultado = $conexao->query($query)->fetchAll();
 
-        return $produtos;
-
+        return $resultado;
     }
 
+    public function Listar1Produto($id)
+    {
+
+        $conexao = new PDO("mysql:host={$_ENV['HOST']};dbname={$_ENV['DATABASE']};", $_ENV['USER'], $_ENV['PASSWORD']);
+        $query = "SELECT * FROM tb_produtos WHERE id = {$id}";
+        $resultado = $conexao->query($query)->fetch();
+        
+        return $resultado;
+
+    }
 }

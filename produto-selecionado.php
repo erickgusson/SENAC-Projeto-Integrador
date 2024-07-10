@@ -1,13 +1,28 @@
-<?php include "./includes/header.php" ?>
+<?php
+include "./includes/header.php";
+include "./classes/Produto.php";
+
+$produto = new Produto();
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $dados = $produto->Listar1Produto($id);
+
+} else {
+    header('location: produtos.php');
+}
+
+?>
 
 <section id="produto-selecionado">
 
-    <h1>Torta de morango</h1>
+    <h1><?= $dados['nome'] ?></h1>
 
     <figure>
 
         <div class="produto-img-tag">
-            <img class="caixa-produto" src="assets/img/produtos/TortaMorango.png" alt="Tora de morango">
+            <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>.png" alt="<?= $dados['nome'] ?>">
 
             <div class="tags">
                 <span>Torta</span>
@@ -25,7 +40,7 @@
     </figure>
 
     <div class="preco-adicionar">
-        <p class="preco">Preço: R$7,50 cada 100g. (R$75,00 o kg)</p>
+        <p class="preco">Preço: R$ <?= $dados['preco'] ?></p>
         <div class="adicionar">
             <button class="botao-click">EU QUEROOO!</button>
         </div>
