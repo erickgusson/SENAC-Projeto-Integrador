@@ -40,7 +40,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     </figure>
 
     <div class="preco-adicionar">
-        <p class="preco">Preço: R$ <?= $dados['preco'] ?></p>
+        <p class="preco">Preço: R$ <?= number_format($dados['preco'], 2, '.', ',') ?></p>
         <div class="adicionar">
             <button class="botao-click">EU QUEROOO!</button>
         </div>
