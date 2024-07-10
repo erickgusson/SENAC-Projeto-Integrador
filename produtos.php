@@ -1,4 +1,10 @@
-<?php include "./includes/header.php" ?>
+<?php
+include "./includes/header.php";
+include "./classes/Produto.php";
+
+$produto = new Produto();
+$dados = $produto->ListarProdutos();
+?>
 
 <section>
     <main id="produtos" class="col">
@@ -33,11 +39,27 @@
             </div>
 
             <div class="lista-produtos">
-                <?php 
-                    for($i=0; $i<50; $i++){
-                        include "includes/produto.php";
-                    }
-                
+
+
+                <?php
+
+                foreach ($dados as $valor) { ?>
+
+                    <a href="produto-selecionado.php?id=<?=$valor['id']?>" class="item">
+                        <img src="assets/img/produtos/<?=$valor['imagem']?>.png" alt="">
+                        <p><?=$valor['nome']?></p>
+                        <p>R$ <?=$valor['preco']?></p>
+                        <button class="adicionar">Adicionar ao Carrinho</button>
+                    </a>
+
+                <?php }
+
+
+
+                // for ($i = 0; $i < 50; $i++) {
+                //     include "includes/produto.php";
+                // }
+
                 ?>
             </div>
         </div>
