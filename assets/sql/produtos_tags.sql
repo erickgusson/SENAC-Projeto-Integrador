@@ -119,42 +119,10 @@ VALUES(12, 8);
 
 
 INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(13, 0);
-
-
-
-
+VALUES(13, 2);
 
 INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(14, 0);
-
-
-
-
-
-INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(15, 0);
-
-
-
-
-
-INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(16, 0);
-
-
-
-
-
-INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(17, 0);
-
-
-
-
-
-INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(18, 0);
+VALUES(13, 6);
 
 
 
@@ -162,4 +130,69 @@ VALUES(18, 0);
 
 
 INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
-VALUES(1, 6);
+VALUES(14, 6);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(14, 10);
+
+
+
+
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(15, 9);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(15, 2);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(15, 5);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(15, 6);
+
+
+
+
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(16, 2);
+
+
+
+
+
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(17, 1);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(17, 4);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(17, 6);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(17, 8);
+
+
+
+
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(18, 1);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(18, 4);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(18, 6);
+
+INSERT INTO `tb_produtos_tags`(`id_produto`, `id_tag`) 
+VALUES(18, 8);
+
+
+
+
+
+
