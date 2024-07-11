@@ -12,7 +12,7 @@ include "./includes/header.php" ?>
             espontânea vontade e interesse dos mesmos.</p>
         <p>Colocando em prática tudo que foi visto no decorrer do curso, desde algorotimo, lógica, prototipagem,
             tratamento de imagens, linguagens de programação e marcação e banco de dados.</p>
-        <p>Em resumo, somos mais do que uma simples loja de doces, mais que uma irmandade, IRMÃOS!</p>
+        <p>Em resumo, somos mais do que uma simples loja de doces e mais que uma irmandade, somos IRMÃOS!</p>
         <br>
         <strong>SABOR GALÁCTICO EM CADA PEDACINHO!!!</strong>
         <br>

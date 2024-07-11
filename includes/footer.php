@@ -2,7 +2,7 @@
 
 <script src="assets/js/script.js"></script>
 
-<footer class="footer">
+<footer id="footer">
     <div class="col">
         <a href="#">
             <img src="assets/img/logo/Logo.png" alt="Logo">
@@ -22,17 +22,21 @@
     </div>
 
     <div class="col">
-        <h4><a href="sobre.php">Quem somos</a></h4>
+        <a href="sobre.php"><h4>Quem somos</h4></a>
     </div>
 
-    <div class="col">
+    <div class="col parceiros" >
         <h4>Parceiros</h4>
 
-        <a href="https://policebox.paulowh.com/" target="_blank">Police Box</a>
-        <a href="https://buildsburguer.paulowh.com/" target="_blank">Build's Burguer</a>
-        <a href="https://ventqui.paulowh.com/" target="_blank">Ven't Qui</a>
-        <a href="https://idrink.paulowh.com/adega-idrink/" target="_blank">Idrink</a>
-        <a href="#" target="_blank">Pc Previnido</a>
+        <div>
+            <a href="https://policebox.paulowh.com/" target="_blank">Police Box</a> - 
+            <a href="https://buildsburguer.paulowh.com/" target="_blank">Build's Burguer</a> - 
+            <a href="https://ventqui.paulowh.com/" target="_blank">Ven't Qui</a>
+        </div>
+        <div>
+            <a href="https://idrink.paulowh.com/adega-idrink/" target="_blank">Idrink</a> - 
+            <a href="#" target="_blank">Pc Previnido</a>
+        </div>
     </div>
 </footer>
 

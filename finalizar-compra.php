@@ -10,22 +10,6 @@ include "./includes/header.php"
         <form action="#" class="formulario-pedido">
             <div class="pedido-dados">
                 <div>
-                    <label for="frete">Calcular frete:</label>
-                    <p class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt=""><input type="search" placeholder="0000-000"></p>
-
-                </div>
-
-                <div>
-                    <label for="frete">Número da Casa:</label>
-                    <p class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt=""><input type="search" placeholder="0000"></p>
-                </div>
-
-                <div>
-                    <label for="frete">Complemento:</label>
-                    <p class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt=""><input type="search" placeholder="0000"></p>
-                </div>
-
-                <div>
                     <label for="frete">Cadastar cupom: </label>
                     <p class="botao-geral"><img src="assets/img/icon/icon-cupom.png" alt=""><input type="search" placeholder="INAUG30"></p>
                 </div>

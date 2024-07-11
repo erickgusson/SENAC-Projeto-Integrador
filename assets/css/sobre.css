@@ -19,5 +19,28 @@ body {
 }
 
 .quem-somos div strong{
+    display: flex;
+    justify-content: center;
     text-align: center;
+    align-items: center;
+}
+
+.quem-somos div strong::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-image: url(../img/icon/decoracao-estrela.png);
+    background-size: cover;
+}
+
+.quem-somos div strong::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    background-image: url(../img/icon/decoracao-estrela.png);
+    background-size: cover;
 }
