@@ -23,11 +23,11 @@ INSERT INTO tb_usuario(`email`,`senha`,`id_pessoa`) VALUES('erick@gmail.com','er
 
 Tarefinhas:
 
-- [ ] Criar Banco de Dados dos Produtos
-  - [ ] Criar Banco de Dados de Categorias
-  - [ ] Criar Banco de Dados de Relacionamento de produto-categoria
-- [ ] Criar Banco de Dados dos Usuários
-- [ ] Criar Banco de Dados de Pessoas (dados pessoais)
+- [x] Criar Banco de Dados dos Produtos
+  - [x] Criar Banco de Dados de Categorias
+  - [x] Criar Banco de Dados de Relacionamento de produto-categoria
+- [x] Criar Banco de Dados dos Usuários
+- [x] Criar Banco de Dados de Pessoas (dados pessoais)
 - [ ] Criar Banco de Dados de Vendas (controle)
   - [ ] hora
   - [ ] id_pessoa

@@ -21,20 +21,32 @@
 
     </div>
 
-    <div class="col">
-        <a href="sobre.php"><h4>Quem somos</h4></a>
+    <div class="col sobre">
+        <a href="sobre.php">
+            <h4>Quem somos</h4>
+        </a>
+
+        <div>
+            <a href="https:/github.com/erickgusson" target="_blank">
+                <img src="./assets/img/icon/icon-github.png" alt="Logo do github para acessar o perfil do gitbhub do Erick"> Erick
+            </a>
+    
+            <a href="https:/github.com/RenonHG" target="_blank">
+                <img src="./assets/img/icon/icon-github.png" alt="Logo do github para acessar o perfil do gitbhub do Renon"> Renon
+            </a>
+        </div>
     </div>
 
-    <div class="col parceiros" >
+    <div class="col parceiros">
         <h4>Parceiros</h4>
 
         <div>
-            <a href="https://policebox.paulowh.com/" target="_blank">Police Box</a> - 
-            <a href="https://buildsburguer.paulowh.com/" target="_blank">Build's Burguer</a> - 
+            <a href="https://policebox.paulowh.com/" target="_blank">Police Box</a> -
+            <a href="https://buildsburguer.paulowh.com/" target="_blank">Build's Burguer</a> -
             <a href="https://ventqui.paulowh.com/" target="_blank">Ven't Qui</a>
         </div>
         <div>
-            <a href="https://idrink.paulowh.com/adega-idrink/" target="_blank">Idrink</a> - 
+            <a href="https://idrink.paulowh.com/adega-idrink/" target="_blank">Idrink</a> -
             <a href="#" target="_blank">Pc Previnido</a>
         </div>
     </div>

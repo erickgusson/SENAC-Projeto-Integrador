@@ -21,6 +21,10 @@ body {
     align-content: space-between;
 }
 
+h1 {
+    color: #ffcc80;
+}
+
 .banner {
     width: 100%;
 }

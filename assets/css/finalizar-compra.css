@@ -18,7 +18,7 @@ input[type="search"]{
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 100px;
+    gap: 50px;
     margin: 40px 0 80px;
 }
 

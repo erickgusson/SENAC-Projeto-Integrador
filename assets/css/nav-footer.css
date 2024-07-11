@@ -75,6 +75,7 @@
 
 #footer p {
     font-size: 20px;
+    
 }
 
 #footer a {
@@ -88,11 +89,25 @@
     gap: 1rem;
 }
 
+#footer .sobre div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-between; */
+    gap: 20px;
+}
+
+#footer .sobre a, #footer .sobre a img{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 #footer .parceiros div{
     gap: 20px;
 }
 
-#footer .parceiros div a:hover{
+#footer .parceiros div a:hover, #footer .sobre div a:hover{
     color: #ffcc80;
 }
 

@@ -3,7 +3,6 @@
     flex-direction: column;
 
     margin: 10px;
-    
 }
 
 #login-cadastro{
@@ -11,10 +10,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    /* gap: 100px; */
     margin-bottom: 50px;
     flex-direction: column;
-
+    gap: 30px;
 }
 
 #login-cadastro h2{

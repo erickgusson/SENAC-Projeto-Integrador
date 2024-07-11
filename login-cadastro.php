@@ -80,12 +80,12 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="campos">
 
             <!-- Telefone -->
-            <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-.png" alt="">
                 <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
             </span>
 
             <!-- CEP -->
-            <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
                 <input type="number" name="cep" id="cep" placeholder="CEP" required>
             </span>
         </div>
@@ -93,12 +93,12 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="campos">
 
             <!-- Rua -->
-            <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
                 <input type="text" name="nome" id="nome" placeholder="Rua" required>
             </span>
 
             <!-- Nº -->
-            <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="">
                 <input type="number" name="numero" id="numero" placeholder="Nº" required>
             </span>
         </div>
@@ -106,12 +106,12 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="campos">
 
             <!-- Bairro -->
-            <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
                 <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
             </span>
 
             <!-- Cidade -->
-            <span class="botao-geral"><img src="assets/img/icon/decoracao-estrela.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
                 <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
             </span>
         </div>

@@ -39,7 +39,7 @@
                         <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de carrinho de compras">Início</a>
                         <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>
                         <a href="finalizar-compra.php" class="botao-geral"><img src="assets/img/icon/icon-pagamento.png" alt="icone representando um pessoa">Finalizar compras</a>
-                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt="icone de lupa">Pesquisar</a>
+                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt="icone de lupa">Produtos</a>
                         <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone representando um pessoa">Quem somos</a>
                         <a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone representando um pessoa">Login</a>
                     </div>

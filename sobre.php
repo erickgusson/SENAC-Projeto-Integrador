@@ -6,7 +6,7 @@ include "./includes/header.php" ?>
     <br>
     <div>
         <p>
-        <h2>Quem somos?</h2>
+        <h1>Quem somos?</h1>
         </p>
         <p>Este projeto foi desenvolvido no Senac pelos alunos Erick e Renon. A doceria foi escolhida por livre e
             espontânea vontade e interesse dos mesmos.</p>

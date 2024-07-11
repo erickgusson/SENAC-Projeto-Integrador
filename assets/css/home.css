@@ -80,7 +80,7 @@
 
     background-color: #B49B8A;
 
-    border: 2px solid white;
+    /* border: 2px solid white; */
     border-radius: 25px;
 
     padding: 8px 4px;
@@ -95,8 +95,8 @@
 }
 
 #home-produtos .produtos .produtos-bottom figure img {
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
 }
 
 @media screen and (max-width: 768px) {

@@ -22,7 +22,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <figure>
 
         <div class="produto-img-tag">
-            <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>.png" alt="<?= $dados['nome'] ?>">
+            <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>.png" alt="Foto de <?= $dados['nome'] ?>">
 
             <div class="tags">
                 <span>Torta</span>
