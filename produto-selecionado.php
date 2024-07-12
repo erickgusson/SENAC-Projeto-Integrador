@@ -8,7 +8,9 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];
 
     $dados = $produto->Listar1Produto($id);
-
+    if ($dados == false) {
+        header('location: produtos.php?erro=1');
+    }
 } else {
     header('location: produtos.php');
 }
@@ -33,9 +35,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
         </div>
 
-        <span>Essa torta consiste em um massa de biscoito de maizena, recheio de creme branco com pedaços de
-            morango, cobertura de calda de morango e morangos inteiros.
-        </span>
+        <div>
+            <span> <?= $dados['descricao'] ?> </span> <br>
+            <small> <?= $dados['ingredientes'] ?> </small>
+        </div>
 
     </figure>
 

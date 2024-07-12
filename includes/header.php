@@ -25,8 +25,8 @@
     <main class="home">
         <header id="menu">
             <nav class="nav">
-                <div class="row">
-                    <div class="col">
+                <div class="row logo">
+                    <div class="col ">
                         <a href="index.php"><img src="assets/img/logo/Logo.png" alt="Logo"></a>
                     </div>
 
@@ -36,12 +36,12 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de carrinho de compras">Início</a>
+                        <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa representando a aba início/home">Início</a>
                         <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>
-                        <a href="finalizar-compra.php" class="botao-geral"><img src="assets/img/icon/icon-pagamento.png" alt="icone representando um pessoa">Finalizar compras</a>
-                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt="icone de lupa">Produtos</a>
-                        <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone representando um pessoa">Quem somos</a>
-                        <a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone representando um pessoa">Login</a>
+                        <a href="finalizar-compra.php" class="botao-geral"><img src="assets/img/icon/icon-pagamento.png" alt="icone de uma moeda representando a aba de finalizar compra">Finalizar compras</a>
+                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produto.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
+                        <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
+                        <a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>
                     </div>
                 </div>  
             </nav>

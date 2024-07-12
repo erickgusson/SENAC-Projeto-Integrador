@@ -45,6 +45,7 @@
     text-decoration: none;
 
     color: white;
+    font-size: 24px;
 
     display: flex;
     align-items: center;
@@ -59,8 +60,8 @@
 #home-produtos .produtos .produtos-top a::after {
     content: '';
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 29px;
+    height: 29px;
     margin-left: 10px;
     background-image: url(../img/icon/mais.png);
     background-size: cover;

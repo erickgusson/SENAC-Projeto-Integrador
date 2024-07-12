@@ -1,3 +1,4 @@
+-- SQLBook: Code
 INSERT INTO `tb_tags`(`tag`) 
 VALUES('Torta');
 
@@ -20,7 +21,7 @@ INSERT INTO `tb_tags`(`tag`)
 VALUES('Cones');
 
 INSERT INTO `tb_tags`(`tag`) 
-VALUES('De frutas');
+VALUES('Frutas');
 
 INSERT INTO `tb_tags`(`tag`) 
 VALUES('Sorvetes');

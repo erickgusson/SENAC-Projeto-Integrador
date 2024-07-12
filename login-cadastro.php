@@ -1,18 +1,17 @@
 <?php
 $title = "Página de Usuário";
 include "./includes/header.php";
-
+include "./classes/User.php";
 
 if (isset($_POST) && !empty($_POST)) {
 
-    $user = $_POST['email'];
+    $login = $_POST['email'];
     $password = $_POST['senha'];
+    
+    $login = new User();
 
-    $conexao = new PDO("mysql:host=localhost;dbname=db_usuarios", "root", "");
-
-    $script = "SELECT * FROM tb_usuario WHERE email ='{$user}' AND senha = '{$password}'";
-
-    $resultado = $conexao->query($script)->fetch();
+    $resultado = $login->Logar($login, $password);
+    
 }
 ?>
 
@@ -80,7 +79,7 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="campos">
 
             <!-- Telefone -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="">
                 <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
             </span>
 

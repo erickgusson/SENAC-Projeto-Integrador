@@ -1,4 +1,4 @@
-CREATE TABLE tb_users (
+CREATE TABLE tb_pessoa (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `nome` VARCHAR(255),
@@ -12,13 +12,13 @@ CREATE TABLE tb_users (
     `complemento` VARCHAR(255)
 )
 
-CREATE TABLE tb_user_verificacao (
+CREATE TABLE tb_pessoa_verificacao (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `id_usuario` INT,
     `login` VARCHAR(200),
     `senha` VARCHAR(200),
-    `ativo` ENUM('0', '1') COMMENT "0 = inativo, 1 = ativo"
+    `ativo` ENUM('0', '1')
 )
 
 CREATE TABLE tb_tags (
@@ -32,7 +32,10 @@ CREATE TABLE tb_produtos (
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `imagem` VARCHAR(200),
     `nome` VARCHAR(200),
-    `preco` FLOAT(9, 2)
+    `descricao` TEXT,
+    `ingredientes` TEXT,
+    `preco` FLOAT(9, 2),
+    `vendidos` INT DEFAULT 0
 )
 
 CREATE Table tb_produtos_tags (

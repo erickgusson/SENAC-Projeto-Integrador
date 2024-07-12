@@ -21,6 +21,7 @@
     grid-template-columns: 1fr 2fr;
 
     width: 60vw;
+    gap: 20px;
 }
 
 #produto-selecionado figure .produto-img-tag {
@@ -32,11 +33,15 @@
     width: 300px;
 }
 
-figure > span {
-    width: 50%;
+figure > div > span {
+    font-size: 28px;
+    text-align: justify;
+}
 
-    font-size: 32px;
-
+figure small {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .tags {
@@ -61,5 +66,9 @@ figure > span {
     grid-template-columns: 1fr 2fr;
 
     width: 60vw;
+    gap: 20px;
 }
 
+.torta {
+    background-color: #ffcc80;
+}
