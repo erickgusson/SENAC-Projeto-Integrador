@@ -22,6 +22,11 @@
     margin-bottom: 10px;
 }
 
+#login-cadastro .login-mensagem {
+    display: flex;
+    justify-content: center;
+}
+
 #login-cadastro .dados-pessoais{
     margin-top: 50px;
 }

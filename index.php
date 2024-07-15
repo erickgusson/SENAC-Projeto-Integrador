@@ -1,5 +1,6 @@
 <?php
-include "./includes/header.php"
+include "./includes/header.php";
+
 ?>
 <div class="banner">
     <img src="assets/img/banner-abertura.png" alt="">

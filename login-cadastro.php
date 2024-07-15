@@ -3,41 +3,71 @@ $title = "Página de Usuário";
 include "./includes/header.php";
 include "./classes/User.php";
 
-if (isset($_POST) && !empty($_POST)) {
+// Para Logar
+if (
+    isset($_POST['email'])
+    && isset($_POST['senha'])
+) {
 
     $login = $_POST['email'];
     $password = $_POST['senha'];
-    
-    $login = new User();
 
-    $resultado = $login->Logar($login, $password);
-    
+    $user = new User();
+    $resultadoLogin = $user->Logar($login, $password);
 }
+
+//Para cadastrar
+
+if (
+    isset($_POST['nome']) && !empty(($_POST['nome']))
+    && isset($_POST['emailCadastro']) && !empty(($_POST['emailCadastro']))
+    && isset($_POST['senhaCadastro']) && !empty(($_POST['senhaCadastro']))
+    && isset($_POST['senhaCadastro2']) && !empty(($_POST['senhaCadastro2']))
+    && isset($_POST['telefone']) && !empty(($_POST['telefone']))
+    && isset($_POST['cep']) && !empty(($_POST['cep']))
+    && isset($_POST['cidade']) && !empty(($_POST['cidade']))
+    && isset($_POST['bairro']) && !empty(($_POST['bairro']))
+    && isset($_POST['rua']) && !empty(($_POST['rua']))
+    && isset($_POST['numero']) && !empty(($_POST['numero']))
+) {
+    $nome = $_POST['nome'];
+    $email = $_POST['emailCadastro'];
+    $senha = $_POST['senhaCadastro'];
+    $confirmarSenha = $_POST['senhaCadastro2'];
+    $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $rua = $_POST['rua'];
+    $numero = $_POST['numero'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+
+    $user = new User();
+    $resultadoCadastro = $user->Cadastrar($nome, $email, $senha, $confirmarSenha, $telefone, $cep, $rua, $numero, $bairro, $cidade);
+}
+var_dump($_POST);
 ?>
 
+<h4><?= $resultadoCadastro; ?></h4>
 <div id="login-cadastro">
     <form action="#" method="POST" class="caixa ">
         <h2>LOGIN</h2>
 
         <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
-            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="text" name="email" id="email" placeholder="Email" required>
         </span>
 
         <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
             <input type="password" name="senha" id="senha" placeholder="Senha" required>
         </span>
 
-        <?php
-        if (isset($_POST) && !empty($_POST)) {
-            if (!empty($resultado)) {
-                echo 'Conectado com sucesso!';
-                header('location:https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-            } else {
-                echo '<div class="erro-login">Email ou Senha incorretos! Burrão</div>';
-                // echo "<script>alert('teste')</script>";
+        <span class="login-mensagem">
+            <?php
+            if (!empty($resultadoLogin)) {
+                echo $resultadoLogin;
+                // header('location:https://www.youtube.com/watch?v=dQw4w9WgXcQ');
             }
-        }
-        ?>
+            ?>
+        </span>
 
         <input type="submit" value="Entrar" class="botao-click">
 
@@ -45,7 +75,7 @@ if (isset($_POST) && !empty($_POST)) {
 
     </form>
 
-    <form action="#" method="post" class="caixa caixa-cadastro escondido" id="form-cadastro">
+    <form action="#" method="POST" class="caixa caixa-cadastro escondido" id="form-cadastro">
         <h2>CADASTRAR</h2>
 
         <div class="campos">
@@ -57,7 +87,7 @@ if (isset($_POST) && !empty($_POST)) {
 
             <!-- Email -->
             <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
-                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="email" name="emailCadastro" id="email" placeholder="Email" required>
             </span>
         </div>
 
@@ -65,12 +95,12 @@ if (isset($_POST) && !empty($_POST)) {
 
             <!-- Senha -->
             <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
-                <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                <input type="password" name="senhaCadastro" id="senha" placeholder="Senha" required>
             </span>
 
             <!-- Confirmar Senha -->
             <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
-                <input type="password" name="senha2" id="senha2" placeholder="Confirmar Senha" required>
+                <input type="password" name="senhaCadastro2" id="senha2" placeholder="Confirmar Senha" required>
             </span>
         </div>
 
