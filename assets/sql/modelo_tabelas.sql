@@ -9,10 +9,10 @@ CREATE TABLE tb_pessoa (
     `bairro` VARCHAR(255),
     `rua` VARCHAR(255),
     `numero` VARCHAR(255),
-    `complemento` VARCHAR(255)
+    
 )
 
-CREATE TABLE tb_pessoa_verificacao (
+CREATE TABLE tb_user (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `id_usuario` INT,

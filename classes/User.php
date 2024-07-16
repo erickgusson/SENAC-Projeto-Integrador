@@ -12,8 +12,12 @@ class User
         $script = "SELECT * FROM tb_user WHERE login = '{$user}' AND senha = '{$password}'";
         $resultado = $conexao->query($script)->fetch();
         if (!empty($resultado)) {
+            session_start();
+            $_SESSION['usuario'] = $user;
+
+            // sleep(5);
+            header('location: index.php');
             return '<span class="login-mensagem">Usuario Validado com sucesso!!!</span>';
-            // header('location:index.php');
         } else {
             return '<span class="login-mensagem">Usuario não encontrado.</span>';
         }
@@ -56,12 +60,12 @@ class User
             }
 
             //Tabela de dados pessoais
-            $conexao = new PDO("mysql:host={$_ENV['HOST']};dbname={$_ENV['DATABASE']};", $_ENV['USER'], $_ENV['PASSWORD']);
-            $scriptPessoa = "INSERT INTO tb_pessoa (nome, email, telefone, CEP, cidade, bairro, rua, numero) VALUE (:nome, :email, :telefone, :cep, :cidade, :bairro, :rua, :numero)";
+            include 'conexao.php';
 
-            $preparoPessoa = $conexao->prepare($scriptPessoa);
+            $scriptPessoa = "INSERT INTO tb_pessoa (nome, email, telefone, CEP, cidade, bairro, rua, numero) VALUES (:nome, :email, :telefone, :cep, :cidade, :bairro, :rua, :numero)";
+            $resultado = $conexao->prepare($scriptPessoa);
 
-            $preparoPessoa->execute([
+            $resultado->execute([
                 ':nome' => $nome,
                 ':email' => $email,
                 ':telefone' => $telefone,
@@ -74,18 +78,17 @@ class User
 
             // Tabela de usuario
             $id_usuario = $conexao->lastInsertId();
-            $scriptUsuario = "INSERT INTO tb_user (id_usuario, login, senha, ativo) VALUE (:id, :login, :senha, 1)";
+            $scriptUsuario = "INSERT INTO tb_user (id_usuario, login, senha, ativo) VALUES (:id, :login, :senha, 1)";
 
-            $preparoUsuario = $conexao->prepare($scriptUsuario);
-            $preparoUsuario->execute([
+            $preparoUsuario = $conexao->prepare($scriptUsuario)->execute([
                 ':id' => $id_usuario,
                 ':login' => $email,
-                ':senha' => $senha,
+                ':senha' => $senha
             ]);
 
-            return "Usuário cadastrado com sucesso id: " . $conexao->lastInsertId();
+            return "Usuário cadastrado com sucesso id: " . $id_usuario;
         } catch (PDOException $erro) {
-            echo "Erro <br>" . $erro->getMessage();
+            return "Erro <br>" . $erro->getMessage();
         }
     }
 }

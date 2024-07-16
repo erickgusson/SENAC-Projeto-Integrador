@@ -1,5 +1,7 @@
 <?php
+$title = "Carrinho";
 include "./includes/header.php"
+
 ?>
 
 <section id="carrinho" class="carrinho">

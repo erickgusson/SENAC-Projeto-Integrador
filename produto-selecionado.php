@@ -1,4 +1,6 @@
 <?php
+
+
 include "./includes/header.php";
 include "./classes/ListarProduto.php";
 
@@ -14,7 +16,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 } else {
     header('location: produtos.php');
 }
-
 ?>
 
 <section id="produto-selecionado">

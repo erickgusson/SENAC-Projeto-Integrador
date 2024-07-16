@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<?php session_start(); ?>
+
+
 <head>
 
     <meta charset="UTF-8">
@@ -33,6 +36,10 @@
                     <div class="col">
                         <h1>Doces Lunares</h1>
                     </div>
+
+                    <div class="col">
+                        <?php echo (isset($_SESSION['usuario'])) ? '<img src="https://picsum.photos/100">' : ''; ?>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -42,7 +49,8 @@
                         <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produto.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
                         <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
                         <a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>
+                        <a href="logout.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Logout</a>
                     </div>
-                </div>  
+                </div>
             </nav>
         </header>

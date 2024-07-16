@@ -1,5 +1,5 @@
 <?php
-$title = "Página de Usuário";
+$title = "Login/Cadastro";
 include "./includes/header.php";
 include "./classes/User.php";
 
@@ -9,26 +9,16 @@ if (
     && isset($_POST['senha'])
 ) {
 
-    $login = $_POST['email'];
+    $usuario = $_POST['email'];
     $password = $_POST['senha'];
 
     $user = new User();
-    $resultadoLogin = $user->Logar($login, $password);
+    $resultadoLogin = $user->Logar($usuario, $password);
 }
 
 //Para cadastrar
-
 if (
-    isset($_POST['nome']) && !empty(($_POST['nome']))
-    && isset($_POST['emailCadastro']) && !empty(($_POST['emailCadastro']))
-    && isset($_POST['senhaCadastro']) && !empty(($_POST['senhaCadastro']))
-    && isset($_POST['senhaCadastro2']) && !empty(($_POST['senhaCadastro2']))
-    && isset($_POST['telefone']) && !empty(($_POST['telefone']))
-    && isset($_POST['cep']) && !empty(($_POST['cep']))
-    && isset($_POST['cidade']) && !empty(($_POST['cidade']))
-    && isset($_POST['bairro']) && !empty(($_POST['bairro']))
-    && isset($_POST['rua']) && !empty(($_POST['rua']))
-    && isset($_POST['numero']) && !empty(($_POST['numero']))
+    isset($_POST['nome'])
 ) {
     $nome = $_POST['nome'];
     $email = $_POST['emailCadastro'];
@@ -44,10 +34,9 @@ if (
     $user = new User();
     $resultadoCadastro = $user->Cadastrar($nome, $email, $senha, $confirmarSenha, $telefone, $cep, $rua, $numero, $bairro, $cidade);
 }
-var_dump($_POST);
 ?>
 
-<h4><?= $resultadoCadastro; ?></h4>
+<!-- <?= var_dump($resultadoCadastro); ?> -->
 <div id="login-cadastro">
     <form action="#" method="POST" class="caixa ">
         <h2>LOGIN</h2>
@@ -110,12 +99,12 @@ var_dump($_POST);
 
             <!-- Telefone -->
             <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="">
-                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
             </span>
 
             <!-- CEP -->
             <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
-                <input type="number" name="cep" id="cep" placeholder="CEP" required>
+                <input type="text" name="cep" id="cep" placeholder="CEP" required>
             </span>
         </div>
 
@@ -123,12 +112,12 @@ var_dump($_POST);
 
             <!-- Rua -->
             <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
-                <input type="text" name="nome" id="nome" placeholder="Rua" required>
+                <input type="text" name="rua" id="rua" placeholder="Rua" required>
             </span>
 
             <!-- Nº -->
             <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="">
-                <input type="number" name="numero" id="numero" placeholder="Nº" required>
+                <input type="text" name="numero" id="numero" placeholder="Nº" required>
             </span>
         </div>
 

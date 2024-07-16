@@ -1,4 +1,5 @@
 <?php
+$title = "Finalizar Compra";
 include "./includes/header.php"
 ?>
 
