@@ -1,9 +1,11 @@
 <?php
+$title = "Produtos";
 include "./includes/header.php";
 include "./classes/ListarProduto.php";
 
 $produto = new Produto();
-$dados = $produto->ListarProdutos();
+$dados = $produto->ListarProdutos(2);
+
 ?>
 
 <section>
@@ -35,7 +37,7 @@ $dados = $produto->ListarProdutos();
         <div class="produtos-meio">
             <div class="titulo-produtos">
                 <h2>TODOS</h2>
-                <span class="botao-geral"><img src="assets/img/icon/icon-pesquisar.png" alt=""><input type="search"></span>
+                <span class="botao-geral"><input type="button" name="botao-busca"><input type="search" name="busca"></span>
             </div>
 
             <div class="lista-produtos">
