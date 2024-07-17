@@ -40,8 +40,8 @@ class Produto
     {
         try {
             include 'conexao.php';
-            $query = "SELECT * FROM tb_produtos WHERE nome LIKE = '%{$texto}%'";
-            $resultado = $conexao->query($query)->fetch();
+            $query = "SELECT * FROM tb_produtos WHERE nome LIKE '%{$texto}%'";
+            $resultado = $conexao->query($query)->fetchAll();
 
             return $resultado;
         } catch (PDOException $th) {

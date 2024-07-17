@@ -6,6 +6,11 @@ include "./classes/ListarProduto.php";
 $produto = new Produto();
 $dados = $produto->ListarProdutos(2);
 
+if (isset($_GET['busca']) && !empty($_GET['busca'])) {
+    $busca = $_GET['busca'];
+    $dados = $produto->Pesquisar($busca);
+    // var_dump($dados);
+}
 ?>
 
 <section>
@@ -35,10 +40,10 @@ $dados = $produto->ListarProdutos(2);
         </div>
 
         <div class="produtos-meio">
-            <div class="titulo-produtos">
+            <form method="GET" action="produtos.php" class="titulo-produtos">
                 <h2>TODOS</h2>
-                <span class="botao-geral"><input type="button" name="botao-busca"><input type="search" name="busca"></span>
-            </div>
+                <span class="botao-geral"><button style="background: none; cursor:pointer;"><img src="assets/img/icon/icon-pesquisar.png" alt=""></button><input type="search" name="busca"></span>
+            </form>
 
             <div class="lista-produtos">
                 <?php include "./includes/produto.php"; ?>

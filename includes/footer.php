@@ -61,5 +61,6 @@
     </div>
 </footer>
 
+<script src="./assets/js/sidebar.js"></script>
 
 </html>

@@ -50,7 +50,7 @@
                     <?php } ?> -->
                     <?php
                     if (isset($_SESSION['usuario'])) { ?>
-                        <button class="toggle-btn" onclick="toggleSidebar()"><img class="drophover caixa" src="https://picsum.photos/75"></button>
+                        <button class="toggle-btn" onclick="toggleSidebar()"><img class="drophover caixa" src="https://picsum.photos/100"></button>
 
                         <div class="sidebar" id="sidebar">
 
@@ -59,7 +59,7 @@
                             </section>
 
                             <section class="sidebar-usuario">
-                                <button class="toggle-btn" onclick="toggleSidebar()"><img src="https://picsum.photos/75" class="caixa"></button>
+                                <img src="https://picsum.photos/100/100" class="imagemPerfil">
                                 <h2 class="nomeLogin"><?= $_SESSION['usuario'] ?></h2>
                             </section>
 
@@ -84,3 +84,5 @@
                 </div>
             </nav>
         </header>
+
+        <?php include 'includes/footer.php'; ?>
