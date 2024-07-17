@@ -33,7 +33,7 @@ h1 {
     width: 100%;
 }
 
-.botao-geral{
+.botao-geral {
     display: flex;
     align-items: center;
 
@@ -52,21 +52,20 @@ h1 {
 }
 
 /* Botão pesquisar */
-.botao-geral img{
+.botao-geral img {
     height: 24px;
     border-right: 1px solid #a9a6a6;
     margin-right: 8px;
     padding-right: 8px;
 }
 
-.botao-geral:hover{
+.botao-geral:hover {
     cursor: pointer;
     color: #6e52ab;
     font-weight: bold;
 }
 
-input[type="search"]
-{
+input[type="search"] {
     width: 100%;
 }
 
@@ -115,7 +114,7 @@ input[type="search"]
     cursor: pointer;
 }
 
-.botao-click{
+.botao-click {
     height: 50px;
     width: 250px;
 
@@ -129,7 +128,7 @@ input[type="search"]
     color: white;
 }
 
-.botao-click:hover{
+.botao-click:hover {
     transform: scale(1.05);
 
 }

@@ -29,7 +29,7 @@
     gap: 1rem;
 }
 
-#menu .nav .row .col .botao-geral {
+#menu .nav .row .col > .botao-geral {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 
@@ -46,15 +46,46 @@
     color: #7B429A;
 }
 
-#menu .nav .logo{
+#menu .nav .logo {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     place-items: center;
+    justify-content: center;
     /* justify-content: space-evenly;     */
 }
 
+#menu .dropdown {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    width: 50%;
+}
 
+#menu .dropdown > img {
+    border-radius: 25px;
+    /* border-radius: 100%; */
+}
 
+#menu .dropdown-conteudo {
+    display: none;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+#menu .dropdown-conteudo a {
+    /* display: block; */
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#menu .dropdown:hover .dropdown-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 100px;
+}
 
 /* Fim da Nav */
 
@@ -102,7 +133,7 @@
 
 #footer p {
     font-size: 20px;
-    
+
 }
 
 #footer a {
@@ -124,17 +155,19 @@
     gap: 20px;
 }
 
-#footer .sobre a, #footer .sobre a img{
+#footer .sobre a,
+#footer .sobre a img {
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-#footer .parceiros div{
+#footer .parceiros div {
     gap: 20px;
 }
 
-#footer .parceiros div a:hover, #footer .sobre div a:hover{
+#footer .parceiros div a:hover,
+#footer .sobre div a:hover {
     color: #ffcc80;
 }
 
@@ -149,19 +182,20 @@
         gap: 24px;
     }
 
-    #menu .nav .col h1{
+    #menu .nav .col h1 {
         font-size: 60px;
     }
 
     #footer {
         flex-direction: column;
         gap: 24px;
-        padding-bottom: 240px;        
+        padding-bottom: 240px;
     }
 
     #footer h4 {
         font-size: 16px;
     }
+
     #footer p {
         font-size: 12px;
     }
@@ -170,8 +204,7 @@
         width: 40px;
     }
 
-    #footer .col > a img{
+    #footer .col>a img {
         display: none;
     }
 }
-

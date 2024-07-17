@@ -36,7 +36,7 @@ if (
 }
 ?>
 
-<!-- <?= var_dump($resultadoCadastro); ?> -->
+<!-- <?= var_dump($resultadoLogin); ?> -->
 <div id="login-cadastro">
     <form action="#" method="POST" class="caixa ">
         <h2>LOGIN</h2>

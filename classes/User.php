@@ -14,6 +14,7 @@ class User
         if (!empty($resultado)) {
             session_start();
             $_SESSION['usuario'] = $user;
+            $_SESSION['id'] = $resultado['id'];
 
             // sleep(5);
             header('location: index.php');

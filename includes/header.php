@@ -37,9 +37,16 @@
                         <h1>Doces Lunares</h1>
                     </div>
 
-                    <div class="col">
-                        <?php echo (isset($_SESSION['usuario'])) ? '<img src="https://picsum.photos/100">' : ''; ?>
-                    </div>
+                    <?php
+                    if (isset($_SESSION['usuario'])) { ?>
+                        <div class="col dados-usuario dropdown">
+                            <img class="drophover" src="https://picsum.photos/100">
+                            <div class="dropdown-conteudo">
+                                <a href="#?id=<?= (isset($_SESSION['id'])) ? $_SESSION['id'] : ''; ?>" class="botao-geral"><img src="assets/img/icon/icon-user.png" alt="icone de usuario representando a aba de informações do usuario">Perfil</a>
+                                <a href="logout.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Logout</a>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -48,8 +55,7 @@
                         <a href="finalizar-compra.php" class="botao-geral"><img src="assets/img/icon/icon-pagamento.png" alt="icone de uma moeda representando a aba de finalizar compra">Finalizar compras</a>
                         <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produto.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
                         <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
-                        <a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>
-                        <a href="logout.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Logout</a>
+                        <?= (isset($_SESSION['usuario'])) ? '' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>' ?>
                     </div>
                 </div>
             </nav>
