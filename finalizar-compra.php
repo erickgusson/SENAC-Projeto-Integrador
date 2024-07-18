@@ -3,7 +3,7 @@ $title = "Finalizar Compra";
 include "./includes/header.php"
 ?>
 
-<main class="home">
+<main>
     <section id="finalizar-compra">
 
         <h1>Finalizar Compra</h1>

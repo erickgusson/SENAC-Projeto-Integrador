@@ -7,4 +7,7 @@ function mostrarCadastro(){
     esconderBotao.classList.add("escondido");
     esconderBotao.classList.remove("botao-cadastrar");
 
+    let formularioLogin = document.getElementById("form-login");
+    formularioLogin.classList.add("escondido");
+
 }

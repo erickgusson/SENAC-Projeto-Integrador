@@ -16,9 +16,11 @@ CREATE TABLE tb_user (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `id_usuario` INT,
+    `foto_perfil` VARCHAR(200) DEFAULT 'perfil.png',
     `login` VARCHAR(200),
     `senha` VARCHAR(200),
-    `ativo` ENUM('0', '1')
+    `ativo` ENUM('0', '1'),
+    `nivel` VARCHAR(5) DEFAULT 'user'
 )
 
 CREATE TABLE tb_tags (
@@ -35,6 +37,7 @@ CREATE TABLE tb_produtos (
     `descricao` TEXT,
     `ingredientes` TEXT,
     `preco` FLOAT(9, 2),
+    `estoque` INT DEFAULT 0,
     `vendidos` INT DEFAULT 0
 )
 
@@ -44,3 +47,5 @@ CREATE Table tb_produtos_tags (
     `id_produto` INT,
     `id_tag` INT
 )
+
+-- CREATE TABLE vendas;

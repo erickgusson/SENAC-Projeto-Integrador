@@ -26,7 +26,6 @@
 
 <body>
 
-    <main class="home">
         <header id="menu">
             <nav class="nav">
                 <div class="row logo">
@@ -50,7 +49,7 @@
                     <?php } ?> -->
                     <?php
                     if (isset($_SESSION['usuario'])) { ?>
-                        <button class="toggle-btn" onclick="toggleSidebar()"><img class="drophover caixa" src="https://picsum.photos/75"></button>
+                        <button onclick="toggleSidebar()"><img src="assets/img/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" class="caixa" alt="Perfil"></button>
 
                         <div class="sidebar" id="sidebar">
 
@@ -59,13 +58,15 @@
                             </section>
 
                             <section class="sidebar-usuario">
-                                <button class="toggle-btn" onclick="toggleSidebar()"><img src="https://picsum.photos/75" class="caixa"></button>
+                                <button onclick="toggleSidebar()"><img src="assets/img/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" class="caixa" alt="Perfil"></button>
                                 <h2 class="nomeLogin"><?= $_SESSION['usuario'] ?></h2>
                             </section>
 
                             <ul>
                                 <li></li>
                                 <li><a href="#?id=<?= (isset($_SESSION['id'])) ? $_SESSION['id'] : ''; ?>">Perfil</a></li>
+                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="cadastrar-produto.php">Cadastrar Produto</a></li>' : "" ?>
+                                <li><a href="finalizar-compra.php">Finalizar compras</a></li>
                                 <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </div>
@@ -76,7 +77,6 @@
                     <div class="col">
                         <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa representando a aba início/home">Início</a>
                         <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>
-                        <a href="finalizar-compra.php" class="botao-geral"><img src="assets/img/icon/icon-pagamento.png" alt="icone de uma moeda representando a aba de finalizar compra">Finalizar compras</a>
                         <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produto.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
                         <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
                         <?= (isset($_SESSION['usuario'])) ? '' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>' ?>

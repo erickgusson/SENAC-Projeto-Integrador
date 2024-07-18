@@ -13,8 +13,10 @@ class User
         $resultado = $conexao->query($script)->fetch();
         if (!empty($resultado)) {
             session_start();
-            $_SESSION['usuario'] = $user;
             $_SESSION['id'] = $resultado['id'];
+            $_SESSION['foto_perfil'] = $resultado['foto_perfil'];
+            $_SESSION['usuario'] = $resultado['login'];
+            $_SESSION['nivel'] = $resultado['nivel'];
 
             // sleep(5);
             header('location: index.php');
@@ -87,6 +89,7 @@ class User
                 ':senha' => $senha
             ]);
 
+            header('location: index.php');
             return "Usuário cadastrado com sucesso id: " . $id_usuario;
         } catch (PDOException $erro) {
             return "Erro <br>" . $erro->getMessage();

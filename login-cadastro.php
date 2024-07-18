@@ -38,7 +38,7 @@ if (
 
 <!-- <?= var_dump($resultadoLogin); ?> -->
 <div id="login-cadastro">
-    <form action="#" method="POST" class="caixa ">
+    <form action="#" method="POST" class="caixa" id="form-login">
         <h2>LOGIN</h2>
 
         <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
@@ -60,7 +60,6 @@ if (
 
         <input type="submit" value="Entrar" class="botao-click">
 
-        <a href="#">Esqueceu sua senha?</a>
 
     </form>
 

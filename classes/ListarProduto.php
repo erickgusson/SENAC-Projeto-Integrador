@@ -40,7 +40,7 @@ class Produto
     {
         try {
             include 'conexao.php';
-            $query = "SELECT * FROM tb_produtos WHERE nome LIKE '%{$texto}%'";
+            $query = "SELECT * FROM tb_produtos WHERE nome LIKE '%{$texto}%' OR ingredientes LIKE '%{$texto}%' OR descricao LIKE '%{$texto}%'";
             $resultado = $conexao->query($query)->fetchAll();
 
             return $resultado;

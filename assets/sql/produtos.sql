@@ -45,7 +45,7 @@ INSERT INTO tb_produtos (imagem, nome, descricao, ingredientes, preco)
 VALUES ('PetitGateau', 'Petit gateau', 'Sobremesa quente e decadente, com um exterior crocante e um interior cremoso de chocolate derretido.', 'Chocolate meio amargo, manteiga, açúcar, ovos, farinha de trigo', 8.5);
 
 INSERT INTO tb_produtos (imagem, nome, descricao, ingredientes, preco) 
-VALUES ('Rocambole', 'Rocambole', 'Doce em formato de rolo, com uma massa leve e recheios variados.', 'Massa de bolo, recheio variado (pode incluir doce de leite, chocolate, frutas)', 10.00);
+VALUES ('Rocambole', 'Rocambole de Prestígio', 'Doce em formato de rolo, com uma massa leve e recheio de Prestígio.', 'Massa de bolo recheada de prestigeo', 10.00);
 
 INSERT INTO tb_produtos (imagem, nome, descricao, ingredientes, preco) 
 VALUES ('TortaLimao', 'Torta de limão (100g)', 'Torta com recheio refrescante de creme de limão, coberta com uma camada suave de merengue.', 'Leite condensado, suco de limão, creme de leite, bolacha maizena', 5.00);
