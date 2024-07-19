@@ -1,6 +1,12 @@
 <?php
 $title = "Finalizar Compra";
-include "./includes/header.php"
+include "./includes/header.php";
+
+if (!isset($_SESSION['usuario'])) {
+    echo" <script>history.go(-1);</script>";
+    // header('location: index.php');
+}
+
 ?>
 
 <main>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/produto-selecionado.css">
     <link rel="stylesheet" href="assets/css/carrinho.css">
     <link rel="stylesheet" href="assets/css/sobre.css">
+    <link rel="stylesheet" href="assets/css/cadastrar-produto.css">
 
     <link rel="shortcut icon" href="assets/img/logo/logo-aba.png" type="image/x-icon">
 
@@ -36,17 +37,7 @@
                     <div class="col">
                         <h1>Doces Lunares</h1>
                     </div>
-                    <!-- 
-                    <?php
-                    if (isset($_SESSION['usuario'])) { ?>
-                        <div class="col dados-usuario dropdown">
-                            <img class="drophover caixa" src="https://picsum.photos/100">
-                            <div class="dropdown-conteudo">
-                                <a href="#?id=<?= (isset($_SESSION['id'])) ? $_SESSION['id'] : ''; ?>" class="botao-geral">Perfil</a>
-                                <a href="logout.php" class="botao-geral">Logout</a>
-                            </div>
-                        </div>
-                    <?php } ?> -->
+                   
                     <?php
                     if (isset($_SESSION['usuario'])) { ?>
                         <button onclick="toggleSidebar()"><img src="assets/img/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" class="caixa" alt="Perfil"></button>
@@ -66,6 +57,7 @@
                                 <li></li>
                                 <li><a href="#?id=<?= (isset($_SESSION['id'])) ? $_SESSION['id'] : ''; ?>">Perfil</a></li>
                                 <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="cadastrar-produto.php">Cadastrar Produto</a></li>' : "" ?>
+                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="alterar-usuarios.php">Alterar Usuarios</a></li>' : "" ?>
                                 <li><a href="finalizar-compra.php">Finalizar compras</a></li>
                                 <li><a href="logout.php">Logout</a></li>
                             </ul>
@@ -76,8 +68,8 @@
                 <div class="row">
                     <div class="col">
                         <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa representando a aba início/home">Início</a>
-                        <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>
-                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produto.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
+                        <?= (isset($_SESSION['usuario'])) ? '<a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>' ?>                   
+                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produtos.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
                         <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
                         <?= (isset($_SESSION['usuario'])) ? '' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>' ?>
                     </div>

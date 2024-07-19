@@ -95,6 +95,11 @@ input[type="search"] {
     transition: 500ms;
 }
 
+#produtos .lista-produtos .item a {
+    text-decoration: none;
+    color: black;
+}
+
 #produtos .lista-produtos .item:hover {
     transform: scale(1.05);
     cursor: pointer;

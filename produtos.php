@@ -28,7 +28,7 @@ if (isset($_GET['busca']) && !empty($_GET['busca'])) {
                 <li>Tortas<input type="checkbox" name="" id="cb-tortas"></li>
                 <li>Massas<input type="checkbox" name="" id="cb-"></li>
                 <li>Cones<input type="checkbox" name="" id="cb-"></li>
-                <li>De frutas<input type="checkbox" name="" id="cb-"></li>
+                <li>Frutas<input type="checkbox" name="" id="cb-"></li>
                 <li>Sorvetes<input type="checkbox" name="" id="cb-"></li>
                 <li>Cookies<input type="checkbox" name="" id="cb-"></li>
                 <li>Docinhos<input type="checkbox" name="" id="cb-"></li>

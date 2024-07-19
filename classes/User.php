@@ -19,8 +19,8 @@ class User
             $_SESSION['nivel'] = $resultado['nivel'];
 
             // sleep(5);
-            header('location: index.php');
-            return '<span class="login-mensagem">Usuario Validado com sucesso!!!</span>';
+            // header('location: index.php');
+            return "<script>history.go(-1);</script>";
         } else {
             return '<span class="login-mensagem">Usuario não encontrado.</span>';
         }
@@ -89,7 +89,7 @@ class User
                 ':senha' => $senha
             ]);
 
-            header('location: index.php');
+            header('location: login-cadastro.php');
             return "Usuário cadastrado com sucesso id: " . $id_usuario;
         } catch (PDOException $erro) {
             return "Erro <br>" . $erro->getMessage();

@@ -1,0 +1,72 @@
+/* input[type="search"] {
+    outline: none;
+    color: #7B429B;
+} */
+
+#cadastro-produto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#cadastro-produto form{
+    display: flex;
+    margin: 10px;
+    align-items: flex-start;
+}
+
+#cadastro-produto form.caixa{
+    padding: 20px 30px;
+    gap: 40px;
+    display: flex;
+    width: 70%;
+ 
+}
+/* =========== ESQUERDA =========== */
+#cadastro-produto form.caixa .esquerda{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+#cadastro-produto input[type="text"],
+#cadastro-produto input[type="number"]
+{
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+#cadastro-produto .esquerda span.textarea{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+#cadastro-produto .esquerda span textarea{
+    border-top: 1px solid grey;
+    padding-top: 10px;
+    outline: none;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+/* =========== DIREITA =========== */
+#cadastro-produto form.caixa .direita{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 20px;
+    font-size: 20px;
+    outline: none;
+}
+
+    

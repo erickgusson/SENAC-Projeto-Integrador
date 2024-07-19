@@ -69,6 +69,10 @@ figure small {
     gap: 20px;
 }
 
+.botao-click {
+    text-decoration: none;
+}
+
 .torta {
     background-color: #ffcc80;
 }

@@ -60,12 +60,6 @@ h1 {
     padding-right: 8px;
 }
 
-.botao-geral:hover {
-    cursor: pointer;
-    color: #6e52ab;
-    font-weight: bold;
-}
-
 input[type="search"] {
     width: 100%;
 }

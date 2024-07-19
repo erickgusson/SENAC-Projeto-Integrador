@@ -1,6 +1,4 @@
 <?php
-
-
 include "./includes/header.php";
 include "./classes/ListarProduto.php";
 
@@ -14,7 +12,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         header('location: produtos.php?erro=1');
     }
 } else {
-    header('location: produtos.php');
+    header('location: produtos.php?erro=1');
+    echo "<script>history.go(-1);</script>";
+    echo "<script>window.location.href = 'produtos.php?erro=1';</script>";
+    
 }
 ?>
 
@@ -46,7 +47,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <div class="preco-adicionar">
         <p class="preco">Preço: R$ <?= number_format($dados['preco'], 2, '.', ',') ?></p>
         <div class="adicionar">
-            <button class="botao-click">EU QUEROOO!</button>
+            <?= (isset($_SESSION['usuario'])) ? '<button class="botao-click">EU QUEROOO!</button>' : '<button class="botao-click"><a href="login-cadastro.php?tela=produto_selecionado" class="botao-click">EU QUEROOO!</a></button>' ?>
         </div>
     </div>
 

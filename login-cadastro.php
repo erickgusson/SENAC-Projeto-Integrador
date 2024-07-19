@@ -3,10 +3,15 @@ $title = "Login/Cadastro";
 include "./includes/header.php";
 include "./classes/User.php";
 
+if (isset($_SESSION['usuario'])) {
+    echo "<script>history.go(-1);</script>";
+    // header('location: index.php');
+}
+
 // Para Logar
 if (
-    isset($_POST['email'])
-    && isset($_POST['senha'])
+    isset($_POST['email']) && 
+    isset($_POST['senha'])
 ) {
 
     $usuario = $_POST['email'];
