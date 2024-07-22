@@ -9,7 +9,7 @@ include "./includes/header.php"
 
     <div id="cadastro-produto">
 
-        <form action="#" method="POST" class="caixa">
+        <form action="produto-selecionado.php" method="POST" class="caixa">
 
 
             <section class="esquerda">
@@ -31,14 +31,14 @@ include "./includes/header.php"
 
                 <!-- Ingredientes -->
                 <span class="botao-geral"><img src="assets/img/icon/icon-ingredientes.png" alt="">
-                    <input type="text" name="ingredientes" id="ingredientes" placeholder="Ingredientes: (Ovo, Leite, Cacau em pó...)" required>
+                    <input type="text" name="ingredientes" id="ingredientes" placeholder="Ingredientes: (exemplo: Ovo, Leite...)" required>
                 </span>
             </section>
 
             <section class="direita">
                 <!-- Enviar Imagem -->
                 <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="">Enviar imagem (.png)</label>
-                <input type="file" name="upload" id="upload" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
+                <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
                 <img id="imagem-preview" width="250" height="250" class="caixa-produto">
             </section>
         </form>

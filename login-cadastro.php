@@ -8,7 +8,7 @@ if (isset($_SESSION['usuario'])) {
     // header('location: index.php');
 }
 
-// Para Logar
+// =============  Para Logar ============= 
 if (
     isset($_POST['email']) && 
     isset($_POST['senha'])
@@ -21,7 +21,7 @@ if (
     $resultadoLogin = $user->Logar($usuario, $password);
 }
 
-//Para cadastrar
+//============= Para cadastrar ============= 
 if (
     isset($_POST['nome'])
 ) {
@@ -46,11 +46,11 @@ if (
     <form action="#" method="POST" class="caixa" id="form-login">
         <h2>LOGIN</h2>
 
-        <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
+        <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="icone de carta representando email">
             <input type="text" name="email" id="email" placeholder="Email" required>
         </span>
 
-        <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
+        <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="icone de cadeado">
             <input type="password" name="senha" id="senha" placeholder="Senha" required>
         </span>
 
@@ -65,7 +65,6 @@ if (
 
         <input type="submit" value="Entrar" class="botao-click">
 
-
     </form>
 
     <form action="#" method="POST" class="caixa caixa-cadastro escondido" id="form-cadastro">
@@ -74,12 +73,12 @@ if (
         <div class="campos">
 
             <!-- Nome -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-user.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-user.png" alt="icone representando usuário ">
                 <input type="text" name="nome" id="nome" placeholder="Nome" required>
             </span>
 
             <!-- Email -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="icone de carta representando email">
                 <input type="email" name="emailCadastro" id="email" placeholder="Email" required>
             </span>
         </div>
@@ -87,12 +86,12 @@ if (
         <div class="campos">
 
             <!-- Senha -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="icone de cadeado">
                 <input type="password" name="senhaCadastro" id="senha" placeholder="Senha" required>
             </span>
 
             <!-- Confirmar Senha -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="icone de cadeado">
                 <input type="password" name="senhaCadastro2" id="senha2" placeholder="Confirmar Senha" required>
             </span>
         </div>
@@ -102,12 +101,12 @@ if (
         <div class="campos">
 
             <!-- Telefone -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="icone de telefone">
                 <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
             </span>
 
             <!-- CEP -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
                 <input type="text" name="cep" id="cep" placeholder="CEP" required>
             </span>
         </div>
@@ -115,12 +114,12 @@ if (
         <div class="campos">
 
             <!-- Rua -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
                 <input type="text" name="rua" id="rua" placeholder="Rua" required>
             </span>
 
             <!-- Nº -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa">
                 <input type="text" name="numero" id="numero" placeholder="Nº" required>
             </span>
         </div>
@@ -128,12 +127,12 @@ if (
         <div class="campos">
 
             <!-- Bairro -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
                 <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
             </span>
 
             <!-- Cidade -->
-            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="">
+            <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
                 <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
             </span>
         </div>
