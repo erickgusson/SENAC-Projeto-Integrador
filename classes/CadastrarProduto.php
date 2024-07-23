@@ -1,19 +1,22 @@
-<?php 
+<?php
 $_ENV = parse_ini_file(".env");
 
-class CadastrarProduto{
+class CadastrarProduto
+{
 
-    public function CadastrarProduto($nome, $preco, $descricao, $ingredientes, $imagem){
+    public function CadastrarProduto($imagem, $nome, $descricao, $ingredientes, $preco)
+    {
 
         include 'conexao.php';
-        $scriptProduto = "INSERT INTO tb_produtos (nome, descricao, ingredientes, preco, estoque) VALUES ('$nome', '$preco', '$descricao', '$ingredientes', '$imagem')";
-        $resultado = $conexao->query($scriptProduto)->fetch();
-
-        $resultado->execute([
-            
+        $scriptProduto = "INSERT INTO tb_produtos (imagem, nome, descricao, ingredientes, preco) VALUES (:imagem, :nome, :descricao, :ingredientes, :preco)";
+        $conexao->prepare($scriptProduto)->execute([
+            ":imagem" => $imagem,
+            ":nome" => $nome,
+            ":descricao" => $descricao,
+            ":ingredientes" => $ingredientes,
+            ":preco" => $preco,
         ]);
 
-        
+        header('location: produto-selecionado.php?id=' . $conexao->lastInsertId());
     }
-
 }

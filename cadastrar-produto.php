@@ -1,6 +1,32 @@
 <?php
 $title = "Cadastrar Produto";
-include "./includes/header.php"
+include "./includes/header.php";
+include "./classes/CadastrarProduto.php";
+
+$cadastro = new CadastrarProduto();
+
+// Para cadastrar produtos
+if (isset($_POST) && !empty($_POST)) {
+
+    // echo '<pre>';
+    // print_r($_POST);
+    $imagem = $_FILES['upload'];
+    // print_r($imagem);
+
+    $nomeCaminhoDaImagem = 'assets/img/produtos/' . round(microtime(true)) . $imagem['name'];
+    move_uploaded_file($imagem['tmp_name'], $nomeCaminhoDaImagem);
+    // echo $nomeCaminhoDaImagem;
+
+    $imagemNome = round(microtime(true)) . $imagem['name'];
+    $nome = $_POST['nome_produto'];
+    $preco = $_POST['preco_produto'];
+    $descricao = $_POST['descricao_produto'];
+    $ingredientes = $_POST['ingredientes'];
+
+    $cadastro->CadastrarProduto($imagemNome, $nome, $descricao, $ingredientes, $preco);
+    // echo '</pre>';
+}
+
 ?>
 
 <main>
@@ -9,9 +35,7 @@ include "./includes/header.php"
 
     <div id="cadastro-produto">
 
-        <form action="produto-selecionado.php" method="POST" class="caixa">
-
-
+        <form action="#" method="POST" class="caixa" enctype="multipart/form-data">
             <section class="esquerda">
                 <!-- Nome do Produto -->
                 <span class="botao-geral"><img src="assets/img/icon/icon-produto.png" alt="">
@@ -40,10 +64,25 @@ include "./includes/header.php"
                 <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="">Enviar imagem (.png)</label>
                 <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
                 <img id="imagem-preview" width="250" height="250" class="caixa-produto">
-            </section>
-        </form>
 
-        <input type="submit" value="Cadastrar" class="botao-click">
+
+            </section>
+            <input type="submit" value="Cadastrar" class="botao-click">
+
+            <!-- <select name="tag" id="tag">
+                <option value="torta">Torta</option>
+                <option value="Bolo">Bolo</option>
+                <option value="Cookie">Cookie</option>
+                <option value="Diet">Diet</option>
+                <option value="Mousse">Mousse</option>
+                <option value="Massas">Massas</option>
+                <option value="Cones">Cones</option>
+                <option value="Frutas">Frutas</option>
+                <option value="Sorvetes">Sorvetes</option>
+                <option value="Docinhos">Docinhos</option>
+                <option value="Especiais">Especiais</option>
+            </select> -->
+        </form>
 
     </div>
 

@@ -2,7 +2,7 @@
 $cont = 1;
 foreach ($maisVendidos as $valor) { ?>
     <a href="produto-selecionado.php?id=<?= $valor['id'] ?>" class="caixa-produto">
-        <img src="assets/img/produtos/<?= $valor['imagem'] ?>.png" alt="<?= $valor['nome'] ?>">
+        <img src="assets/img/produtos/<?= $valor['imagem'] ?>" alt="<?= $valor['nome'] ?>">
         <figcaption>
             <h4><?= $valor['nome'] ?></h4>
         </figcaption>

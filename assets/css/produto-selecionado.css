@@ -27,6 +27,13 @@
 #produto-selecionado figure .produto-img-tag {
     display: grid;
     place-items: center;
+    margin-right: 50px;
+}
+
+#produto-selecionado figure .produto-img-tag img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
 }
 
 #produto-selecionado figure .caixa-produto{
