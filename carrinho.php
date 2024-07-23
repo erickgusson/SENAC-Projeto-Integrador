@@ -1,6 +1,11 @@
 <?php
 $title = "Carrinho";
-include "./includes/header.php"
+include "./includes/header.php";
+
+// $_SESSION['id'] = 1;
+// $_SESSION['id']['nome'] = 'teste';
+
+var_dump($_SESSION);
 
 ?>
 

@@ -1,0 +1,112 @@
+#editar-perfil form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#editar-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#editar-perfil h2{
+    text-align: center;
+    font-size: 26px;
+    color: #7B429B;
+    margin-bottom: 10px;
+}
+
+
+#editar-perfil .dados-pessoais{
+    margin-top: 50px;
+}
+
+#editar-perfil input[type="email"], 
+#editar-perfil input[type="password"],
+#editar-perfil input[type="text"],
+#editar-perfil input[type="tel"],
+#editar-perfil input[type="number"]
+{
+    outline: none;
+
+    width: 400px;
+    padding: 10px 10px;
+
+    font-size: 20px;
+}
+
+#editar-perfil input[type="submit"]{
+
+    align-self: center;
+    text-align: center;
+    margin-top: 30px;
+
+    
+}
+
+#editar-perfil form.caixa{
+    padding: 20px 30px;
+    gap: 40px;
+}
+
+#editar-perfil form.caixa-editar{
+    height: max-content;
+    width: max-content;
+}
+
+/* Esqueci minha senha */
+#editar-perfil form a{
+    text-align: center;
+    margin-top: -30px;
+
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+
+    transition: 300ms;
+} 
+
+#editar-perfil form a:hover{
+    color: #7B429B;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* --------------------- */
+
+#editar-perfil form .campos{
+    display: flex;
+    gap: 20px;
+}
+
+#editar-perfil form .botao-geral{
+    width: 400px;
+    
+}
+
+/* ------------------ */
+.container-1 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 200px 500px 200px;
+    grid-template-areas:
+      "cabecalho cabecalho cabecalho""menu-lateral principal principal""rodape rodape rodape";
+  }
+
+ 
+  
+  .menu-lateral {
+    grid-area: menu-lateral;
+  }
+  
+  .principal {
+    grid-area: principal;
+  }
+  
+  .rodape {
+    grid-area: rodape;
+  }

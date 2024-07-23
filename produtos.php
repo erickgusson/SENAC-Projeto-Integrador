@@ -4,12 +4,17 @@ include "./includes/header.php";
 include "./classes/ListarProduto.php";
 
 $produto = new Produto();
-$dados = $produto->ListarProdutos(2);
+$dados = $produto->ListarProdutos(1);
 
 if (isset($_GET['busca']) && !empty($_GET['busca'])) {
     $busca = $_GET['busca'];
     $dados = $produto->Pesquisar($busca);
     // var_dump($dados);
+}
+
+if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
+    $id_produto = $_GET['produto-adicionar'];
+    $_SESSION['carrinho'][$id_produto]++;
 }
 ?>
 
@@ -59,5 +64,23 @@ if (isset($_GET['busca']) && !empty($_GET['busca'])) {
         </div>
     </main>
 </section>
+
+<script>
+    // Salva a posição de rolagem atual no localStorage
+    window.onbeforeunload = function() {
+        localStorage.setItem('scrollPosition', JSON.stringify({
+            x: window.scrollX,
+            y: window.scrollY
+        }));
+    }
+    // Restaura a posição de rolagem após o carregamento da página
+    window.onload = function() {
+        var scrollPosition = JSON.parse(localStorage.getItem('scrollPosition'));
+        if (scrollPosition) {
+            window.scrollTo(scrollPosition.x, scrollPosition.y);
+            localStorage.removeItem('scrollPosition'); // Limpa a posição após restaurar
+        }
+    }
+</script>
 
 <?php include "./includes/footer.php" ?>

@@ -64,8 +64,6 @@ if (isset($_POST) && !empty($_POST)) {
                 <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="">Enviar imagem (.png)</label>
                 <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
                 <img id="imagem-preview" width="250" height="250" class="caixa-produto">
-
-
             </section>
             <input type="submit" value="Cadastrar" class="botao-click">
 
