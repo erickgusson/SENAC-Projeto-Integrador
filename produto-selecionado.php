@@ -15,7 +15,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     header('location: produtos.php?erro=1');
     echo "<script>history.go(-1);</script>";
     echo "<script>window.location.href = 'produtos.php?erro=1';</script>";
-    
 }
 ?>
 
@@ -47,7 +46,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <div class="preco-adicionar">
         <p class="preco">Preço: R$ <?= number_format($dados['preco'], 2, '.', ',') ?></p>
         <div class="adicionar">
-            <?= (isset($_SESSION['usuario'])) ? '<button class="botao-click">EU QUEROOO!</button>' : '<button class="botao-click"><a href="login-cadastro.php?tela=produto_selecionado" class="botao-click">EU QUEROOO!</a></button>' ?>
+            <button class="botao-click"><a href="produtos.php?produto-adicionar=<?= $dados['id'] ?>" class="botao-click">EU QUEROOO!</a></button>
         </div>
     </div>
 

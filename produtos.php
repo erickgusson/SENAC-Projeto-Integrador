@@ -66,6 +66,7 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
             </div>
 
             <div class="carrinho">
+                
                 <?php if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
                     foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
                         $dados = $produto->Listar1Produto($id_produto);

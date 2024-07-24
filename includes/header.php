@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="col">
                         <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa representando a aba início/home">Início</a>
-                        <?= (isset($_SESSION['usuario'])) ? '<a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>' ?>                   
+                        <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>                   
                         <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produtos.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
                         <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
                         <?= (isset($_SESSION['usuario'])) ? '' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>' ?>
