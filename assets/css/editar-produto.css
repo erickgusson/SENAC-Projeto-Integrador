@@ -1,0 +1,58 @@
+
+#editar-produto div{
+    display: flex;
+    margin: 10px;
+}
+
+#editar-produto{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ===========GRID============ */
+.container-editar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 20px;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-areas:
+      "foto-perfil nome-produto icone-editar";
+    
+  }
+
+  .foto-perfil {
+    display: grid;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    justify-items: stretch;
+    grid-area: foto-perfil;
+
+    background-color: red;
+
+
+  }
+  
+  .nome-produto {
+    display: grid;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    justify-items: stretch;
+    grid-area: nome-produto;
+
+    background-color: green;
+  }
+  
+  .icone-editar {
+    display: grid;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    justify-items: stretch;
+    grid-area: icone-editar;
+
+    background-color: blue;
+
+  }

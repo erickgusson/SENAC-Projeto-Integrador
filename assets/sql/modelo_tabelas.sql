@@ -8,8 +8,7 @@ CREATE TABLE tb_pessoa (
     `cidade` VARCHAR(255),
     `bairro` VARCHAR(255),
     `rua` VARCHAR(255),
-    `numero` VARCHAR(255),
-    
+    `numero` VARCHAR(255)
 )
 
 CREATE TABLE tb_user (
@@ -19,7 +18,7 @@ CREATE TABLE tb_user (
     `foto_perfil` VARCHAR(200) DEFAULT 'perfil.png',
     `login` VARCHAR(200),
     `senha` VARCHAR(200),
-    `ativo` ENUM('0', '1'),
+    `ativo` ENUM('0', '1') DEFAULT '1',
     `nivel` VARCHAR(5) DEFAULT 'user'
 )
 

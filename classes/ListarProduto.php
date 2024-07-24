@@ -18,7 +18,8 @@ class Produto
         include 'conexao.php';
         $query = "SELECT * FROM tb_produtos ORDER BY {$operacao}";
         $resultado = $conexao->query($query)->fetchAll();
-
+        
+        $conexao = null;
         return $resultado;
     }
 
@@ -29,9 +30,11 @@ class Produto
             include 'conexao.php';
             $query = "SELECT * FROM tb_produtos WHERE id = {$id}";
             $resultado = $conexao->query($query)->fetch();
-
+            
+            $conexao = null;
             return $resultado;
         } catch (PDOException $th) {
+            $conexao = null;
             return false;
         }
     }
@@ -44,7 +47,9 @@ class Produto
             $resultado = $conexao->query($query)->fetchAll();
 
             return $resultado;
+            $conexao = null;
         } catch (PDOException $th) {
+            $conexao = null;
             return false;
         }
     }

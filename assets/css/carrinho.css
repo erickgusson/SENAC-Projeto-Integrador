@@ -46,6 +46,16 @@ th, td {
     gap: 20px;
 }
 
+th a {
+    text-decoration: none;
+    transition: 500ms;
+    color: black;
+}
+
+th a:hover {
+    color: red;
+}
+
 #carrinho .caixa-produto{
     max-width: 125px;
     max-height: 125px;

@@ -8,6 +8,7 @@ foreach ($dados as $valor) { ?>
             <p><?= $valor['nome'] ?></p>
             <p>R$ <?= number_format($valor['preco'], 2, '.', ',') ?></p>
         </a>
+        
         <button class="adicionar" style="position: relative; bottom: 5px;" name="produto-adicionar" value="<?= $valor['id'] ?>">Adicionar ao Carrinho</button>
     </form>
 

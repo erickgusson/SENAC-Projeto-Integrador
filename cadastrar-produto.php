@@ -61,7 +61,7 @@ if (isset($_POST) && !empty($_POST)) {
 
             <section class="direita">
                 <!-- Enviar Imagem -->
-                <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="">Enviar imagem (.png)</label>
+                <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="" required>Enviar imagem (.png)</label>
                 <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
                 <img id="imagem-preview" width="250" height="250" class="caixa-produto">
             </section>
@@ -81,9 +81,7 @@ if (isset($_POST) && !empty($_POST)) {
                 <option value="Especiais">Especiais</option>
             </select> -->
         </form>
-
     </div>
-
 </main>
 
 

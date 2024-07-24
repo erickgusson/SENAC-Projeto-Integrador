@@ -12,11 +12,15 @@ if (isset($_GET['busca']) && !empty($_GET['busca'])) {
     // var_dump($dados);
 }
 
+// Adiciona produtos ao carrinho
 if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
     $id_produto = $_GET['produto-adicionar'];
     $_SESSION['carrinho'][$id_produto]++;
+    header('location: produtos.php');
 }
+
 ?>
+
 
 <section>
     <main id="produtos" class="col">
@@ -61,26 +65,25 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
                 <h2>Carrinho</h2>
             </div>
 
+            <div class="carrinho">
+                <?php if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
+                    foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
+                        $dados = $produto->Listar1Produto($id_produto);
+                        if (isset($dados) && !empty($dados)) { ?>
+                            <div class="carrinho-item">
+                                <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="Foto de <?= $dados['nome'] ?>">
+                                <h2><?= $quantidade; ?> x</h2> <!-- quantidade -->
+                            </div>
+                <?php }
+                    }
+                } ?>
+            </div>
+
+            <a href="carrinho.php"><button class="adicionar">Ir para o carrinho</button></a>
         </div>
     </main>
 </section>
 
-<script>
-    // Salva a posição de rolagem atual no localStorage
-    window.onbeforeunload = function() {
-        localStorage.setItem('scrollPosition', JSON.stringify({
-            x: window.scrollX,
-            y: window.scrollY
-        }));
-    }
-    // Restaura a posição de rolagem após o carregamento da página
-    window.onload = function() {
-        var scrollPosition = JSON.parse(localStorage.getItem('scrollPosition'));
-        if (scrollPosition) {
-            window.scrollTo(scrollPosition.x, scrollPosition.y);
-            localStorage.removeItem('scrollPosition'); // Limpa a posição após restaurar
-        }
-    }
-</script>
+<script src="./assets/js/fixarRolagem.js"> </script>
 
 <?php include "./includes/footer.php" ?>

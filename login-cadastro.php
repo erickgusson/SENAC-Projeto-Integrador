@@ -13,7 +13,6 @@ if (
     isset($_POST['email']) && 
     isset($_POST['senha'])
 ) {
-
     $usuario = $_POST['email'];
     $password = $_POST['senha'];
 

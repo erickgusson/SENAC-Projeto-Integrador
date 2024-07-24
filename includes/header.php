@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/sobre.css">
     <link rel="stylesheet" href="assets/css/cadastrar-produto.css">
     <link rel="stylesheet" href="assets/css/perfil.css">
+    <link rel="stylesheet" href="assets/css/editar-produto.css">
 
     <link rel="shortcut icon" href="assets/img/logo/logo-aba.png" type="image/x-icon">
 
@@ -58,6 +59,7 @@
                                 <li></li>
                                 <li><a href="perfil.php?id=<?=$_SESSION['id']?>">Perfil</a></li>
                                 <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="cadastrar-produto.php">Cadastrar Produto</a></li>' : "" ?>
+                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="editar-produto.php">Editar Produto</a></li>' : "" ?>
                                 <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="alterar-usuarios.php">Alterar Usuarios</a></li>' : "" ?>
                                 <li><a href="finalizar-compra.php">Finalizar compras</a></li>
                                 <li><a href="logout.php">Logout</a></li>

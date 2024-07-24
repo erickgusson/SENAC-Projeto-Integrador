@@ -26,7 +26,6 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-
 }
 
 /* -------------------- */
@@ -187,3 +186,47 @@ li:has(input:checked) {
 
 /* ---------------- */
 /* PRODUTOS DIREITA (CARRINHO) */
+
+#produtos .produtos-direita {
+    padding: 8px 4px;
+    min-width: 200px;
+}
+
+
+#produtos .produtos-direita .carrinho {
+    padding: 4px;
+    gap: 8px;
+}
+
+#produtos .produtos-direita .carrinho .carrinho-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#produtos .produtos-direita .carrinho .carrinho-item img {
+    width: 75px;
+    height: 75px;
+}
+
+#produtos .produtos-direita a {
+    align-self: center;
+}
+
+#produtos .produtos-direita .adicionar {
+    align-self: center;
+    margin-top: 10px;
+    background-color: #6e52ab;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: white;
+}
+
+#produtos .produtos-direita .adicionar:hover {
+    cursor: pointer;
+    color: #ffcc80;
+    transition: 200ms;
+    transform: scale(1.05);
+}

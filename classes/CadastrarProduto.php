@@ -6,7 +6,6 @@ class CadastrarProduto
 
     public function CadastrarProduto($imagem, $nome, $descricao, $ingredientes, $preco)
     {
-
         include 'conexao.php';
         $scriptProduto = "INSERT INTO tb_produtos (imagem, nome, descricao, ingredientes, preco) VALUES (:imagem, :nome, :descricao, :ingredientes, :preco)";
         $conexao->prepare($scriptProduto)->execute([
@@ -18,5 +17,6 @@ class CadastrarProduto
         ]);
 
         header('location: produto-selecionado.php?id=' . $conexao->lastInsertId());
+        $conexao = null;
     }
 }

@@ -64,3 +64,5 @@
 <script src="./assets/js/sidebar.js"></script>
 
 </html>
+
+<?php $conexao = null; ?>

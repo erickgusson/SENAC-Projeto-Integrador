@@ -9,7 +9,7 @@ class User
     {
 
         include 'conexao.php';
-        $script = "SELECT * FROM tb_user WHERE login = '{$user}' AND senha = '{$password}'";
+        $script = "SELECT * FROM tb_user WHERE login = '{$user}' AND senha = '{$password}' AND ativo = '1'";
         $resultado = $conexao->query($script)->fetch();
         if (!empty($resultado)) {
             session_start();
@@ -20,9 +20,11 @@ class User
 
             // sleep(5);
             // header('location: index.php');
+            $conexao = null;
             return "<script>history.go(-1);</script>";
         } else {
-            return '<span class="login-mensagem">Usuario não encontrado.</span>';
+            return '<span class="login-mensagem">Usuario não encontrado ou desativado.</span>';
+            $conexao = null;
         }
     }
 
@@ -90,8 +92,10 @@ class User
             ]);
 
             header('location: login-cadastro.php');
+            $conexao = null;
             return "Usuário cadastrado com sucesso id: " . $id_usuario;
         } catch (PDOException $erro) {
+            $conexao = null;
             return "Erro <br>" . $erro->getMessage();
         }
     }

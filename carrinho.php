@@ -1,12 +1,22 @@
 <?php
 $title = "Carrinho";
 include "./includes/header.php";
+include "./classes/ListarProduto.php";
 
-// $_SESSION['id'] = 1;
-// $_SESSION['id']['nome'] = 'teste';
-
-var_dump($_SESSION);
-
+$produto = new Produto();
+if (isset($_GET['deletar']) && !empty($_GET['deletar'])) {
+    $id_produto = $_GET['deletar'];
+    $_SESSION['carrinho'][$id_produto]--;
+    if ($_SESSION['carrinho'][$id_produto] <= 0) {
+        unset($_SESSION['carrinho'][$id_produto]);
+        // array_splice($_SESSION['carrinho'], $id_produto);
+    }
+    header('location: carrinho.php');
+}
+if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
+    $id_produto = $_GET['deletar-todos'];
+    array_splice($_SESSION['carrinho'], $id_produto);
+}
 ?>
 
 <section id="carrinho" class="carrinho">
@@ -18,44 +28,36 @@ var_dump($_SESSION);
                 <th>Preço</th>
                 <th>QTD</th>
                 <th>Subtotal</th>
-                <th></th>
+                <th><a href="carrinho.php?deletar-todos=1">Deletar todos</a></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <a href="produto-selecionado.php"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
-                    <label for="">Cookie Nutella</label>
-                </td>
-                <td>R$ <span>10,00</span></td>
-                <td>2</td>
-                <td>R$ <span>20,00</span></td>
-                <td><button class="btn-deletar"></button></td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="produto-selecionado.php"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
-                    <label for="">Cookie Nutella</label>
-                </td>
-                <td>R$ <span>10,00</span></td>
-                <td>2</td>
-                <td>R$ <span>20,00</span></td>
-                <td><button class="btn-deletar"></button></td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="produto-selecionado.php"><img src="assets/img/produtos/CookieNutella.png" alt="Cookie Nutella" class="caixa-produto"></a>
-                    <label for="">Cookie Nutella</label>
-                </td>
-                <td>R$ <span>10,00</span></td>
-                <td>2</td>
-                <td>R$ <span>20,00</span></td>
-                <td><button class="btn-deletar"></button></td>
-            </tr>
+            
+
+            <?php 
+            if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
+
+                foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
+                    $dados = $produto->Listar1Produto($id_produto);
+
+                    if (isset($dados) && !empty($dados)) { ?>
+                        <tr>
+                            <td>
+                                <a href="produto-selecionado.php?=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto"></a>
+                                <label><?= $dados['nome'] ?></label>
+                            </td>
+                            <td>R$ <span><?= $dados['preco'] ?></span></td>
+                            <td><?= $quantidade ?></td>
+                            <td>R$ <span><?= $dados['preco'] * $quantidade ?></span></td>
+                            <td><a href="carrinho.php?deletar=<?= $dados['id'] ?>"><button class="btn-deletar"></button></a></td>
+                        </tr>
+            <?php }
+                }
+            } ?>
         </tbody>
     </table>
     <button class="botao-click">Finalizar pedido</button>
 </section>
 
-
+<script src="./assets/js/fixarRolagem.js"> </script>
 <?php include "./includes/footer.php" ?>
