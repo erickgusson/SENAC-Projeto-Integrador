@@ -118,7 +118,7 @@ input[type="search"] {
     border-radius: 25px;
 
     font-size: 24px;
-    color: white;
+    color: white !important;
     text-decoration: none;
 
     transition: 300ms;
@@ -129,4 +129,5 @@ input[type="search"] {
 
 .botao-click:hover {
     transform: scale(1.05);
+    color: #ffcc80 !important;
 }
