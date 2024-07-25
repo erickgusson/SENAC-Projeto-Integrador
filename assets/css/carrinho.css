@@ -81,7 +81,7 @@ th a:hover {
     margin: 30px;
 }
 
-a {
+#carrinho a {
     text-decoration: none;
     color: black;
     font-weight: 700;
