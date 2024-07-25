@@ -24,6 +24,8 @@ body {
 h1 {
     color: #ffcc80;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 62px;
 }
 
 .banner {
@@ -117,6 +119,8 @@ input[type="search"] {
 
     font-size: 24px;
     color: white;
+    text-decoration: none;
+
     transition: 300ms;
 
     background-color: #7B429B;
@@ -125,5 +129,4 @@ input[type="search"] {
 
 .botao-click:hover {
     transform: scale(1.05);
-
 }

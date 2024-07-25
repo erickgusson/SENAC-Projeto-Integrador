@@ -18,6 +18,8 @@ if (
 
     $user = new User();
     $resultadoLogin = $user->Logar($usuario, $password);
+    $_POST['email'];
+    $_POST['senha'];
 }
 
 //============= Para cadastrar ============= 

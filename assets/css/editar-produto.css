@@ -18,7 +18,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     gap: 20px;
-    grid-template-rows: 300px 300px 300px;
+    grid-template-rows: min-content;
     grid-template-areas:
       "foto-perfil nome-produto icone-editar";
     
@@ -31,7 +31,6 @@
     justify-items: stretch;
     grid-area: foto-perfil;
 
-    background-color: red;
 
 
   }

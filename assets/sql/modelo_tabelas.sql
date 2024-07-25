@@ -18,7 +18,7 @@ CREATE TABLE tb_user (
     `foto_perfil` VARCHAR(200) DEFAULT 'perfil.png',
     `login` VARCHAR(200),
     `senha` VARCHAR(200),
-    `ativo` ENUM('0', '1') DEFAULT '1',
+    `ativo` ENUM('inativo', 'ativo') DEFAULT 'ativo',
     `nivel` VARCHAR(5) DEFAULT 'user'
 )
 
@@ -37,7 +37,8 @@ CREATE TABLE tb_produtos (
     `ingredientes` TEXT,
     `preco` FLOAT(9, 2),
     `estoque` INT DEFAULT 0,
-    `vendidos` INT DEFAULT 0
+    `vendidos` INT DEFAULT 0,
+    `ativo` ENUM('inativo', 'ativo') DEFAULT 'ativo'
 )
 
 CREATE Table tb_produtos_tags (

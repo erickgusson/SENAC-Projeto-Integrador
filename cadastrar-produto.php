@@ -1,9 +1,9 @@
 <?php
 $title = "Cadastrar Produto";
 include "./includes/header.php";
-include "./classes/CadastrarProduto.php";
+include "./classes/Produto.php";
 
-$cadastro = new CadastrarProduto();
+$cadastro = new Produto();
 
 // Para cadastrar produtos
 if (isset($_POST) && !empty($_POST)) {
@@ -29,6 +29,8 @@ if (isset($_POST) && !empty($_POST)) {
 
 ?>
 
+
+
 <main>
 
     <h1>Cadastrar Produto</h1>
@@ -44,7 +46,7 @@ if (isset($_POST) && !empty($_POST)) {
 
                 <!-- Preço do produto -->
                 <span class="botao-geral"><img src="assets/img/icon/icon-pagamento.png" alt="">
-                    <input type="number" name="preco_produto" id="preco" placeholder="Preço do Produto" required>
+                    <input type="number" min=0 step="0.01" name="preco_produto" id="preco" placeholder="Preço do Produto" required>
                 </span>
 
                 <!-- Descrição do Produto -->
@@ -63,7 +65,7 @@ if (isset($_POST) && !empty($_POST)) {
                 <!-- Enviar Imagem -->
                 <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="" required>Enviar imagem (.png)</label>
                 <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
-                <img id="imagem-preview" width="250" height="250" class="caixa-produto">
+                <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto"></label>
             </section>
             <input type="submit" value="Cadastrar" class="botao-click">
 
@@ -82,6 +84,7 @@ if (isset($_POST) && !empty($_POST)) {
             </select> -->
         </form>
     </div>
+
 </main>
 
 

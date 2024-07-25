@@ -53,11 +53,13 @@
                             <section class="sidebar-usuario">
                                 <button onclick="toggleSidebar()"><img src="assets/img/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" class="caixa" alt="Perfil"></button>
                                 <h2 class="nomeLogin"><?= $_SESSION['usuario'] ?></h2>
+                                <?= $_SESSION['nivel'] !== "user" ? '<p class="nomeLogin">Admin</p>' : ''  ?>
+                                <!-- <h3 class="nomeLogin"><?= $_SESSION['nivel'] ?></h3> -->
                             </section>
 
                             <ul>
                                 <li></li>
-                                <li><a href="perfil.php?id=<?=$_SESSION['id']?>">Perfil</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
                                 <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="cadastrar-produto.php">Cadastrar Produto</a></li>' : "" ?>
                                 <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="editar-produto.php">Editar Produto</a></li>' : "" ?>
                                 <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="alterar-usuarios.php">Alterar Usuarios</a></li>' : "" ?>

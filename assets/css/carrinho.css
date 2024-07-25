@@ -79,3 +79,12 @@ th a:hover {
 #carrinho button {
     margin: 30px;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.operacao-menos:hover {
+
+}

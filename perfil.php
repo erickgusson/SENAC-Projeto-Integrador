@@ -1,4 +1,5 @@
 <?php
+$title = "Editar Perfil";
 include "./includes/header.php";
 
 ?>
@@ -14,8 +15,8 @@ include "./includes/header.php";
                 <div class="foto-perfil">
                     <section class="foto">
                         <!-- Enviar Imagem -->
-                        <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
-                        <img id="imagem-preview" width="250" height="250" class="caixa-produto" style="cursor: default;"><br>
+                        <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden>
+                        <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto" style="cursor: default; padding: 0; border-radius: 100%;"><br></label>
                         <label for="upload" class="botao-geral" style="cursor: pointer" ;><img src="assets/img/icon/icon-upload.png" alt="">Enviar imagem (.png)</label>
                     </section>
                 </div>
@@ -50,7 +51,7 @@ include "./includes/header.php";
                 </div>
 
                 <div class="dados-pessoais" id="teste">
-                    <h2 >Dados Pessoais</h2>
+                    <h2>Dados Pessoais</h2>
 
                     <div class="campos">
 
@@ -94,7 +95,7 @@ include "./includes/header.php";
 
             </section>
         </div>
-        
+
         <!-- Cadastrar -->
         <input type="submit" value="Atualizar" class="botao-click">
     </form>

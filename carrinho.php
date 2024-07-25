@@ -1,7 +1,7 @@
 <?php
 $title = "Carrinho";
 include "./includes/header.php";
-include "./classes/ListarProduto.php";
+include "./classes/Produto.php";
 
 $produto = new Produto();
 
@@ -51,7 +51,7 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
             if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
 
                 foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
-                    $dados = $produto->Listar1Produto($id_produto);
+                    $dados = $produto->ListarProdutos($id_produto, 1);
 
                     if (isset($dados) && !empty($dados)) { ?>
                         <tr>
@@ -59,9 +59,9 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
                                 <a href="produto-selecionado.php?=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto"></a>
                                 <label><?= $dados['nome'] ?></label>
                             </td>
-                            <td>R$ <span><?= $dados['preco'] ?></span></td>
-                            <td><a href="carrinho.php?subtrair=<?= $dados['id'] ?>" style="text-decoration: none; color:black"> - </a> <?= $quantidade ?> <a href="carrinho.php?adicionar=<?= $dados['id'] ?>" style="text-decoration: none; color:black"> + </a></td>
-                            <td>R$ <span><?= $dados['preco'] * $quantidade ?></span></td>
+                            <td>R$ <span><?=number_format($dados['preco'], 2, ',', '.') ?></span></td>
+                            <td><a class="operacao operacao-menos" href="carrinho.php?subtrair=<?= $dados['id'] ?>"> - </a> <?= $quantidade ?> <a class="operacao operacao-mais" href="carrinho.php?adicionar=<?= $dados['id'] ?>"> + </a></td>
+                            <td>R$ <span><?=number_format(($dados['preco'] * $quantidade), 2, ',', '.')?></span></td>
                             <td><a href="carrinho.php?deletar=<?= $dados['id'] ?>"><button class="btn-deletar"></button></a></td>
                         </tr>
             <?php }
@@ -69,7 +69,7 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
             } ?>
         </tbody>
     </table>
-    <?= isset($_SESSION['usuario']) ? '<button class="botao-click"><a href="finalizar-compra.php" style="text-decoration: none; color:white">Finalizar pedido</a></button>' : ''; ?>
+    <?= isset($_SESSION['usuario']) ? '<button class="botao-click"><a class="botao-click" href="finalizar-compra.php">Finalizar pedido</a></button>' : '<button class="botao-click"><a class="botao-click" href="login-cadastro.php">Finalizar pedido</a></button>'; ?>
 
 
 </section>

@@ -9,18 +9,17 @@
 
 #produto-selecionado h1{
     text-align: center;
-    font-size: 80px;
+    font-size: 62px;
 
     margin: 100px 0;
-    color: #ffcc80;
 }
 
 #produto-selecionado figure {
     display: grid;
-    place-items: center;
+    /* place-items: start; */
     grid-template-columns: 1fr 2fr;
 
-    width: 60vw;
+    width: 70vw;
     gap: 20px;
 }
 
@@ -31,24 +30,25 @@
 }
 
 #produto-selecionado figure .produto-img-tag img{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
 
-#produto-selecionado figure .caixa-produto{
-    width: 300px;
+figure > div:has(span) {
+    margin-top: 20px;
 }
-
 figure > div > span {
     font-size: 28px;
     text-align: justify;
+    margin-top: 20px;
 }
 
 figure small {
     display: flex;
     margin-top: 20px;
     margin-left: 20px;
+    max-width: 90%;
 }
 
 .tags {
@@ -72,7 +72,7 @@ figure small {
     place-items: center;
     grid-template-columns: 1fr 2fr;
 
-    width: 60vw;
+    width: 70vw;
     gap: 20px;
 }
 

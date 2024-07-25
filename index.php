@@ -1,6 +1,6 @@
 <?php
 include "./includes/header.php";
-include "./classes/ListarProduto.php";
+include "./classes/Produto.php";
 
 $produto = new Produto();
 $maisVendidos = $produto->ListarProdutos(1);

@@ -9,7 +9,7 @@ class User
     {
 
         include 'conexao.php';
-        $script = "SELECT * FROM tb_user WHERE login = '{$user}' AND senha = '{$password}' AND ativo = '1'";
+        $script = "SELECT * FROM tb_user WHERE login = '{$user}' AND senha = '{$password}' AND status = '1'";
         $resultado = $conexao->query($script)->fetch();
         if (!empty($resultado)) {
             session_start();

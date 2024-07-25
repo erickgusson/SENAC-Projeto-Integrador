@@ -1,13 +1,13 @@
 <?php
 include "./includes/header.php";
-include "./classes/ListarProduto.php";
+include "./classes/Produto.php";
 
 $produto = new Produto();
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];
 
-    $dados = $produto->Listar1Produto($id);
+    $dados = $produto->Listar1Produto($id, 1);
     if ($dados == false) {
         header('location: produtos.php?erro=1');
     }
@@ -20,8 +20,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 <section id="produto-selecionado">
 
-    <h1><?= $dados['nome'] ?></h1>
-
+    <div style="display: flex; align-items: center; gap: 50px; ">
+        <h1><?= $dados['nome'] ?></h1>
+        <a href="editar-produto.php?id=<?=$id?>"> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>
+    </div>
     <figure>
 
         <div class="produto-img-tag">
@@ -44,9 +46,9 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     </figure>
 
     <div class="preco-adicionar">
-        <p class="preco">Preço: R$ <?= number_format($dados['preco'], 2, '.', ',') ?></p>
+        <p class="preco">Preço: R$ <?= number_format($dados['preco'], 2, ',', '.') ?></p>
         <div class="adicionar">
-            <button class="botao-click"><a href="produtos.php?produto-adicionar=<?= $dados['id'] ?>" class="botao-click">EU QUEROOO!</a></button>
+            <button class="botao-click"><a href="produtos.php?produto-adicionar=<?= $id ?>" class="botao-click">EU QUEROOO!</a></button>
         </div>
     </div>
 

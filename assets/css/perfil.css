@@ -21,6 +21,9 @@
     margin-bottom: 10px;
 }
 
+#image-preview{
+    border-radius: 100%;
+}
 
 #editar-perfil .dados-pessoais{
     margin-top: 50px;

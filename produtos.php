@@ -1,7 +1,7 @@
 <?php
 $title = "Produtos";
 include "./includes/header.php";
-include "./classes/ListarProduto.php";
+include "./classes/Produto.php";
 
 $produto = new Produto();
 $dados = $produto->ListarProdutos(1);
@@ -15,6 +15,7 @@ if (isset($_GET['busca']) && !empty($_GET['busca'])) {
 // Adiciona produtos ao carrinho
 if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
     $id_produto = $_GET['produto-adicionar'];
+    $_SESSION['carrinho'][$id_produto];
     $_SESSION['carrinho'][$id_produto]++;
     header('location: produtos.php');
 }
@@ -69,7 +70,7 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
                 
                 <?php if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
                     foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
-                        $dados = $produto->Listar1Produto($id_produto);
+                        $dados = $produto->Listar1Produto($id_produto, 1);
                         if (isset($dados) && !empty($dados)) { ?>
                             <div class="carrinho-item">
                                 <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="Foto de <?= $dados['nome'] ?>">
