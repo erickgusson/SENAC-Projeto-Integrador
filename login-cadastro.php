@@ -18,8 +18,7 @@ if (
 
     $user = new User();
     $resultadoLogin = $user->Logar($usuario, $password);
-    $_POST['email'];
-    $_POST['senha'];
+    header('location: login-cadastro.php');
 }
 
 //============= Para cadastrar ============= 
@@ -57,7 +56,7 @@ if (
 
         <span class="login-mensagem">
             <?php
-            if (!empty($resultadoLogin)) {
+            if (isset($resultadoLogin)) {
                 echo $resultadoLogin;
                 // header('location:https://www.youtube.com/watch?v=dQw4w9WgXcQ');
             }

@@ -10,7 +10,7 @@ class Produto
             $operacao = "ORDER BY vendidos DESC";
         }
         if ($opcao == 2) {
-            $operacao = "OR ativo = 0";
+            $operacao = "OR ativo = '0' ORDER BY vendidos DESC";
         }
 
         include 'conexao.php';
@@ -26,14 +26,14 @@ class Produto
 
         try {
             if ($opcao == 1) {
-                $operacao = "ativo = 1";
+                $operacao = "and status = '1'";
             }
             if ($opcao == 2) {
-                $operacao = "ativo = 0";
+                $operacao = "";
             }
 
             include 'conexao.php';
-            $query = "SELECT * FROM tb_produtos WHERE id = {$id} AND {$operacao}";
+            $query = "SELECT * FROM tb_produtos WHERE id = {$id} {$operacao}";
             $resultado = $conexao->query($query)->fetch();
             
             $conexao = null;

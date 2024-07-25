@@ -32,18 +32,19 @@ td {
     font-size: 24px;
 }
  
-th:not(:first-child), td:not(:first-child) {
-    flex: 3;
-}
 
 th, td {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    justify-content: start;
+    
     flex: 5;
-
+    
     gap: 20px;
+}
+
+th:not(:first-child), td:not(:first-child) {
+    flex: 3;
 }
 
 th a {
@@ -83,8 +84,14 @@ th a:hover {
 a {
     text-decoration: none;
     color: black;
+    font-weight: 700;
+    transition: 200ms;
 }
 
 .operacao-menos:hover {
+    color: red;
+}
 
+.operacao-mais:hover {
+    color: red;
 }

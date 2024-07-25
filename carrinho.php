@@ -51,16 +51,16 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
             if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
 
                 foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
-                    $dados = $produto->ListarProdutos($id_produto, 1);
+                    $dados = $produto->Listar1Produto($id_produto, 1);
 
                     if (isset($dados) && !empty($dados)) { ?>
                         <tr>
-                            <td>
+                            <td style="justify-self: flex-start; width: 100%">
                                 <a href="produto-selecionado.php?=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto"></a>
                                 <label><?= $dados['nome'] ?></label>
                             </td>
                             <td>R$ <span><?=number_format($dados['preco'], 2, ',', '.') ?></span></td>
-                            <td><a class="operacao operacao-menos" href="carrinho.php?subtrair=<?= $dados['id'] ?>"> - </a> <?= $quantidade ?> <a class="operacao operacao-mais" href="carrinho.php?adicionar=<?= $dados['id'] ?>"> + </a></td>
+                            <td><a class="operacao operacao-menos" href="carrinho.php?subtrair=<?= $dados['id'] ?>"> - </a> </> <?= $quantidade ?> <a class="operacao operacao-mais" href="carrinho.php?adicionar=<?= $dados['id'] ?>"> + </a></></td>
                             <td>R$ <span><?=number_format(($dados['preco'] * $quantidade), 2, ',', '.')?></span></td>
                             <td><a href="carrinho.php?deletar=<?= $dados['id'] ?>"><button class="btn-deletar"></button></a></td>
                         </tr>

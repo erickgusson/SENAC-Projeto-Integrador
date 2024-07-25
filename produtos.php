@@ -15,9 +15,9 @@ if (isset($_GET['busca']) && !empty($_GET['busca'])) {
 // Adiciona produtos ao carrinho
 if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
     $id_produto = $_GET['produto-adicionar'];
+    header('location: produtos.php');
     $_SESSION['carrinho'][$id_produto];
     $_SESSION['carrinho'][$id_produto]++;
-    header('location: produtos.php');
 }
 
 ?>
@@ -67,7 +67,7 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
             </div>
 
             <div class="carrinho">
-                
+
                 <?php if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
                     foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
                         $dados = $produto->Listar1Produto($id_produto, 1);
