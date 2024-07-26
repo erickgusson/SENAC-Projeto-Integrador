@@ -68,10 +68,10 @@
 }
 
 #home-produtos .produtos .produtos-bottom {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-around;
-    gap: 20px 0;
+    gap: 20px;
 }
 
 #home-produtos .produtos .produtos-bottom a {
