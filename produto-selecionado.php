@@ -22,7 +22,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
     <div style="display: flex; align-items: center; gap: 50px; ">
         <h1><?= $dados['nome'] ?></h1>
-        <a href="editar-produto.php?id=<?=$id?>"> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>
+        <?= (isset($_SESSIO['nivel'] == 'admin') ? '<a href="editar-produto.php?id=<?=$id?>"> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>' : '' ?>
+        
     </div>
     <figure>
 
