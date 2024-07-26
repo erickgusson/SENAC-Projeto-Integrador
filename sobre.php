@@ -1,6 +1,11 @@
 <?php
 $title = "Sobre";
-include "./includes/header.php" ?> 
+include "./includes/header.php" ;
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
+
+?> 
 
 <section class="quem-somos">
     <br>

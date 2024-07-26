@@ -22,9 +22,12 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
     <div style="display: flex; align-items: center; gap: 50px; ">
         <h1><?= $dados['nome'] ?></h1>
-        <?php if (isset($_SESSION['usuario'])) {
-        ($_SESSION['nivel'] !== "user") ? '<a href="editar-produto.php?id=" . $id . "> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>' : '';
-}?>
+        <?php
+        if (isset($_SESSION['usuario'])) {
+            if ($_SESSION['nivel'] !== "user") {
+                echo '<a href="editar-produto.php?id=' . $dados['id'] . '"> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>';
+            }
+        } ?>
     </div>
     <figure>
 
@@ -50,7 +53,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <div class="preco-adicionar">
         <p class="preco">Preço: R$ <?= number_format($dados['preco'], 2, ',', '.') ?></p>
         <div class="adicionar">
-            <button class="botao-click"><a href="produtos.php?produto-adicionar=<?= $id ?>" class="botao-click">EU QUEROOO!</a></button>
+            <button class="botao-click"><a href="produtos.php?produto-adicionar=<?= $dados['id'] ?>" class="botao-click">EU QUEROOO!</a></button>
         </div>
     </div>
 

@@ -1,8 +1,16 @@
 <?php
+
 $title = "Editar Produto";
 include "./includes/header.php";
 include "./classes/Produto.php";
 
+if (empty($_SESSION['usuario']) || !isset($_SESSION['usuario']) || $_SESSION['nivel'] == "user") {
+    echo "<script>history.go(-1);</script>";
+}
+
+if (isset($_SESSION['usuario'])) {
+    // header('location: index.php');
+}
 
 $editar = new Produto();
 
