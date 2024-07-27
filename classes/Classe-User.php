@@ -13,7 +13,7 @@ class User
         $resultado = $conexao->query($script)->fetch();
         if (!empty($resultado)) {
             session_start();
-            $_SESSION['id'] = $resultado['id'];
+            $_SESSION['id'] = $resultado['id_usuario'];
             $_SESSION['foto_perfil'] = $resultado['foto_perfil'];
             $_SESSION['usuario'] = $resultado['login'];
             $_SESSION['nivel'] = $resultado['nivel'];
@@ -98,5 +98,16 @@ class User
             $conexao = null;
             return "Erro <br>" . $erro->getMessage();
         }
+    }
+
+    public function EditarPerfil($id)
+    {
+
+        include 'conexao.php';
+        $script = "SELECT * FROM tb_user WHERE id = '{$id}'";
+        $resultado = $conexao->query($script)->fetch();
+
+        $conexao = null;
+        return $resultado;
     }
 }

@@ -2,30 +2,33 @@
 
 $title = "Editar Produto";
 include "./includes/header.php";
-include "./classes/Produto.php";
+include "./classes/Classe-Produto.php";
 
+$editar = new Produto();
+
+// (validação) Verifica se o usuario está vazio ou se não está definido ou se o nivel de acesso é usuário, caso seja ele direciona para a página anterior.
 if (empty($_SESSION['usuario']) || !isset($_SESSION['usuario']) || $_SESSION['nivel'] == "user") {
     echo "<script>history.go(-1);</script>";
 }
 
-if (isset($_SESSION['usuario'])) {
-    // header('location: index.php');
-}
-
-$editar = new Produto();
-
-if (isset($_GET['id']) && !empty($_GET['id'])) {
+// guarda o id passado no GET
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
+    $dados = $editar->Listar1Produto($id, 2); // listar 1 produto (selecionado)
 
-    $dados = $editar->Listar1Produto($id, 2);
-} else {
-    header('location: produtos.php');
+    // caso o produto não seja encontrado, retonra a pagina de produtos.
+    if ($dados == false) {
+        header('location: produtos.php?erro=1');
+    }
 }
 
+// Se o botão foi pressionado ele  envia pro post o atualizar-status e executa a função
+if (isset($_POST['atualizar-status'])) {
+    $editar->StatusProduto($id, $dados['status']);
+}
 
-if (isset($_POST) && !empty($_POST)) {
-
-
+// Verifica se o botão atualizar foi pressionado e executa a função de atualizar os dados do produto
+if (isset($_POST['atualizar']) && !empty($_POST['atualizar'])) {
     $imagem = $_FILES['upload'];
 
     $nomeCaminhoDaImagem = 'assets/img/produtos/' . round(microtime(true)) . $imagem['name'];
@@ -44,10 +47,12 @@ if (isset($_POST) && !empty($_POST)) {
 
 
 <main>
+    <?php
+    ?>
 
     <h1>Editar Produto</h1>
 
-    <div id="cadastro-produto">
+    <div id="editar-produto">
 
         <form action="#" method="POST" class="caixa" enctype="multipart/form-data">
             <section class="esquerda">
@@ -80,13 +85,15 @@ if (isset($_POST) && !empty($_POST)) {
                 <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto" src="./assets/img/produtos/<?= $dados['imagem'] ?>"></label>
             </section>
 
-            <input type="submit" value="Atualizar" class="botao-click">
+            <input type="submit" name="atualizar" class="botao-click" value="Atualizar">
 
         </form>
-
-        <form action="#" method="post">
-            
-            <?= ($dados['status'] == 1) ? 'ativar' : 'desativar'; ?>
+        
+        <!-- Botão para mostrar a função de ativar e desativar o produto ( para os usuários apenas) -->
+        <form action="#" method="POST">
+            <button type="submit" name="atualizar-status" class="botao-click">
+                <?= ($dados['status'] == 1) ? 'desativar' : 'ativar'; ?>
+            </button>
         </form>
 
     </div>

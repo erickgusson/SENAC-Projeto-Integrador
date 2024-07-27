@@ -1,7 +1,7 @@
 <?php
 $title = "Carrinho";
 include "./includes/header.php";
-include "./classes/Produto.php";
+include "./classes/Classe-Produto.php";
 
 $produto = new Produto();
 
@@ -56,7 +56,7 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
                     if (isset($dados) && !empty($dados)) { ?>
                         <tr>
                             <td style="justify-self: flex-start; width: 100%">
-                                <a href="produto-selecionado.php?=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto"></a>
+                                <a href="produto-selecionado.php?=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto" width="100px" height="100px"></a>
                                 <label><?= $dados['nome'] ?></label>
                             </td>
                             <td>R$ <span><?=number_format($dados['preco'], 2, ',', '.') ?></span></td>

@@ -1,6 +1,6 @@
 <?php
 include "./includes/header.php";
-include "./classes/Produto.php";
+include "./classes/Classe-Produto.php";
 
 $produto = new Produto();
 
@@ -11,11 +11,19 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     if ($dados == false) {
         header('location: produtos.php?erro=1');
     }
+    
 } else {
     header('location: produtos.php?erro=1');
     echo "<script>history.go(-1);</script>";
     echo "<script>window.location.href = 'produtos.php?erro=1';</script>";
 }
+
+if (isset($_SESSION['nivel']) != 'admin' || !isset($_SESSION['nivel'])) {
+    if ($dados['status'] == 0) {
+        header('location: produtos.php?erro=1');
+    }
+}
+
 ?>
 
 <section id="produto-selecionado">
@@ -25,7 +33,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         <?php
         if (isset($_SESSION['usuario'])) {
             if ($_SESSION['nivel'] !== "user") {
-                echo '<a href="editar-produto.php?id=' . $dados['id'] . '"> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>';
+                echo '<a href="produto-editar.php?id=' . $dados['id'] . '"> <img src="./assets/img/icon/icon-edit.svg" alt="" width="40px"></a>';
             }
         } ?>
     </div>

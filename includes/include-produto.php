@@ -2,7 +2,7 @@
 
 foreach ($dados as $valor) { ?>
 
-    <form class="item">
+    <form class="item <?= ($valor['status'] == 0) ? 'escondido' : '' ?>">
         <a href="produto-selecionado.php?id=<?= $valor['id'] ?>">
             <img src="assets/img/produtos/<?= $valor['imagem'] ?>" alt="<?= $valor['nome'] ?>">
             <p><?= $valor['nome'] ?></p>

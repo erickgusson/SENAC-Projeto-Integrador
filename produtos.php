@@ -1,7 +1,7 @@
 <?php
 $title = "Produtos";
 include "./includes/header.php";
-include "./classes/Produto.php";
+include "./classes/Classe-Produto.php";
 
 $produto = new Produto();
 $dados = $produto->ListarProdutos(1);
@@ -21,6 +21,12 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
 }
 
 ?>
+
+<style>
+    .escondido {
+        <?= ($_SESSION['nivel'] == "admin") ? 'display: flex !important' : '' ?>
+    }
+</style>
 
 
 <section>
@@ -56,7 +62,7 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
             </form>
 
             <div class="lista-produtos">
-                <?php include "./includes/produto.php"; ?>
+                <?php include "./includes/include-produto.php"; ?>
             </div>
         </div>
 

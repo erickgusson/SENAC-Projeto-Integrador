@@ -5,7 +5,7 @@
 <footer id="footer">
     <div class="row">
         <div class="col">
-            <a href="#">
+            <a href="index.php">
                 <img src="assets/img/logo/Logo.png" alt="Logo">
             </a>
 

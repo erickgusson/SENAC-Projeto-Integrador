@@ -2,6 +2,14 @@
 $title = "Editar Perfil";
 include "./includes/header.php";
 
+if(!isset($_SESSION['id'])) {
+    echo "<script>history.go(-1);</script>";
+}
+
+if ($_SESSION['id'] != $_GET['id']) {
+    echo "<script>history.go(-1);</script>";
+}
+
 ?>
 
 <h1>Editar Perfil</h1>

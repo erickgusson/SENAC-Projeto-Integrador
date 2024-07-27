@@ -59,11 +59,11 @@
 
                             <ul>
                                 <li></li>
-                                <li><a href="perfil.php">Perfil</a></li>
-                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="cadastrar-produto.php">Cadastrar Produto</a></li>' : "" ?>
-                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="editar-produto.php">Editar Produto</a></li>' : "" ?>
-                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="alterar-usuarios.php">Alterar Usuarios</a></li>' : "" ?>
-                                <li><a href="finalizar-compra.php">Finalizar compras</a></li>
+                                <li><a href="perfil-editar.php?id=<?=$_SESSION['id']?>">Perfil</a></li>
+                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="produto-cadastrar.php">Cadastrar Produto</a></li>' : "" ?>
+                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="produtos.php">Editar Produto</a></li>' : "" ?>
+                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="usuarios-alterar.php">Alterar Usuarios</a></li>' : "" ?>
+                                <li><a href="carrinho-finalizar.php">Finalizar compras</a></li>
                                 <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </div>

@@ -1,6 +1,6 @@
 <?php
 include "./includes/header.php";
-include "./classes/Produto.php";
+include "./classes/Classe-Produto.php";
 
 $produto = new Produto();
 $maisVendidos = $produto->ListarProdutos(1);
@@ -19,7 +19,7 @@ $maisVendidos = $produto->ListarProdutos(1);
         </div>
 
         <div class="produtos-bottom">
-            <?php include "./includes/produto-home.php"; ?>
+            <?php include "./includes/include-produto-home.php"; ?>
         </div>
 
     </section>

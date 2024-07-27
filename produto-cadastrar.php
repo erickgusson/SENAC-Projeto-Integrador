@@ -1,7 +1,7 @@
 <?php
 $title = "Cadastrar Produto";
 include "./includes/header.php";
-include "./classes/Produto.php";
+include "./classes/Classe-Produto.php";
 
 $cadastro = new Produto();
 

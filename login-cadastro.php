@@ -1,7 +1,7 @@
 <?php
 $title = "Login/Cadastro";
 include "./includes/header.php";
-include "./classes/User.php";
+include "./classes/Classe-User.php";
 
 if (isset($_SESSION['usuario'])) {
     echo "<script>history.go(-1);</script>";

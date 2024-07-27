@@ -1,57 +1,75 @@
+/* input[type="search"] {
+    outline: none;
+    color: #7B429B;
+} */
 
-#editar-produto div{
-    display: flex;
-    margin: 10px;
+#editar-produto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  gap: 30px;
 }
 
-#editar-produto{
-    display: flex;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    flex-direction: column;
-    gap: 30px;
+#editar-produto form{
+  display: flex;
+  margin: 10px;
+  align-items: flex-start;
 }
 
-/* ===========GRID============ */
-.container-editar{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-    gap: 20px;
-    grid-template-rows: min-content;
-    grid-template-areas:
-      "foto-perfil nome-produto icone-editar";
-    
-  }
+#editar-produto form.caixa{
+  padding: 20px 30px;
+  gap: 40px;
+  display: flex;
+  width: 70%;
 
-  .foto-perfil {
-    display: grid;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    justify-items: stretch;
-    grid-area: foto-perfil;
+}
+/* =========== ESQUERDA =========== */
+#editar-produto form.caixa .esquerda{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+}
 
+#editar-produto input[type="text"],
+#editar-produto input[type="number"]
+{
+  outline: none;
+  width: 100%;
+  font-size: 20px;
+}
 
+#editar-produto .esquerda span.textarea{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: grey;
+}
+#editar-produto .esquerda span textarea{
+  border-top: 1px solid grey;
+  padding: 10px;
 
-  }
+  width: 100%;
   
-  .nome-produto {
-    display: grid;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    justify-items: stretch;
-    grid-area: nome-produto;
+  outline: none;
+  line-height: 20px;
+  font-size: 16px;
+}
 
-    background-color: green;
-  }
+/* =========== DIREITA =========== */
+#editar-produto form.caixa .direita{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
-  .icone-editar {
-    display: grid;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    justify-items: stretch;
-    grid-area: icone-editar;
+  gap: 20px;
+  font-size: 20px;
+  outline: none;
+}
 
-    background-color: blue;
-
-  }
+  

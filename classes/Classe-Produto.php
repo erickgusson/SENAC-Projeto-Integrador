@@ -6,15 +6,16 @@ class Produto
     public function ListarProdutos($opcao)
     {
 
-        if ($opcao == 1) {
-            $operacao = "ORDER BY vendidos DESC";
-        }
-        if ($opcao == 2) {
-            $operacao = "OR ativo = '0' ORDER BY vendidos DESC";
-        }
+        // if ($opcao == 1) {
+        //     $operacao = "ORDER BY vendidos DESC";
+        // }
+        // if ($opcao == 2) {
+        //     $operacao = "OR ativo = '0' ORDER BY vendidos DESC";
+        // }
 
         include 'conexao.php';
-        $query = "SELECT * FROM tb_produtos WHERE status = '1' {$operacao}";
+        // $query = "SELECT * FROM tb_produtos WHERE status = '1' {$operacao}";
+        $query = "SELECT * FROM tb_produtos";
         $resultado = $conexao->query($query)->fetchAll();
         
         $conexao = null;
@@ -25,15 +26,16 @@ class Produto
     {
 
         try {
-            if ($opcao == 1) {
-                $operacao = "and status = '1'";
-            }
-            if ($opcao == 2) {
-                $operacao = "";
-            }
+            // if ($opcao == 1) {
+            //     $operacao = "and status = '1'";
+            // }
+            // if ($opcao == 2) {
+            //     $operacao = "";
+            // }
 
             include 'conexao.php';
-            $query = "SELECT * FROM tb_produtos WHERE id = {$id} {$operacao}";
+            // $query = "SELECT * FROM tb_produtos WHERE id = {$id} {$operacao}";
+            $query = "SELECT * FROM tb_produtos WHERE id = {$id}";
             $resultado = $conexao->query($query)->fetch();
             
             $conexao = null;
@@ -99,12 +101,12 @@ class Produto
         // ativar produto
         if ($status == 0 ){
             $scriptProduto = "UPDATE tb_produtos SET status = '1' WHERE id = '$id'";
-            header('location: editar-produto?id=' .$id);
+            header('location: produto-editar.php?id=' .$id);
         } 
         //desativar
         else {
             $scriptProduto = "UPDATE tb_produtos SET status = '0' WHERE id = '$id'";
-            header('location: editar-produto?id=' .$id);
+            header('location: produto-editar.php?id=' .$id);
         }
         
         $conexao->prepare($scriptProduto)->execute([]);
