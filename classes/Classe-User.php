@@ -13,18 +13,19 @@ class User
         $resultado = $conexao->query($script)->fetch();
         if (!empty($resultado)) {
             session_start();
-            $_SESSION['id'] = $resultado['id_usuario'];
+            $_SESSION['id'] = $resultado['id'];
+            $_SESSION['id_pessoa'] = $resultado['id_usuario'];
             $_SESSION['foto_perfil'] = $resultado['foto_perfil'];
             $_SESSION['usuario'] = $resultado['login'];
             $_SESSION['nivel'] = $resultado['nivel'];
 
             // sleep(5);
-            // header('location: index.php');
+            header('location: index.php');
             $conexao = null;
-            return "<script>history.go(-1);</script>";
+            return "";
         } else {
-            return '<span class="login-mensagem">Usuario não encontrado ou desativado.</span>';
             $conexao = null;
+            return 'Usuario não encontrado ou desativado.';
         }
     }
 
@@ -67,6 +68,13 @@ class User
             //Tabela de dados pessoais
             include 'conexao.php';
 
+            $script = "SELECT * FROM tb_user WHERE login = '{$email}' AND status = '1'";
+            $resultado1 = $conexao->query($script)->fetch();
+
+            if (!empty($resultado1)) {
+                return "login já existe";
+            }
+
             $scriptPessoa = "INSERT INTO tb_pessoa (nome, email, telefone, CEP, cidade, bairro, rua, numero) VALUES (:nome, :email, :telefone, :cep, :cidade, :bairro, :rua, :numero)";
             $resultado = $conexao->prepare($scriptPessoa);
 
@@ -83,7 +91,7 @@ class User
 
             // Tabela de usuario
             $id_usuario = $conexao->lastInsertId();
-            $scriptUsuario = "INSERT INTO tb_user (id_usuario, login, senha, ativo) VALUES (:id, :login, :senha, 1)";
+            $scriptUsuario = "INSERT INTO tb_user (id_usuario, login, senha) VALUES (:id, :login, :senha)";
 
             $preparoUsuario = $conexao->prepare($scriptUsuario)->execute([
                 ':id' => $id_usuario,
@@ -91,7 +99,7 @@ class User
                 ':senha' => $senha
             ]);
 
-            header('location: login-cadastro.php');
+            // header('location: login-cadastro.php');
             $conexao = null;
             return "Usuário cadastrado com sucesso id: " . $id_usuario;
         } catch (PDOException $erro) {

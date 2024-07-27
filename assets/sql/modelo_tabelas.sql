@@ -41,11 +41,18 @@ CREATE TABLE tb_produtos (
     `ativo` ENUM('inativo', 'ativo') DEFAULT 'ativo'
 )
 
-CREATE Table tb_produtos_tags (
+CREATE TABLE tb_produtos_tags (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `id_produto` INT,
     `id_tag` INT
 )
 
--- CREATE TABLE vendas;
+CREATE TABLE tb_vendas (
+    `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `id_usuario` INT,
+    `id_produto` INT,
+    `vendidos` INT,
+    `total` FLOAT(5, 2)
+);

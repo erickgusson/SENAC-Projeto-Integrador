@@ -1,4 +1,5 @@
 <?php
+
 $title = "Login/Cadastro";
 include "./includes/header.php";
 include "./classes/Classe-User.php";
@@ -10,7 +11,7 @@ if (isset($_SESSION['usuario'])) {
 
 // =============  Para Logar ============= 
 if (
-    isset($_POST['email']) && 
+    isset($_POST['email']) &&
     isset($_POST['senha'])
 ) {
     $usuario = $_POST['email'];
@@ -18,12 +19,23 @@ if (
 
     $user = new User();
     $resultadoLogin = $user->Logar($usuario, $password);
-    header('location: login-cadastro.php');
+    if (!str_contains($resultadoLogin, 'Usuario não encontrado ou desativado.')) {
+        header('refresh: 0');
+    }
 }
 
 //============= Para cadastrar ============= 
 if (
-    isset($_POST['nome'])
+    !empty(isset($_POST['nome'])) &&
+    !empty(isset($_POST['emailCadastro'])) &&
+    !empty(isset($_POST['senhaCadastro'])) &&
+    !empty(isset($_POST['senhaCadastro2'])) &&
+    !empty(isset($_POST['telefone'])) &&
+    !empty(isset($_POST['cep'])) &&
+    !empty(isset($_POST['rua'])) &&
+    !empty(isset($_POST['numero'])) &&
+    !empty(isset($_POST['bairro'])) &&
+    !empty(isset($_POST['cidade']))
 ) {
     $nome = $_POST['nome'];
     $email = $_POST['emailCadastro'];
@@ -38,7 +50,14 @@ if (
 
     $user = new User();
     $resultadoCadastro = $user->Cadastrar($nome, $email, $senha, $confirmarSenha, $telefone, $cep, $rua, $numero, $bairro, $cidade);
+    if (str_contains($resultadoCadastro, 'Usuário cadastrado com sucesso id:')) {
+        header('refresh: 0');
+    } else {
+        echo "<script>alert('" . $resultadoCadastro . "');</script>";
+    }
 }
+
+
 ?>
 
 <!-- <?= var_dump($resultadoLogin); ?> -->
@@ -56,7 +75,7 @@ if (
 
         <span class="login-mensagem">
             <?php
-            if (isset($resultadoLogin)) {
+            if (!empty(isset($resultadoLogin))) {
                 echo $resultadoLogin;
                 // header('location:https://www.youtube.com/watch?v=dQw4w9WgXcQ');
             }
@@ -68,6 +87,14 @@ if (
     </form>
 
     <form action="#" method="POST" class="caixa caixa-cadastro escondido" id="form-cadastro">
+        <span class="login-mensagem">
+            <?php
+            if (isset($resultadoCadastro)) {
+                echo $resultadoCadastro;
+                // header('location:https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+            }
+            ?>
+        </span>
         <h2>CADASTRAR</h2>
 
         <div class="campos">

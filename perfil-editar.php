@@ -2,13 +2,19 @@
 $title = "Editar Perfil";
 include "./includes/header.php";
 
-if(!isset($_SESSION['id'])) {
+if(!isset($_SESSION['id_pessoa'])) {
     echo "<script>history.go(-1);</script>";
 }
 
-if ($_SESSION['id'] != $_GET['id']) {
-    echo "<script>history.go(-1);</script>";
-}
+include './classes/conexao.php';
+$script = "SELECT * FROM tb_pessoa INNER JOIN tb_user on tb_pessoa.id = tb_user.id_usuario WHERE tb_user.id_usuario =" . $_SESSION['id_pessoa'];
+$dados = $conexao->query($script)->fetch();
+
+// echo "<pre>";
+// print_r($dados);
+// echo "</pre>";
+
+$conexao = null;
 
 ?>
 
@@ -24,7 +30,7 @@ if ($_SESSION['id'] != $_GET['id']) {
                     <section class="foto">
                         <!-- Enviar Imagem -->
                         <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden>
-                        <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto" style="cursor: default; padding: 0; border-radius: 100%;"><br></label>
+                        <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto" style="cursor: default; padding: 0; border-radius: 100%;" src="assets/img/user/<?= $dados['foto_perfil'] ?>"><br></label>
                         <label for="upload" class="botao-geral" style="cursor: pointer" ;><img src="assets/img/icon/icon-upload.png" alt="">Enviar imagem (.png)</label>
                     </section>
                 </div>
@@ -35,12 +41,12 @@ if ($_SESSION['id'] != $_GET['id']) {
 
                         <!-- Nome -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-user.png" alt="icone representando usuário ">
-                            <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                            <input type="text" name="nome" id="nome" placeholder="Nome" required value="<?= $dados['nome'] ?>">
                         </span>
 
                         <!-- Email -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="icone de carta representando email">
-                            <input type="email" name="emaiEditar" id="email" placeholder="Email" required>
+                            <input type="email" name="emaiEditar" id="email" placeholder="Email" required value="<?= $dados['email'] ?>">
                         </span>
                     </div>
 
@@ -48,7 +54,7 @@ if ($_SESSION['id'] != $_GET['id']) {
 
                         <!-- Senha -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="icone de cadeado">
-                            <input type="password" name="senhaAtual" id="senhaAtual" placeholder="Senha atual" required>
+                            <input type="password" name="senhaAtual" id="senhaAtual" placeholder="Senha atual" required value="<?= $dados['senha'] ?>">
                         </span>
 
                         <!-- Nova Senha -->
@@ -65,12 +71,12 @@ if ($_SESSION['id'] != $_GET['id']) {
 
                         <!-- Telefone -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="icone de telefone">
-                            <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
+                            <input type="text" name="telefone" id="telefone" placeholder="Telefone" required value="<?= $dados['telefone'] ?>">
                         </span>
 
                         <!-- CEP -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
-                            <input type="text" name="cep" id="cep" placeholder="CEP" required>
+                            <input type="text" name="cep" id="cep" placeholder="CEP" required value="<?= $dados['CEP'] ?>">
                         </span>
                     </div>
 
@@ -78,12 +84,12 @@ if ($_SESSION['id'] != $_GET['id']) {
 
                         <!-- Rua -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
-                            <input type="text" name="rua" id="rua" placeholder="Rua" required>
+                            <input type="text" name="rua" id="rua" placeholder="Rua" required value="<?= $dados['rua'] ?>">
                         </span>
 
                         <!-- Nº -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa">
-                            <input type="text" name="numero" id="numero" placeholder="Nº" required>
+                            <input type="text" name="numero" id="numero" placeholder="Nº" required value="<?= $dados['numero'] ?>">
                         </span>
                     </div>
 
@@ -91,12 +97,12 @@ if ($_SESSION['id'] != $_GET['id']) {
 
                         <!-- Bairro -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
-                            <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+                            <input type="text" name="bairro" id="bairro" placeholder="Bairro" required value="<?= $dados['bairro'] ?>">
                         </span>
 
                         <!-- Cidade -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
-                            <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+                            <input type="text" name="cidade" id="cidade" placeholder="Cidade" required value="<?= $dados['cidade'] ?>">
                         </span>
                     </div>
                 </div>
