@@ -108,14 +108,30 @@ class User
         }
     }
 
-    public function EditarPerfil($id)
+    public function VisualizarPerfil($id)
     {
-
         include 'conexao.php';
-        $script = "SELECT * FROM tb_user WHERE id = '{$id}'";
-        $resultado = $conexao->query($script)->fetch();
+        $script = "SELECT * FROM tb_pessoa INNER JOIN tb_user on tb_pessoa.id = tb_user.id_usuario WHERE tb_user.id_usuario =" . $id;
+        $dados = $conexao->query($script)->fetch();
 
         $conexao = null;
-        return $resultado;
+        return $dados;
+    }
+
+    public function EditarPerfil($id, $id_pessoa, $imagem, $nome, $email, $senhaNova, $telefone, $cep, $rua, $numero, $bairro, $cidade)
+    {
+        include 'conexao.php';
+
+        if (!empty($imagem)) {
+            $scriptUser = "UPDATE tb_user SET login = '$email', senha = '$senhaNova', foto_perfil = '$imagem' WHERE id = '$id'";
+        } else {
+            $scriptUser = "UPDATE tb_user SET login = '$email', senha = '$senhaNova' WHERE id = '$id'";
+        }
+        $conexao->prepare($scriptUser)->execute([]);
+
+        $scriptPessoa = "UPDATE tb_pessoa SET nome = '$nome', email = '$email', telefone = '$telefone', CEP = '$cep', cidade = '$cidade', bairro = '$bairro', rua = '$rua', numero = '$numero' WHERE id = '$id_pessoa'";
+        $conexao->prepare($scriptPessoa)->execute([]);
+
+        $conexao = null;
     }
 }

@@ -1,0 +1,24 @@
+SOBRE O PROJETO
+
+Este projeto foi desenvolvido pela dupla Erick e Renon, inicialmente a ideia do nosso projeto era um site simulando uma loja online, sendo esse uma sorveteria. Essa ideia havia sido escolhida sem um motivo especial. Pensando mais a frente decidimos mudar o tema de uma sorveteria para uma loja de doces, mantendo ainda a ideia da loja online. Essa escolha foi decidida devido a uma ideia de futuramente por em prática essa loja.
+
+Nesse projeto integrador tinha o requisito de por em prática o que já haviamos aprendido e o que ainda iríamos aprender, ou seja, prototipagem e edição de imagens, gerenciamento de banco de dados, HTML (Hypertext Markup Language), CSS(Cascading Style Sheets) e JS(JavaScript) (front-end) e PHP(Hypertext Preprocessor ou Personal Home Page)(backend).
+
+PROTOTIPAGEM
+O projeto foi iniciado pela prototipagem do site utilizando o FIGMA, com o intuito de definir todo o design e telas do site, com o tempo as telas foram aumentando conforme necessida, isso quase até o estágio final do projeto, devido a falta de experiência para saber desde o princípio todas as telas que seriam utilizadas.
+
+BANCO DE DADOS
+Em seguida foi pensando no fluxo de tabelas do banco de dados, utilizando xampp como gerenciador para a linguagem MariaDB(MySQL). Assim como na prototipagem, praticamente até o estágio final do projeto estamos ainda reformulando e criando novas colunas e tabelas conforme necessidade.
+
+FRONT-END
+Após já definido algumas telas na prototipagem, começamos aplicando na prática e desenvolvendo o site em HTMl e CSS e JS, sendo as telas de produtos, home, compra e carrinho, de usuário, cadastro e edição de produtos e usuários entre outras.
+
+BACKEND
+Para o backend utilizamos a linguagem PHP, foi feito toda uma conversão de todo o código, reduzindo grandemente o número de linhas dos arquivos. Graças a isso pode ser evitado muito trabalho repetitivo, usando Classes, Includes de cabeçalho e rodapé por exemplo.
+
+MAIORES DESAFIOS
+De longe o PHP foi o maior desafio no projeto, pois visualmente sua linguagem é um pouco complexa a primeira vista, e sua logica também é um pouco complicada de se aplicar, devido ficar todo momento tendo que misturar as linguagens, abrindo e fechando tags php. Tivemos alguns problemas com armazenar e organizar variáveis nele, além de problemas no uso adequado delas. Porém com erros e tentativas, tudo pode ser realizado com sucesso.
+
+
+CONCLUSÃO
+Apesar do tempo, estresse e dificuldades, concordamos entre nós dois que o resultado foi muito satisfatório. Foi uma grande experiência e aprendizado colocar grande parte do conhecimento em prática em um projeto "real". O Erick tinha mais facilidade e experiência com programação, então isso foi de grande ajuda para o desenvolvimento nosso.

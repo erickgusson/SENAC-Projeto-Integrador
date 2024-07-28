@@ -25,10 +25,11 @@ if (!isset($_SESSION['usuario'])) {
             <div class="pedido-info caixa">
                 <h3>Resumo do pedido</h3>
                 <ul>
-                    <li>Subtotoal: <span>R$ 80,00</span></li>
-                    <li>Frete: <span>R$ 10,00</span></li>
-                    <li>desconto: <span>R$ 20,00</span></li>
-                    <li>total: <span>R$ 80,00</span></li>
+                    <li></li>
+                    <li>Subtotoal: <span></span></li>
+                    <li>Frete: <span></span></li>
+                    <li>desconto: <span></span></li>
+                    <li>total: <span></span></li>
                 </ul>
             </div>
         </form>

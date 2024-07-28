@@ -15,7 +15,7 @@ class Produto
 
         include 'conexao.php';
         // $query = "SELECT * FROM tb_produtos WHERE status = '1' {$operacao}";
-        $query = "SELECT * FROM tb_produtos";
+        $query = "SELECT * FROM tb_produtos ORDER BY vendidos DESC";
         $resultado = $conexao->query($query)->fetchAll();
         
         $conexao = null;

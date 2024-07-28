@@ -4,6 +4,7 @@ include "./includes/header.php";
 include "./classes/Classe-Produto.php";
 
 $produto = new Produto();
+$total = 0;
 
 if (isset($_GET['subtrair']) && !empty($_GET['subtrair'])) {
     $id_produto = $_GET['subtrair'];
@@ -62,14 +63,25 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
                             <td>R$ <span><?=number_format($dados['preco'], 2, ',', '.') ?></span></td>
                             <td><a class="operacao operacao-menos" href="carrinho.php?subtrair=<?= $dados['id'] ?>"> - </a> </> <?= $quantidade ?> <a class="operacao operacao-mais" href="carrinho.php?adicionar=<?= $dados['id'] ?>"> + </a></></td>
                             <td>R$ <span><?=number_format(($dados['preco'] * $quantidade), 2, ',', '.')?></span></td>
+                            
+                            <?php $total += $dados['preco'] * $quantidade ?>
+
                             <td><a href="carrinho.php?deletar=<?= $dados['id'] ?>"><button class="btn-deletar"></button></a></td>
                         </tr>
             <?php }
                 }
             } ?>
+        
+            <tr style="border-top: 1px dashed black; padding-top: 10px;">
+                <td></td>
+                <td></td>
+                <td><b> TOTAL: </b></td>
+                <td>R$  <?= number_format(($total), 2, ',', '.')?></td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
-    <?= isset($_SESSION['usuario']) ? '<button class="botao-click"><a class="botao-click" href="finalizar-compra.php">Finalizar pedido</a></button>' : '<button class="botao-click"><a class="botao-click" href="login-cadastro.php">Finalizar pedido</a></button>'; ?>
+    <?= isset($_SESSION['usuario']) ? '<button class="botao-click"><a class="botao-click" href="carrinho-finalizar.php">Finalizar pedido</a></button>' : '<button class="botao-click"><a class="botao-click" href="login-cadastro.php">Finalizar pedido</a></button>'; ?>
 
 
 </section>

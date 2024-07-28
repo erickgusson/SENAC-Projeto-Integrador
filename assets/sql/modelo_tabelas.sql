@@ -1,3 +1,4 @@
+-- SQLBook: Code
 CREATE TABLE tb_pessoa (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -53,6 +54,7 @@ CREATE TABLE tb_vendas (
     `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `id_usuario` INT,
     `id_produto` INT,
+    `preco` FLOAT(5, 2),
     `vendidos` INT,
     `total` FLOAT(5, 2)
 );

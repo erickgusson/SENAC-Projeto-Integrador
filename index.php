@@ -5,6 +5,11 @@ include "./classes/Classe-Produto.php";
 $produto = new Produto();
 $maisVendidos = $produto->ListarProdutos(1);
 ?>
+<style>
+    .escondido {
+        <?= ($_SESSION['nivel'] == "admin") ? 'display: flex !important' : '' ?>
+    }
+</style>
 <div class="banner">
     <img src="assets/img/banner-abertura.png" alt="">
 </div>

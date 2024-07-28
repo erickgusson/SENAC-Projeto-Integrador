@@ -1,26 +1,58 @@
 <?php
 $title = "Editar Perfil";
+include "./classes/Classe-User.php";
 include "./includes/header.php";
 
-if(!isset($_SESSION['id_pessoa'])) {
-    echo "<script>history.go(-1);</script>";
+if (!isset($_SESSION['id_pessoa'])) {
+    echo "";
 }
 
-include './classes/conexao.php';
-$script = "SELECT * FROM tb_pessoa INNER JOIN tb_user on tb_pessoa.id = tb_user.id_usuario WHERE tb_user.id_usuario =" . $_SESSION['id_pessoa'];
-$dados = $conexao->query($script)->fetch();
+$perfil = new User();
+
+$dados = $perfil->VisualizarPerfil($_SESSION['id_pessoa']);
+
+
 
 // echo "<pre>";
 // print_r($dados);
 // echo "</pre>";
 
-$conexao = null;
+if (!empty(isset($_POST['nome'])) && !empty(isset($_POST['emailEditar'])) && !empty(isset($_POST['senhaAtual']))) {
+    $imagem = $_FILES['upload'];
+    
+    $nomeCaminhoDaImagem = 'assets/img/user/' . round(microtime(true)) . $imagem['name'];
+    move_uploaded_file($imagem['tmp_name'], $nomeCaminhoDaImagem);
+    $imagem = $imagem['name'];
 
+    if (!empty($imagem)) {
+        $imagem = round(microtime(true)) . $imagem;
+    }
+
+    $nome = $_POST['nome'];
+    $email = $_POST['emailEditar'];
+    $senha = $_POST['senhaAtual'];
+
+    if (!empty($_POST['senhaNova'])) {
+        $senhaNova = $_POST['senhaNova'];
+    } else {
+        $senhaNova = $_POST['senhaAtual'];
+    }
+
+    $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $rua = $_POST['rua'];
+    $numero = $_POST['numero'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+
+    $perfil->EditarPerfil($_SESSION['id'], $_SESSION['id_pessoa'], $imagem, $nome, $email, $senhaNova, $telefone, $cep, $rua, $numero, $bairro, $cidade);
+    echo "<script>window.location.href = 'logout.php';</script>";
+}
 ?>
 
 <h1>Editar Perfil</h1>
 <div id="editar-perfil">
-    <form action="#" method="POST" class="caixa caixa-editar" id="form-cadastro">
+    <form action="#" method="POST" class="caixa caixa-editar" id="form-cadastro" enctype="multipart/form-data">
 
         <div>
             <h2>Dados de Usuário</h2>
@@ -41,12 +73,14 @@ $conexao = null;
 
                         <!-- Nome -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-user.png" alt="icone representando usuário ">
+                            <!-- <span style="opacity: .5;">Nome</span> -->
                             <input type="text" name="nome" id="nome" placeholder="Nome" required value="<?= $dados['nome'] ?>">
                         </span>
 
                         <!-- Email -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-email.png" alt="icone de carta representando email">
-                            <input type="email" name="emaiEditar" id="email" placeholder="Email" required value="<?= $dados['email'] ?>">
+                            <!-- <span style="opacity: .5;">Email</span> -->
+                            <input type="email" name="emailEditar" id="email" placeholder="Email" required value="<?= $dados['email'] ?>">
                         </span>
                     </div>
 
@@ -54,12 +88,14 @@ $conexao = null;
 
                         <!-- Senha -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="icone de cadeado">
-                            <input type="password" name="senhaAtual" id="senhaAtual" placeholder="Senha atual" required value="<?= $dados['senha'] ?>">
+                            <!-- <span style="opacity: .5;">Senha</span> -->
+                            <input type="password" name="senhaAtual" id="senhaAtual" placeholder="Senha atual" readonly required value="<?= $dados['senha'] ?>">
                         </span>
 
                         <!-- Nova Senha -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-senha.png" alt="icone de cadeado">
-                            <input type="password" name="senhaNova" id="senhaNova" placeholder="Nova senha" required>
+                            <!-- <span style="opacity: .5;">Nova senha</span> -->
+                            <input type="password" name="senhaNova" id="senhaNova" placeholder="Nova senha">
                         </span>
                     </div>
                 </div>
@@ -71,11 +107,13 @@ $conexao = null;
 
                         <!-- Telefone -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="icone de telefone">
+                            <!-- <span style="opacity: .5;">Tel</span> -->
                             <input type="text" name="telefone" id="telefone" placeholder="Telefone" required value="<?= $dados['telefone'] ?>">
                         </span>
 
                         <!-- CEP -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
+                            <!-- <span style="opacity: .5;">CEP</span> -->
                             <input type="text" name="cep" id="cep" placeholder="CEP" required value="<?= $dados['CEP'] ?>">
                         </span>
                     </div>
@@ -84,11 +122,13 @@ $conexao = null;
 
                         <!-- Rua -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
+                            <!-- <span style="opacity: .5;">Rua</span> -->
                             <input type="text" name="rua" id="rua" placeholder="Rua" required value="<?= $dados['rua'] ?>">
                         </span>
 
                         <!-- Nº -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa">
+                            <!-- <span style="opacity: .5;">Numero</span> -->
                             <input type="text" name="numero" id="numero" placeholder="Nº" required value="<?= $dados['numero'] ?>">
                         </span>
                     </div>
@@ -97,11 +137,13 @@ $conexao = null;
 
                         <!-- Bairro -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
+                            <!-- <span style="opacity: .5;">Bairro</span> -->
                             <input type="text" name="bairro" id="bairro" placeholder="Bairro" required value="<?= $dados['bairro'] ?>">
                         </span>
 
                         <!-- Cidade -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
+                            <!-- <span style="opacity: .5;">Cidade</span> -->
                             <input type="text" name="cidade" id="cidade" placeholder="Cidade" required value="<?= $dados['cidade'] ?>">
                         </span>
                     </div>
@@ -117,4 +159,4 @@ $conexao = null;
 
 
 
-<?php include "./includes/footer.php" ?>
+<?php include "./includes/footer.php"; ?>

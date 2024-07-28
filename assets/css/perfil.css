@@ -1,10 +1,10 @@
-#editar-perfil form{
+#editar-perfil form {
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
 
-#editar-perfil{
+#editar-perfil {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,40 +14,39 @@
     gap: 30px;
 }
 
-#editar-perfil h2{
+#editar-perfil h2 {
     text-align: center;
     font-size: 26px;
     color: #7B429B;
     margin-bottom: 10px;
 }
 
-#image-preview{
+#image-preview {
     border-radius: 100%;
 }
 
-#editar-perfil .dados-pessoais{
+#editar-perfil .dados-pessoais {
     margin-top: 50px;
 }
 
-#editar-perfil input[type="email"], 
+#editar-perfil input[type="email"],
 #editar-perfil input[type="password"],
 #editar-perfil input[type="text"],
 #editar-perfil input[type="tel"],
-#editar-perfil input[type="number"]
-{
+#editar-perfil input[type="number"] {
     outline: none;
     width: 400px;
     padding: 10px 10px;
     font-size: 20px;
 }
 
-#editar-perfil input[type="submit"]{
+#editar-perfil input[type="submit"] {
     align-self: center;
     text-align: center;
-    margin-top: 30px;    
+    margin-top: 30px;
 }
 
-#editar-perfil form.caixa{
+#editar-perfil form.caixa {
     padding: 20px 30px;
     gap: 40px;
 }
@@ -56,20 +55,21 @@
 /* --------------------- */
 
 
-#editar-perfil form .campos{
+#editar-perfil form .campos {
     display: flex;
     column-gap: 20px;
     margin-left: 20px;
 }
 
-#editar-perfil form .dados-pessoais .campos{
+#editar-perfil form .dados-pessoais .campos {
     display: flex;
     column-gap: 120px;
 }
 
-#editar-perfil form .botao-click{
+#editar-perfil form .botao-click {
     align-items: center;
 }
+
 /* ---------GRID --------- */
 .container-perfil {
     display: grid;
@@ -77,37 +77,37 @@
     gap: 20px;
     grid-template-rows: 300px 500px;
     grid-template-areas:
-      "foto-perfil dados-user"
-      "dados-pessoais dados-pessoais";
-    
-  }
+        "foto-perfil dados-user"
+        "dados-pessoais dados-pessoais";
 
-  .foto-perfil {
+}
+
+.foto-perfil {
     display: grid;
     justify-content: space-evenly;
     align-content: space-evenly;
     justify-items: stretch;
     grid-area: foto-perfil;
 
-  }
-  
-  .dados-user {
+}
+
+.dados-user {
     display: grid;
     justify-content: space-evenly;
     align-content: space-evenly;
     justify-items: stretch;
     grid-area: dados-user;
-  }
-  
-  .dados-pessoais {
+}
+
+.dados-pessoais {
     display: grid;
     justify-content: space-evenly;
     align-content: space-evenly;
     justify-items: stretch;
     grid-area: dados-pessoais;
-  }
+}
 
-  .dados-pessoais .campos{
+.dados-pessoais .campos {
     display: flex;
     justify-content: space-around;
-  }
+}
