@@ -20,7 +20,7 @@ class User
             $_SESSION['nivel'] = $resultado['nivel'];
 
             // sleep(5);
-            header('location: index.php');
+            echo "<script>history.go(-1);</script>";
             $conexao = null;
             return "";
         } else {

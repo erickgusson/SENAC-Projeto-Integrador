@@ -5,6 +5,11 @@ include "./classes/Classe-Produto.php";
 
 $cadastro = new Produto();
 
+// (validação) Verifica se o usuario está vazio ou se não está definido ou se o nivel de acesso é usuário, caso seja ele direciona para a página anterior.
+if (empty($_SESSION['usuario']) || !isset($_SESSION['usuario']) || $_SESSION['nivel'] == "user") {
+    echo "<script>history.go(-1);</script>";
+}
+
 // Para cadastrar produtos
 if (isset($_POST) && !empty($_POST)) {
 
@@ -28,7 +33,6 @@ if (isset($_POST) && !empty($_POST)) {
 }
 
 ?>
-
 
 
 <main>

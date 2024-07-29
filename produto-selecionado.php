@@ -18,7 +18,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     echo "<script>window.location.href = 'produtos.php?erro=1';</script>";
 }
 
-if (isset($_SESSION['nivel']) != 'admin' || !isset($_SESSION['nivel'])) {
+if (isset($_SESSION['nivel']) != 'admin') {
     if ($dados['status'] == 0) {
         header('location: produtos.php?erro=1');
     }

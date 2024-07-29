@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php session_start(); ?>
+<?php 
+session_start();
+?>
 
 
 <head>
@@ -29,56 +31,55 @@
 
 <body>
 
-        <header id="menu">
-            <nav class="nav">
-                <div class="row logo">
-                    <div class="col ">
-                        <a href="index.php"><img src="assets/img/logo/Logo.png" alt="Logo"></a>
-                    </div>
-
-                    <div class="col">
-                        <h1>Doces Lunares</h1>
-                    </div>
-                   
-                    <?php
-                    if (isset($_SESSION['usuario'])) { ?>
-                        <button onclick="toggleSidebar()"><img src="assets/img/user/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" width="100px" height="" class="caixa" alt="Perfil"></button>
-
-                        <div class="sidebar" id="sidebar">
-
-                            <section class="sidebar-fechar">
-                                <button class="fechar" onclick="fechar()">X</button>
-                            </section>
-
-                            <section class="sidebar-usuario">
-                                <button onclick="toggleSidebar()"><img src="assets/img/user/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" width="100px" class="caixa" alt="Perfil"></button>
-                                <h2 class="nomeLogin"><?= $_SESSION['usuario'] ?></h2>
-                                <?= $_SESSION['nivel'] !== "user" ? '<p class="nomeLogin">Admin</p>' : ''  ?>
-                                <!-- <h3 class="nomeLogin"><?= $_SESSION['nivel'] ?></h3> -->
-                            </section>
-
-                            <ul>
-                                <li></li>
-                                <li><a href="perfil-editar.php">Perfil</a></li>
-                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="produto-cadastrar.php">Cadastrar Produto</a></li>' : "" ?>
-                                <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="produtos.php">Editar Produto</a></li>' : "" ?>
-                                <!-- <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="usuarios-alterar.php">Alterar Usuarios</a></li>' : "" ?> -->
-                                <li><a href="carrinho-finalizar.php">Finalizar compra</a></li>
-                                <li><a href="logout.php">Logout</a></li>
-                            </ul>
-                        </div>
-
-                    <?php } ?>
+    <header id="menu">
+        <nav class="nav">
+            <div class="row logo">
+                <div class="col ">
+                    <a href="index.php"><img src="assets/img/logo/Logo.png" alt="Logo"></a>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa representando a aba início/home">Início</a>
-                        <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>                   
-                        <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produtos.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
-                        <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
-                        <?= (isset($_SESSION['usuario'])) ? '' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>' ?>
-                    </div>
+
+                <div class="col">
+                    <h1>Doces Lunares</h1>
                 </div>
-            </nav>
-        </header>
-        
+
+                <?php
+                if (isset($_SESSION['usuario'])) { ?>
+                    <button onclick="toggleSidebar()"><img src="assets/img/user/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" width="100px" height="" class="caixa" alt="Perfil"></button>
+
+                    <div class="sidebar" id="sidebar">
+
+                        <section class="sidebar-fechar">
+                            <button class="fechar" onclick="fechar()">X</button>
+                        </section>
+
+                        <section class="sidebar-usuario">
+                            <button onclick="toggleSidebar()"><img src="assets/img/user/<?= (isset($_SESSION['foto_perfil'])) ? $_SESSION['foto_perfil'] : ''; ?>" width="100px" class="caixa" alt="Perfil"></button>
+                            <h2 class="nomeLogin"><?= $_SESSION['usuario'] ?></h2>
+                            <?= $_SESSION['nivel'] !== "user" ? '<p class="nomeLogin">Admin</p>' : ''  ?>
+                            <!-- <h3 class="nomeLogin"><?= $_SESSION['nivel'] ?></h3> -->
+                        </section>
+
+                        <ul>
+                            <li></li>
+                            <li><a href="perfil-editar.php">Perfil</a></li>
+                            <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="produto-cadastrar.php">Cadastrar Produto</a></li>' : "" ?>
+                            <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="produtos.php">Editar Produto</a></li>' : "" ?>
+                            <!-- <?= ($_SESSION['nivel'] !== "user") ? '<li><a href="usuarios-alterar.php">Alterar Usuarios</a></li>' : "" ?> -->
+                            <li><a href="carrinho-finalizar.php">Finalizar compra</a></li>
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+
+                <?php } ?>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="index.php" class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa representando a aba início/home">Início</a>
+                    <a href="carrinho.php" class="botao-geral"><img src="assets/img/icon/icon-carrinho.png" alt="icone de carrinho de compras">Carrinho</a>
+                    <a href="produtos.php" class="botao-geral"><img src="assets/img/icon/icon-produtos.png" alt="icone de um shop representando a aba de produtos">Produtos</a>
+                    <a href="sobre.php" class="botao-geral"><img src="assets/img/icon/icon-quem-somos.png" alt="icone de uma pessoa representando a aba de Quem somos? ">Quem somos</a>
+                    <?= (isset($_SESSION['usuario'])) ? '' : '<a href="login-cadastro.php" class="botao-geral"><img src="assets/img/icon/icon-login.png" alt="icone de uma porta de entrada representando a aba de login">Login</a>' ?>
+                </div>
+            </div>
+        </nav>
+    </header>

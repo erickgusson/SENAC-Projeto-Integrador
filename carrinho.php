@@ -4,7 +4,8 @@ include "./includes/header.php";
 include "./classes/Classe-Produto.php";
 
 $produto = new Produto();
-$total = 0;
+
+$_SESSION['total'] = 0;
 
 if (isset($_GET['subtrair']) && !empty($_GET['subtrair'])) {
     $id_produto = $_GET['subtrair'];
@@ -57,14 +58,14 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
                     if (isset($dados) && !empty($dados)) { ?>
                         <tr>
                             <td style="justify-self: flex-start; width: 100%">
-                                <a href="produto-selecionado.php?=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto" width="100px" height="100px"></a>
+                                <a href="produto-selecionado.php?id=<?= $dados['id'] ?>"><img src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="<?= $dados['nome'] ?>" class="caixa-produto" width="100px" height="100px"></a>
                                 <label><?= $dados['nome'] ?></label>
                             </td>
                             <td>R$ <span><?=number_format($dados['preco'], 2, ',', '.') ?></span></td>
                             <td><a class="operacao operacao-menos" href="carrinho.php?subtrair=<?= $dados['id'] ?>"> - </a> </> <?= $quantidade ?> <a class="operacao operacao-mais" href="carrinho.php?adicionar=<?= $dados['id'] ?>"> + </a></></td>
                             <td>R$ <span><?=number_format(($dados['preco'] * $quantidade), 2, ',', '.')?></span></td>
                             
-                            <?php $total += $dados['preco'] * $quantidade ?>
+                            <?php $_SESSION['total'] += $dados['preco'] * $quantidade ?>
 
                             <td><a href="carrinho.php?deletar=<?= $dados['id'] ?>"><button class="btn-deletar"></button></a></td>
                         </tr>
@@ -76,7 +77,7 @@ if (isset($_GET['deletar-todos']) && !empty($_GET['deletar-todos'])) {
                 <td></td>
                 <td></td>
                 <td><b> TOTAL: </b></td>
-                <td>R$  <?= number_format(($total), 2, ',', '.')?></td>
+                <td>R$  <?= number_format($_SESSION['total'], 2, ',', '.')?></td>
                 <td></td>
             </tr>
         </tbody>
