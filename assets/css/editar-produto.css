@@ -20,9 +20,10 @@
 }
 
 #editar-produto form.caixa{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 20px 30px;
   gap: 40px;
-  display: flex;
   width: 70%;
 
 }

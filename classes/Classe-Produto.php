@@ -17,7 +17,7 @@ class Produto
         // $query = "SELECT * FROM tb_produtos WHERE status = '1' {$operacao}";
         $query = "SELECT * FROM tb_produtos ORDER BY vendidos DESC";
         $resultado = $conexao->query($query)->fetchAll();
-        
+
         $conexao = null;
         return $resultado;
     }
@@ -37,7 +37,7 @@ class Produto
             // $query = "SELECT * FROM tb_produtos WHERE id = {$id} {$operacao}";
             $query = "SELECT * FROM tb_produtos WHERE id = {$id}";
             $resultado = $conexao->query($query)->fetch();
-            
+
             $conexao = null;
             return $resultado;
         } catch (PDOException $th) {
@@ -81,11 +81,10 @@ class Produto
     {
         include 'conexao.php';
 
-        if(!empty($imagem )){
-            $imagem = round(microtime(true)). $imagem;
+        if (!empty($imagem)) {
+            $imagem = round(microtime(true)) . $imagem;
             $scriptProduto = "UPDATE tb_produtos SET imagem = '$imagem', nome = '$nome', descricao = '$descricao', ingredientes = '$ingredientes', preco = '$preco' WHERE id = '$id'";
-
-        } else{
+        } else {
             $scriptProduto = "UPDATE tb_produtos SET  nome = '$nome', descricao = '$descricao', ingredientes = '$ingredientes', preco = '$preco' WHERE id = '$id'";
         }
         $conexao->prepare($scriptProduto)->execute([]);
@@ -97,19 +96,43 @@ class Produto
     public function StatusProduto($id, $status)
     {
         include 'conexao.php';
-           
+
         // ativar produto
-        if ($status == 0 ){
+        if ($status == 0) {
             $scriptProduto = "UPDATE tb_produtos SET status = '1' WHERE id = '$id'";
-            header('location: produto-editar.php?id=' .$id);
-        } 
+            header('location: produto-editar.php?id=' . $id);
+        }
         //desativar
         else {
             $scriptProduto = "UPDATE tb_produtos SET status = '0' WHERE id = '$id'";
-            header('location: produto-editar.php?id=' .$id);
+            header('location: produto-editar.php?id=' . $id);
         }
-        
+
         $conexao->prepare($scriptProduto)->execute([]);
         $conexao = null;
-    }   
+    }
+
+    public function ListarDesconto($cupom)
+    {
+        include 'conexao.php';
+        $scriptProduto = "SELECT * FROM tb_voucher WHERE nome = '$cupom' AND status = '1'";
+        $resultado = $conexao->query($scriptProduto)->fetch();
+
+        $conexao = null;
+        return $resultado;
+    }
+
+    public function VenderProduto($id_usuario, $id_produto, $preco, $quantidade)
+    {
+        include 'conexao.php';
+
+        $total = $preco * $quantidade;
+
+        $scriptVenda = "INSERT INTO tb_vendas (id_usuario, id_produto, preco, vendidos, total) VALUES ('$id_usuario', '$id_produto', '$preco', '$quantidade', '$total')";
+        $resultado = $conexao->prepare($scriptVenda)->execute([]);
+
+        $scriptProduto = "UPDATE tb_produtos SET vendidos = vendidos + '$quantidade' WHERE id = '$id_produto'";
+
+        $conexao = null;
+    }
 }

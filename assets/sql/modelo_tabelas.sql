@@ -1,3 +1,4 @@
+-- Active: 1719583187159@@62.72.62.1@3306@u687609827_erick
 -- SQLBook: Code
 CREATE TABLE tb_pessoa (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -19,7 +20,7 @@ CREATE TABLE tb_user (
     `foto_perfil` VARCHAR(200) DEFAULT 'perfil.png',
     `login` VARCHAR(200),
     `senha` VARCHAR(200),
-    `status` ENUM('inativo', 'ativo') DEFAULT 'ativo',
+    `status` ENUM('0', '1') DEFAULT '1',
     `nivel` VARCHAR(5) DEFAULT 'user'
 )
 
@@ -39,7 +40,7 @@ CREATE TABLE tb_produtos (
     `preco` FLOAT(9, 2),
     `estoque` INT DEFAULT 0,
     `vendidos` INT DEFAULT 0,
-    `status` ENUM('inativo', 'ativo') DEFAULT 'ativo'
+    `status` ENUM('0', '1') DEFAULT '1'
 )
 
 CREATE TABLE tb_produtos_tags (
@@ -59,3 +60,10 @@ CREATE TABLE tb_vendas (
     `total` FLOAT(5, 2)
 );
 
+CREATE TABLE tb_voucher (
+    `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `data_insercao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `nome` VARCHAR(20) UNIQUE,
+    `desconto` FLOAT(5, 2),
+    `status` ENUM('0', '1') DEFAULT '1'
+);

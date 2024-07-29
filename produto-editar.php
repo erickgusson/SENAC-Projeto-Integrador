@@ -85,16 +85,19 @@ if (isset($_POST['atualizar']) && !empty($_POST['atualizar'])) {
                 <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto" src="./assets/img/produtos/<?= $dados['imagem'] ?>"></label>
             </section>
 
-            <input type="submit" name="atualizar" class="botao-click" value="Atualizar">
+            <div class="esquerda">
+                <span style="display: flex; gap: 10px;">
+                    <input type="checkbox" name="atualizar-status" class="botao-click"></input>
+                    <?= ($dados['status'] == 1) ? 'Desativar Produto' : 'Ativar Produto'; ?>
+                </span>
+            </div>
+
+            <div class="direita"><input type="submit" name="atualizar" class="botao-click" value="Atualizar"></div>
 
         </form>
-        
+
         <!-- Botão para mostrar a função de ativar e desativar o produto ( para os usuários apenas) -->
-        <form action="#" method="POST">
-            <button type="submit" name="atualizar-status" class="botao-click">
-                <?= ($dados['status'] == 1) ? 'desativar' : 'ativar'; ?>
-            </button>
-        </form>
+
 
     </div>
 

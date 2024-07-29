@@ -14,11 +14,41 @@ if (!isset($_SESSION['usuario'])) {
 $desconto = 0;
 
 // Verfica se o cupom existe
-if ($desconto) {
-    # code...
+if (isset($_GET['cupom'])) {
+    $cupom = $_GET['cupom'];
+
+    $cumpomInfo = $produto->ListarDesconto($cupom);
+
+    if (isset($cumpomInfo) && !empty($cumpomInfo)) {
+        $desconto = $cumpomInfo['desconto'];
+    }
+
     // Puxa o banco e define o valor na variável
     // $cupom = $banco->puxaDesconto($get[cupom]);
     // $desconto = cupom['desconto'];
+
+    $desconto = $_SESSION['total'] * $desconto / 100;
+}
+
+if (isset($_POST['finalizarpedido'])) {
+
+
+    if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
+
+        foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
+            $preco = $produto->Listar1Produto($id_produto, 1);
+            $produto->VenderProduto($_SESSION['id_pessoa'], $id_produto, $preco['preco'], $quantidade);
+
+        }
+    }
+
+    // echo "<pre>";
+    // print_r($_SESSION);
+    unset($_SESSION['carrinho']);
+    // print_r($_SESSION);
+    // echo "</pre>";
+
+    header('location: finalizar-pedido.php');
 }
 
 ?>
@@ -34,18 +64,18 @@ if ($desconto) {
                 <p class="botao-geral"><img src="assets/img/icon/icon-cupom.png" alt=""><input type="search" placeholder="INAUG30" name="cupom"></p>
             </div>
         </form>
-        <form action="#" method="GET" class="formulario-pedido">
+        <form action="#" method="POST" class="formulario-pedido">
 
             <div class="pedido-info caixa">
                 <h3>Resumo do pedido</h3>
                 <ul>
-
                     <li></li>
                     <li>Subtotoal: <span>R$ <?= number_format($_SESSION['total'], 2, ',', '.') ?></span></li>
-                    <li>desconto: <span>R$ <?= number_format($_SESSION['total'] - $desconto, 2, ',', '.') ?></span> </li>
-                    <li>total: <span></span> </li>
+                    <li>desconto: <span>R$ <?= number_format($desconto, 2, ',', '.') ?></span> </li>
+                    <li style="border-top: 1px dashed black;">total: <span>R$ <?= number_format($_SESSION['total'] - $desconto, 2, ',', '.') ?></span> </li>
                 </ul>
             </div>
+            <button type="submit" class="botao-click" name="finalizarpedido">Finalizar Pedido</button>
         </form>
     </section>
 </main>

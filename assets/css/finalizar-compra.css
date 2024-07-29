@@ -17,14 +17,13 @@ input[type="search"]{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+ 
     gap: 50px;
     margin: 40px 0 80px;
 }
 
 .pedido-dados {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     /* flex-wrap: wrap; */
     width: 100%;
@@ -35,6 +34,8 @@ input[type="search"]{
 .pedido-info, .pedido-pagamento {
     text-align: center;
     width: 100%;
+
+    padding: 20px;
 }
 
 .pedido-info h3, .pedido-pagamento h3 {
@@ -42,7 +43,7 @@ input[type="search"]{
 }
 
 ul {
-    padding: 20px;
+    padding: 30px;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -53,6 +54,7 @@ ul li {
     justify-content: space-between;
     font-size: 20px;
     text-decoration: none;
+    gap: 100px;
 }
 
 .pedido-pagamento div, .pedido-pagamento div label {
