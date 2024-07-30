@@ -1,4 +1,4 @@
-input[type="search"]{
+input[type="search"] {
     outline: none;
     color: #7B429B;
 }
@@ -17,7 +17,7 @@ input[type="search"]{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
- 
+
     gap: 50px;
     margin: 40px 0 80px;
 }
@@ -31,14 +31,16 @@ input[type="search"]{
     gap: 20px;
 }
 
-.pedido-info, .pedido-pagamento {
+.pedido-info,
+.pedido-pagamento {
     text-align: center;
     width: 100%;
 
     padding: 20px;
 }
 
-.pedido-info h3, .pedido-pagamento h3 {
+.pedido-info h3,
+.pedido-pagamento h3 {
     text-transform: uppercase;
 }
 
@@ -57,8 +59,26 @@ ul li {
     gap: 100px;
 }
 
-.pedido-pagamento div, .pedido-pagamento div label {
+.pedido-pagamento div,
+.pedido-pagamento div label {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#validar {
+
+    display: flex;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/icon/validarWhite.svg);
+
+    transition: 200ms;
+
+    margin-left: 10px;
+    justify-content: center;
+}
+
+#validar:hover {
+    background-image: url(../img/icon/ValidarYellow.svg);
 }

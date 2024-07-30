@@ -77,7 +77,11 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
                 <?php if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
                     foreach ($_SESSION['carrinho'] as $id_produto => $quantidade) {
                         $dados = $produto->Listar1Produto($id_produto, 1);
-                        if (isset($dados) && !empty($dados)) { ?>
+                        if (isset($dados) && !empty($dados)) {
+                            if ($dados['status'] == 0) {
+                                unset($_SESSION['carrinho'][$dados['id']]);
+                            }
+                ?>
                             <div class="carrinho-item">
                                 <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="Foto de <?= $dados['nome'] ?>">
                                 <h2><?= $quantidade; ?> x</h2> <!-- quantidade -->

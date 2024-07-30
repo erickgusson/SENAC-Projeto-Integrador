@@ -1,4 +1,5 @@
--- Active: 1719583187159@@62.72.62.1@3306@u687609827_erick
+-- SQLBook: Code
+-- Active: 1719319891959@@62.72.62.1@3306@u687609827_erick
 -- SQLBook: Code
 CREATE TABLE tb_pessoa (
     `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
