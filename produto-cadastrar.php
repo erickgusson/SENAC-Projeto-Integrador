@@ -70,26 +70,31 @@ if (isset($_POST) && !empty($_POST)) {
                 <label for="upload" class="botao-geral"><img src="assets/img/icon/icon-upload.png" alt="" required>Enviar imagem (.png)</label>
                 <input type="file" name="upload" id="upload" accept="image/png" onchange="document.getElementById('imagem-preview').src = window.URL.createObjectURL(this.files[0])" hidden required>
                 <label for="upload"><img id="imagem-preview" width="250" height="250" class="caixa-produto"></label>
-            </section>
-            <input type="submit" value="Cadastrar" class="botao-click">
 
-            <!-- <select name="tag" id="tag">
-                <option value="torta">Torta</option>
-                <option value="Bolo">Bolo</option>
-                <option value="Cookie">Cookie</option>
-                <option value="Diet">Diet</option>
-                <option value="Mousse">Mousse</option>
-                <option value="Massas">Massas</option>
-                <option value="Cones">Cones</option>
-                <option value="Frutas">Frutas</option>
-                <option value="Sorvetes">Sorvetes</option>
-                <option value="Docinhos">Docinhos</option>
-                <option value="Especiais">Especiais</option>
-            </select> -->
+                <div class="direita">
+                    <input type="submit" value="Cadastrar" class="botao-click" >
+                </div>
+            </section>
+            
+            
+
+                <!-- <input type="checkbox" name="tag[]" value="Torta" id="Torta"><label for="Torta">Torta</label>
+                <input type="checkbox" name="tag[]" value="Bolo" id="Bolo"><label for="Bolo">Bolo</label>
+                <input type="checkbox" name="tag[]" value="Cookie" id="Cookie"><label for="Cookie">Cookie</label>
+                <input type="checkbox" name="tag[]" value="Diet" id="Diet"><label for="Diet">Diet</label>
+                <input type="checkbox" name="tag[]" value="Mousse" id="Mousse"><label for="Mousse">Mousse</label>
+                <input type="checkbox" name="tag[]" value="Massas" id="Massas"><label for="Massas">Massas</label>
+                <input type="checkbox" name="tag[]" value="Cones" id="Cones"><label for="Cones">Cones</label>
+                <input type="checkbox" name="tag[]" value="Frutas" id="Frutas"><label for="Frutas">Frutas</label>
+                <input type="checkbox" name="tag[]" value="Sorvetes" id="Sorvetes"><label for="Sorvetes">Sorvetes</label>
+                <input type="checkbox" name="tag[]" value="Docinhos" id="Docinhos"><label for="Docinhos">Docinhos</label>
+                <input type="checkbox" name="tag[]" value="Especiais" id="Especiais"><label for="Especiais">Especiais</label> -->
+          
+                <!-- Vídeo do checkbox -->
+                <!-- https://www.youtube.com/watch?v=DLdp_RUPeWY -->
+
         </form>
     </div>
 
 </main>
-
-
 <?php include "./includes/footer.php" ?>

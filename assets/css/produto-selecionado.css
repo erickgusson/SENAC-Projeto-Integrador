@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     margin: 10px 0 45px;
 }
 
-#produto-selecionado h1{
+#produto-selecionado h1 {
     text-align: center;
     font-size: 62px;
 
@@ -29,16 +29,17 @@
     margin-right: 50px;
 }
 
-#produto-selecionado figure .produto-img-tag img{
+#produto-selecionado figure .produto-img-tag img {
     width: 300px;
     height: 300px;
     object-fit: cover;
 }
 
-figure > div:has(span) {
+figure>div:has(span) {
     margin-top: 20px;
 }
-figure > div > span {
+
+figure>div>span {
     font-size: 28px;
     text-align: justify;
     margin-top: 20px;
@@ -60,14 +61,16 @@ figure small {
 }
 
 .tags span {
-    background-color: #353535;
-    
+    /* background-color: #353535; */
+
     padding: 4px 8px;
     border: 1px solid black;
     border-radius: 30px;
+
+    text-decoration: none;
 }
 
-.preco-adicionar{
+.preco-adicionar {
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 2fr;
@@ -80,6 +83,66 @@ figure small {
     text-decoration: none;
 }
 
-.torta {
-    background-color: #ffcc80;
+.Torta {
+    background-color: #E6B884;
+    color: black;
+}
+
+.Bolo {
+    background-color: #FFB088;
+    color: black;
+}
+
+.Cookie {
+    background-color: #B0B0D9;
+    color: black;
+}
+
+.Diet {
+    background-color: #A3C36F;
+    color: black;
+}
+
+.Mousse {
+    background-color: #EDE5B6;
+    color: black;
+}
+
+.Massas {
+    background-color: #FFD9D6;
+    color: black;
+}
+
+.Cones {
+    background-color: #A9A9A9;
+    color: black;
+}
+
+.Frutas {
+    background-color: #FF8266;
+    color: black;
+}
+
+.Sorvetes {
+    background-color: #5CBCEC;
+    color: black;
+}
+
+.Docinhos {
+    background-color: #DFFFD8;
+    color: black;
+}
+
+.Especiais {
+    background-color: #FFAEB9;
+    color: black;
+}
+
+.tags a {
+    text-decoration: none;
+}
+
+.tags span:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
 }

@@ -8,10 +8,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];
 
     $dados = $produto->Listar1Produto($id, 1);
+    $tags = $produto->ListarTags1Produto($id);
     if ($dados == false) {
         header('location: produtos.php?erro=1');
     }
-    
 } else {
     header('location: produtos.php?erro=1');
     echo "<script>history.go(-1);</script>";
@@ -43,10 +43,11 @@ if (isset($_SESSION['nivel']) != 'admin') {
             <img class="caixa-produto" src="assets/img/produtos/<?= $dados['imagem'] ?>" alt="Foto de <?= $dados['nome'] ?>">
 
             <div class="tags">
-                <span>Torta</span>
-                <span>Fruta</span>
-                <span>Morango</span>
-                <span>Massas</span>
+                <?php foreach ($tags as $item) { ?>
+
+                    <a href="produtos.php" style="text-decoration: none;"><span class="<?= $item['tag']  ?>"><?= $item['tag'] ?></span></a>
+
+                <?php } ?>
             </div>
 
         </div>

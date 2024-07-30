@@ -120,6 +120,8 @@ input[type="search"] {
     height: 50px;
     width: 250px;
 
+    cursor: pointer;
+
     border-radius: 25px;
 
     font-size: 24px;

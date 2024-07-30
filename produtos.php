@@ -37,22 +37,22 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
                 <h2>Filtro</h2>
             </div>
             <ul>
-                <li>TODOS<input type="checkbox" name="" id="cb-todos"></li>
-                <li>Diet<input type="checkbox" name="" id="cb-diet"></li>
-                <li>Mousse<input type="checkbox" name="" id="cb-mousse"></li>
-                <li>Bolos<input type="checkbox" name="" id="cb-bolos"></li>
-                <li>Tortas<input type="checkbox" name="" id="cb-tortas"></li>
-                <li>Massas<input type="checkbox" name="" id="cb-"></li>
-                <li>Cones<input type="checkbox" name="" id="cb-"></li>
-                <li>Frutas<input type="checkbox" name="" id="cb-"></li>
-                <li>Sorvetes<input type="checkbox" name="" id="cb-"></li>
-                <li>Cookies<input type="checkbox" name="" id="cb-"></li>
-                <li>Docinhos<input type="checkbox" name="" id="cb-"></li>
-                <li>Especiais<input type="checkbox" name="" id="cb-"></li>
+                <li><label for="Todos">TODOS</label><input type="checkbox" name="todos" id="Todos"></li>
+                <li><label for="Torta">Torta</label><input type="checkbox" name="tag[]" value="Torta" id="Torta"></li>
+                <li><label for="Bolo">Bolo</label><input type="checkbox" name="tag[]" value="Bolo" id="Bolo"></li>
+                <li><label for="Cookie">Cookie</label><input type="checkbox" name="tag[]" value="Cookie" id="Cookie"></li>
+                <li><label for="Diet">Diet</label><input type="checkbox" name="tag[]" value="Diet" id="Diet"></li>
+                <li><label for="Mousse">Mousse</label><input type="checkbox" name="tag[]" value="Mousse" id="Mousse"></li>
+                <li><label for="Massas">Massas</label><input type="checkbox" name="tag[]" value="Massas" id="Massas"></li>
+                <li><label for="Cones">Cones</label><input type="checkbox" name="tag[]" value="Cones" id="Cones"></li>
+                <li><label for="Frutas">Frutas</label><input type="checkbox" name="tag[]" value="Frutas" id="Frutas"></li>
+                <li><label for="Sorvetes">Sorvetes</label><input type="checkbox" name="tag[]" value="Sorvetes" id="Sorvetes"></li>
+                <li><label for="Docinhos">Docinhos</label><input type="checkbox" name="tag[]" value="Docinhos" id="Docinhos"></li>
+                <li><label for="Especiais">Especiais</label><input type="checkbox" name="tag[]" value="Especiais" id="Especiais"></li>
             </ul>
             <button type="button">Filtrar</button>
             <!-- <div class="botao-filtrar">
-                </div> -->
+            </div> -->
         </div>
 
         <div class="produtos-meio">

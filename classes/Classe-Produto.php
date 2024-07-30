@@ -77,6 +77,15 @@ class Produto
         $conexao = null;
     }
 
+    public function ListarTags1Produto($id)
+    {
+        include 'conexao.php';
+        $query = "SELECT * FROM tb_produtos_tags INNER JOIN tb_tags ON tb_produtos_tags.id_tag = tb_tags.id WHERE tb_produtos_tags.id_produto = '$id'";
+        $resultado = $conexao->query($query)->fetchAll();
+        $conexao = null;
+        return $resultado;
+    }
+
     public function EditarProduto($imagem, $nome, $descricao, $ingredientes, $preco, $id)
     {
         include 'conexao.php';
