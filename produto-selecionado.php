@@ -45,7 +45,13 @@ if (isset($_SESSION['nivel']) != 'admin') {
             <div class="tags">
                 <?php foreach ($tags as $item) { ?>
 
-                    <a href="produtos.php" style="text-decoration: none;"><span class="<?= $item['tag']  ?>"><?= $item['tag'] ?></span></a>
+                    <span type="submit" class="<?= $item['tag'] ?>">
+                    <form action="produtos.php" method="get">
+                            <button type="submit" name="tag[]" value="<?= $item['tag'] ?>">
+                                <?= $item['tag'] ?>
+                            </button>
+                        </form>
+                    </span>
 
                 <?php } ?>
             </div>

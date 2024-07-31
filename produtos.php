@@ -20,9 +20,9 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
     $_SESSION['carrinho'][$id_produto]++;
 }
 
-// if (isset($_POST['tag'])) {
-//     $dados = $produto->FiltrarProduto($_POST);
-// }
+if (isset($_GET['tag'])) {
+    $dados = $produto->FiltrarProduto($_GET);
+}
 
 ?>
 
@@ -36,7 +36,7 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
 <section>
     <main id="produtos" class="col">
 
-        <form method="post" action="#" class="produtos-esquerda caixa">
+        <form method="GET" action="#" class="produtos-esquerda caixa">
             <div>
                 <h2>Filtro</h2>
             </div>
@@ -69,17 +69,17 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
             <div class="lista-produtos">
                 <?php include "./includes/include-produto.php"; ?>
                 <!-- <?php $ultimoID = 0;
-                foreach ($dados as $valor) {
-                    if ($valor['id_produto'] != $ultimoID) {
-                        // echo "<br>" . $valor['id_produto'] . "<br>";
+                        foreach ($dados as $valor) {
+                            if ($valor['id_produto'] != $ultimoID) {
+                                // echo "<br>" . $valor['id_produto'] . "<br>";
 
-                        $valor = $produto->Listar1Produto($valor['id_produto'], 1);
+                                $valor = $produto->Listar1Produto($valor['id_produto'], 1);
 
-                        // print_r($valor['nome']);
-                    }
+                                // print_r($valor['nome']);
+                            }
 
-                    $ultimoID = $valor['id_produto'];
-                } ?> -->
+                            $ultimoID = $valor['id_produto'];
+                        } ?> -->
 
             </div>
         </div>
