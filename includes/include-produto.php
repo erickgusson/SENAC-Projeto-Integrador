@@ -1,6 +1,9 @@
 <?php
 
-foreach ($dados as $valor) { ?>
+foreach ($dados as $valor) { 
+    // echo "<pre>";
+    // print_r($valor);
+     ?>
 
     <form class="item <?= ($valor['status'] == 0) ? 'escondido' : '' ?>">
         <a href="produto-selecionado.php?id=<?= $valor['id'] ?>">

@@ -48,7 +48,7 @@
             </div>
             <div>
                 <a href="https://idrink.paulowh.com/adega-idrink/" target="_blank">Idrink</a> -
-                <a href="#" target="_blank">Pc Previnido</a>
+                <a href="#" target="_blank">Pc Prevenido</a>
             </div>
         </div>
     </div>

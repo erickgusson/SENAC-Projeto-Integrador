@@ -144,4 +144,43 @@ class Produto
 
         $conexao = null;
     }
+
+    public function FiltrarProduto($filtro)
+    {
+
+        $filtrosTags = $filtro['tag'];
+
+        if (isset($filtro['todos']) == "on") {
+            $script = "SELECT * FROM tb_produtos 
+            INNER JOIN tb_produtos_tags ON tb_produtos.id = tb_produtos_tags.id_produto 
+            INNER JOIN tb_tags ON tb_produtos_tags.id_tag = tb_tags.id";
+        } else {
+            $script = "SELECT * FROM tb_produtos 
+            INNER JOIN tb_produtos_tags ON tb_produtos.id = tb_produtos_tags.id_produto 
+            INNER JOIN tb_tags ON tb_produtos_tags.id_tag = tb_tags.id 
+            WHERE tb_tags.tag = '" . implode("' OR tb_tags.tag = '", $filtrosTags) . "'";
+        }
+
+        include './classes/conexao.php';
+
+        $resultado = $conexao->query($script)->fetchAll();
+        // print_r($resultado);
+
+        $conexao = null;
+
+        return $resultado;
+
+        $ultimoID = 0;
+        foreach ($resultado as $dados) {
+            if ($dados['id_produto'] != $ultimoID) {
+                // echo "<br>" . $dados['id_produto'] . "<br>";
+
+                $dados = $produto->Listar1Produto($dados['id_produto'], 1);
+
+                // print_r($dados['nome']);
+            }
+
+            $ultimoID = $dados['id_produto'];
+        }
+    }
 }

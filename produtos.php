@@ -20,6 +20,10 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
     $_SESSION['carrinho'][$id_produto]++;
 }
 
+// if (isset($_POST['tag'])) {
+//     $dados = $produto->FiltrarProduto($_POST);
+// }
+
 ?>
 
 <style>
@@ -32,28 +36,29 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
 <section>
     <main id="produtos" class="col">
 
-        <div class="produtos-esquerda caixa">
+        <form method="post" action="#" class="produtos-esquerda caixa">
             <div>
                 <h2>Filtro</h2>
             </div>
             <ul>
-                <li><label for="Todos">TODOS</label><input type="checkbox" name="todos" id="Todos"></li>
-                <li><label for="Torta">Torta</label><input type="checkbox" name="tag[]" value="Torta" id="Torta"></li>
-                <li><label for="Bolo">Bolo</label><input type="checkbox" name="tag[]" value="Bolo" id="Bolo"></li>
-                <li><label for="Cookie">Cookie</label><input type="checkbox" name="tag[]" value="Cookie" id="Cookie"></li>
-                <li><label for="Diet">Diet</label><input type="checkbox" name="tag[]" value="Diet" id="Diet"></li>
-                <li><label for="Mousse">Mousse</label><input type="checkbox" name="tag[]" value="Mousse" id="Mousse"></li>
-                <li><label for="Massas">Massas</label><input type="checkbox" name="tag[]" value="Massas" id="Massas"></li>
-                <li><label for="Cones">Cones</label><input type="checkbox" name="tag[]" value="Cones" id="Cones"></li>
-                <li><label for="Frutas">Frutas</label><input type="checkbox" name="tag[]" value="Frutas" id="Frutas"></li>
-                <li><label for="Sorvetes">Sorvetes</label><input type="checkbox" name="tag[]" value="Sorvetes" id="Sorvetes"></li>
-                <li><label for="Docinhos">Docinhos</label><input type="checkbox" name="tag[]" value="Docinhos" id="Docinhos"></li>
-                <li><label for="Especiais">Especiais</label><input type="checkbox" name="tag[]" value="Especiais" id="Especiais"></li>
+                <li><label for="Bolo">Bolo</label><input type="checkbox" name="tag[]" value="Bolo" id="Bolo" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Cones">Cones</label><input type="checkbox" name="tag[]" value="Cones" id="Cones" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Cookie">Cookie</label><input type="checkbox" name="tag[]" value="Cookie" id="Cookie" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Diet">Diet</label><input type="checkbox" name="tag[]" value="Diet" id="Diet" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Docinhos">Docinhos</label><input type="checkbox" name="tag[]" value="Docinhos" id="Docinhos" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Especiais">Especiais</label><input type="checkbox" name="tag[]" value="Especiais" id="Especiais" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Frutas">Frutas</label><input type="checkbox" name="tag[]" value="Frutas" id="Frutas" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Massas">Massas</label><input type="checkbox" name="tag[]" value="Massas" id="Massas" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Mousse">Mousse</label><input type="checkbox" name="tag[]" value="Mousse" id="Mousse" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Sorvetes">Sorvetes</label><input type="checkbox" name="tag[]" value="Sorvetes" id="Sorvetes" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Torta">Torta</label><input type="checkbox" name="tag[]" value="Torta" id="Torta" onclick="desmarcarCampoTodos()"></li>
+                <li><label for="Todos">TODOS</label><input type="checkbox" name="todos" id="Todos" onclick="checkTodos(this)"></li>
+
             </ul>
-            <button type="button">Filtrar</button>
-            <!-- <div class="botao-filtrar">
-            </div> -->
-        </div>
+            <button type="submit" name="filtrar">Filtrar</button>
+
+
+        </form>
 
         <div class="produtos-meio">
             <form method="GET" action="produtos.php" class="titulo-produtos">
@@ -63,6 +68,19 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
 
             <div class="lista-produtos">
                 <?php include "./includes/include-produto.php"; ?>
+                <!-- <?php $ultimoID = 0;
+                foreach ($dados as $valor) {
+                    if ($valor['id_produto'] != $ultimoID) {
+                        // echo "<br>" . $valor['id_produto'] . "<br>";
+
+                        $valor = $produto->Listar1Produto($valor['id_produto'], 1);
+
+                        // print_r($valor['nome']);
+                    }
+
+                    $ultimoID = $valor['id_produto'];
+                } ?> -->
+
             </div>
         </div>
 
@@ -99,3 +117,20 @@ if (isset($_GET['produto-adicionar']) && !empty($_GET['produto-adicionar'])) {
 <script src="./assets/js/fixarRolagem.js"> </script>
 
 <?php include "./includes/footer.php" ?>
+
+<!-- FUNÇÃO DE MARCAR TODOS OS CHECKBOX -->
+<script>
+    function checkTodos(padrao) {
+        let filtros = document.querySelectorAll('input[type="checkbox"]');
+        for (let i = 0; i < filtros.length; i++) {
+            if (filtros[i] != padrao)
+                filtros[i].checked = padrao.checked;
+        }
+    }
+
+    function desmarcarCampoTodos(desmarcar) {
+        let filtros = document.getElementById('Todos')
+        filtros.checked = false
+    }
+</script>
+</script>
