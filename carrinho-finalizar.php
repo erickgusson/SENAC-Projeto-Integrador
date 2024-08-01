@@ -15,7 +15,7 @@ $desconto = 0;
 
 // Verfica se o cupom existe
 if (isset($_GET['cupom'])) {
-    $cupom = $_GET['cupom'];
+    $cupom = preg_replace('/[^a-zA-Z0-9]/', '', $_GET['cupom']);
 
     $cumpomInfo = $produto->ListarDesconto($cupom);
 

@@ -134,4 +134,29 @@ class User
 
         $conexao = null;
     }
+
+    // Falta finalizar a adptaçaõ do código, passar o id corretamente
+    public function AlterarUsuario($id, $status)
+    {
+        include 'conexao.php';
+        
+        if ($status == 0) {
+            $scriptAlterar = "UPDATE tb_user SET status = '1' WHERE id = '$id'";
+            header('location: produto-editar.php?id=' . $id);
+        }
+        //desativar
+        else {
+            $scriptAlterar = "UPDATE tb_user SET status = '0' WHERE id = '$id'";
+            header('location: produto-editar.php?id=' . $id);
+        }
+
+        $conexao->prepare($scriptAlterar)->execute([]);
+        $conexao = null;
+
+        // $scriptAlterar = "UPDATE tb_user SET status = '$status' WHERE id = '$id'";
+        
+        // $conexao->prepare($scriptAlterar)->execute([]);
+
+
+    }
 }

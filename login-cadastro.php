@@ -5,8 +5,10 @@ include "./includes/header.php";
 include "./classes/Classe-User.php";
 
 if (isset($_SESSION['usuario'])) {
-    echo "<script>history.go(-1);</script>";
-    // header('location: index.php');
+    // echo "<script>history.go(-1);</script>";
+    echo "<script>window.location.reload();</script>";
+    header('refresh: 0');
+    header('location: perfil-editar.php');
 }
 
 // =============  Para Logar ============= 
@@ -20,6 +22,8 @@ if (
     $user = new User();
     $resultadoLogin = $user->Logar($usuario, $password);
     if (!str_contains($resultadoLogin, 'Usuario não encontrado ou desativado.')) {
+        header('location: perfil-editar.php');
+        echo "<script>window.location.reload();</script>";
         header('refresh: 0');
     }
 }
@@ -51,6 +55,7 @@ if (
     $user = new User();
     $resultadoCadastro = $user->Cadastrar($nome, $email, $senha, $confirmarSenha, $telefone, $cep, $rua, $numero, $bairro, $cidade);
     if (str_contains($resultadoCadastro, 'Usuário cadastrado com sucesso id:')) {
+        echo "<script>window.location.reload();</script>";
         header('refresh: 0');
     } else {
         echo "<script>alert('" . $resultadoCadastro . "');</script>";

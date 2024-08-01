@@ -108,13 +108,13 @@ if (!empty(isset($_POST['nome'])) && !empty(isset($_POST['emailEditar'])) && !em
                         <!-- Telefone -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="icone de telefone">
                             <!-- <span style="opacity: .5;">Tel</span> -->
-                            <input type="text" name="telefone" id="telefone" placeholder="Telefone" required value="<?= $dados['telefone'] ?>">
+                            <input type="number" name="telefone" id="telefone" placeholder="Telefone" required value="<?= $dados['telefone'] ?>">
                         </span>
 
                         <!-- CEP -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
                             <!-- <span style="opacity: .5;">CEP</span> -->
-                            <input type="text" name="cep" id="cep" placeholder="CEP" required value="<?= $dados['CEP'] ?>">
+                            <input type="number" name="cep" id="cep" placeholder="CEP" required value="<?= $dados['CEP'] ?>">
                         </span>
                     </div>
 
@@ -129,7 +129,7 @@ if (!empty(isset($_POST['nome'])) && !empty(isset($_POST['emailEditar'])) && !em
                         <!-- Nº -->
                         <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa">
                             <!-- <span style="opacity: .5;">Numero</span> -->
-                            <input type="text" name="numero" id="numero" placeholder="Nº" required value="<?= $dados['numero'] ?>">
+                            <input type="number" name="numero" id="numero" placeholder="Nº" required value="<?= $dados['numero'] ?>">
                         </span>
                     </div>
 

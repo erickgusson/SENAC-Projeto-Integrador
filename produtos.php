@@ -7,7 +7,7 @@ $produto = new Produto();
 $dados = $produto->ListarProdutos(1);
 
 if (isset($_GET['busca']) && !empty($_GET['busca'])) {
-    $busca = $_GET['busca'];
+    $busca = preg_replace('/[^a-zA-Z0-9]/', '', $_GET['busca']);
     $dados = $produto->Pesquisar($busca);
     // var_dump($dados);
 }
