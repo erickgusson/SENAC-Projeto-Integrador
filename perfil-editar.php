@@ -4,7 +4,7 @@ include "./classes/Classe-User.php";
 include "./includes/header.php";
 
 if (!isset($_SESSION['id_pessoa'])) {
-    echo "";
+    echo "<script>history.go(-1);</script>";
 }
 
 $perfil = new User();

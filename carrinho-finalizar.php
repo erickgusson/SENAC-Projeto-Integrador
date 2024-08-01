@@ -7,7 +7,7 @@ include "./carrinho.php";
 echo "</div>";
 
 if (!isset($_SESSION['usuario'])) {
-    echo " <script>history.go(-1);</script>";
+    echo "<script>history.go(-1);</script>";
     // header('location: index.php');
 }
 
