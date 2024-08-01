@@ -75,7 +75,7 @@
     border-width: 2px;
     border-color: #ffcc80;
     box-shadow: 0px 0px 10px #ffcc80;
-    /* object-fit: cover; */
+    object-fit: cover;
     width: 100px !important;
     height: 100px !important;
     max-width: 100px !important;
