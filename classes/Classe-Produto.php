@@ -138,9 +138,10 @@ class Produto
         $total = $preco * $quantidade;
 
         $scriptVenda = "INSERT INTO tb_vendas (id_usuario, id_produto, preco, vendidos, total) VALUES ('$id_usuario', '$id_produto', '$preco', '$quantidade', '$total')";
-        $resultado = $conexao->prepare($scriptVenda)->execute([]);
-
+        $conexao->prepare($scriptVenda)->execute([]);
+        
         $scriptProduto = "UPDATE tb_produtos SET vendidos = vendidos + '$quantidade' WHERE id = '$id_produto'";
+        $conexao->prepare($scriptProduto)->execute([]);
 
         $conexao = null;
     }
