@@ -101,7 +101,7 @@ class User
 
             // header('location: login-cadastro.php');
             $conexao = null;
-            return "Usuário cadastrado com sucesso id: " . $id_usuario;
+            return "Usuário cadastrado com sucesso";
         } catch (PDOException $erro) {
             $conexao = null;
             return "Erro <br>" . $erro->getMessage();
@@ -139,24 +139,28 @@ class User
     public function AlterarUsuario($id, $status)
     {
         include 'conexao.php';
-        
+
         if ($status == 0) {
             $scriptAlterar = "UPDATE tb_user SET status = '1' WHERE id = '$id'";
-            header('location: produto-editar.php?id=' . $id);
         }
         //desativar
         else {
             $scriptAlterar = "UPDATE tb_user SET status = '0' WHERE id = '$id'";
-            header('location: produto-editar.php?id=' . $id);
         }
 
         $conexao->prepare($scriptAlterar)->execute([]);
         $conexao = null;
+    }
 
-        // $scriptAlterar = "UPDATE tb_user SET status = '$status' WHERE id = '$id'";
+    public function DeletarUsuario($id, $id_usuario)
+    {
+        include 'conexao.php';
+
+        $scriptUser = "DELETE FROM tb_user WHERE id = '$id'";
+        $scriptPessoa = "DELETE FROM tb_pessoa WHERE id = '$id_usuario'";
         
-        // $conexao->prepare($scriptAlterar)->execute([]);
-
-
+        $conexao->prepare($scriptUser)->execute([]);
+        $conexao->prepare($scriptPessoa)->execute([]);
+        $conexao = null;
     }
 }

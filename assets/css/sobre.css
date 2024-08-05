@@ -2,6 +2,7 @@ body {
     min-height: 100vh;
 }
 
+
 .quem-somos div {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,10 @@ body {
 
 .quem-somos div h1{
     text-align: center;
+}
+
+.quem-somos div h3 {
+    color: #ffcc80;
 }
 
 .quem-somos div strong{

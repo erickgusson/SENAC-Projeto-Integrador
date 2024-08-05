@@ -1,0 +1,48 @@
+#alterar-usuarios {
+    display: grid;
+    place-items: center;
+}
+
+#alterar-usuarios table{
+    max-width: 70vw;
+    padding: 8px;
+}
+
+#alterar-usuarios td img {
+    border-radius: 100%;
+
+    width: 100px;
+    max-width: 100px;
+
+    height: 100px;
+    max-height: 100px;
+    min-height: 100px;
+}
+
+#alterar-usuarios tr {
+    display: grid;
+    grid-template-columns: 1fr repeat(5, 2fr);
+    place-items: center;
+    margin-bottom: 50px;
+}
+
+#alterar-usuarios tr td{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+} 
+
+.botao-onoff {
+    background-color: #7B429B;
+
+    color: white;
+    font-size: 16px;
+    min-width: 100px;
+
+    padding: 8px 12px;
+    border-radius: 25px;
+} 
+
+.botao-onoff:hover{
+    filter: brightness(1.2);
+}

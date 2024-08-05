@@ -55,10 +55,13 @@ if (
     $user = new User();
     $resultadoCadastro = $user->Cadastrar($nome, $email, $senha, $confirmarSenha, $telefone, $cep, $rua, $numero, $bairro, $cidade);
     if (str_contains($resultadoCadastro, 'Usuário cadastrado com sucesso id:')) {
-        echo "<script>window.location.reload();</script>";
-        header('refresh: 0');
+        // echo "<script>window.location.reload();</script>";
+        // header('refresh: 0');
+        echo "<script>alert('" . $resultadoCadastro . "');</script>";
+        header('location: login-cadastro.php');
     } else {
         echo "<script>alert('" . $resultadoCadastro . "');</script>";
+        header('location: login-cadastro.php');
     }
 }
 
@@ -134,12 +137,12 @@ if (
 
             <!-- Telefone -->
             <span class="botao-geral"><img src="assets/img/icon/icon-telefone.png" alt="icone de telefone">
-                <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
+                <input type="number" name="telefone" id="telefone" placeholder="Telefone" required>
             </span>
 
             <!-- CEP -->
             <span class="botao-geral"><img src="assets/img/icon/icon-mapa.png" alt="icone de um pinmap">
-                <input type="text" name="cep" id="cep" placeholder="CEP" required>
+                <input type="number" name="cep" id="cep" placeholder="CEP" required>
             </span>
         </div>
 
@@ -152,7 +155,7 @@ if (
 
             <!-- Nº -->
             <span class="botao-geral"><img src="assets/img/icon/icon-home.png" alt="icone de uma casa">
-                <input type="text" name="numero" id="numero" placeholder="Nº" required>
+                <input type="number" name="numero" id="numero" placeholder="Nº" required>
             </span>
         </div>
 
