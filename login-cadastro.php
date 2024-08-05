@@ -54,14 +54,12 @@ if (
 
     $user = new User();
     $resultadoCadastro = $user->Cadastrar($nome, $email, $senha, $confirmarSenha, $telefone, $cep, $rua, $numero, $bairro, $cidade);
-    if (str_contains($resultadoCadastro, 'Usuário cadastrado com sucesso id:')) {
+    if ($resultadoCadastro == 'Usuário cadastrado com sucesso') {
         // echo "<script>window.location.reload();</script>";
         // header('refresh: 0');
         echo "<script>alert('" . $resultadoCadastro . "');</script>";
-        header('location: login-cadastro.php');
     } else {
         echo "<script>alert('" . $resultadoCadastro . "');</script>";
-        header('location: login-cadastro.php');
     }
 }
 

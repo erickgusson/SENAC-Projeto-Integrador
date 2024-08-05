@@ -20,9 +20,9 @@ class User
             $_SESSION['nivel'] = $resultado['nivel'];
 
             // sleep(5);
-            echo "<script>history.go(-1);</script>";
+            // echo "<script>history.go(-1);</script>";
             $conexao = null;
-            return "";
+            return "Logado com sucesso!";
         } else {
             $conexao = null;
             return 'Usuario não encontrado ou desativado.';

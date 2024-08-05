@@ -100,3 +100,5 @@ if (isset($_POST['deletarUser'])) {
 <br>
 
 <?php include './includes/footer.php' ?>
+
+<script src="./assets/js/fixarRolagem.js"> </script>
