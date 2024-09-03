@@ -28,11 +28,11 @@
             </a>
 
             <div>
-                <a href="https:/github.com/erickgusson" target="_blank">
+                <a href="https://github.com/erickgusson" target="_blank">
                     <img src="./assets/img/icon/icon-github.png" alt="Logo do github para acessar o perfil do gitbhub do Erick"> Erick
                 </a>
 
-                <a href="https:/github.com/RenonHG" target="_blank">
+                <a href="https://github.com/RenonHG" target="_blank">
                     <img src="./assets/img/icon/icon-github.png" alt="Logo do github para acessar o perfil do gitbhub do Renon"> Renon
                 </a>
             </div>
